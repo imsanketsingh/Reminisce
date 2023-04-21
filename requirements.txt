@@ -1,0 +1,13 @@
+streamlit
+streamlit_option_menu
+PIL
+numpy
+pandas
+base64
+requests
+streamlit_text_rating
+streamlit_text_rating.st_text_rater
+random
+streamlit_lottie
+json
+webbrowser
