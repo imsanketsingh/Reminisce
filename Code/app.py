@@ -721,14 +721,16 @@ Finally, If you would like to connect with me further, I invite you to follow me
 
 Once again, thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
 
-        
+                
 
         
 
         def open_link(option):
             if option == "GitHub":
-                webbrowser.get()
-                webbrowser.open("http://github.com/imsanketsingh")
+                url = "https://github.com/imsanketsingh"
+                chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+                webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(chrome_path))
+                webbrowser.get("chrome").open_new(url)     
             elif option == "LinkedIn":
                 webbrowser.open("https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/")
             elif option == "Instagram":
