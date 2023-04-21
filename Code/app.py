@@ -730,7 +730,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
                 url = "https://github.com/imsanketsingh"
                 chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe %s"
                 webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))
-                webbrowser.get('chrome').open_new_tab(url)     
+                webbrowser.get('chrome').open(url)     
             elif option == "LinkedIn":
                 webbrowser.open("https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/")
             elif option == "Instagram":
