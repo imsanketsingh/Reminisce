@@ -96,7 +96,7 @@ elif choose == "Articles":
         #Topic 1
         if topic=='Geopolitics':
             #Topic 1 Article 1
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_IranUS_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_IranUS_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -111,11 +111,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_IranUS_compressed.pdf')
+                    show_pdf('../Published/LT_IranUS_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_IranUS_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_IranUS_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='3',
                         data=PDFbyte,
@@ -128,7 +128,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 2
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_Armenia_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_Armenia_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -143,11 +143,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_Armenia_compressed.pdf')
+                    show_pdf('../Published/LT_Armenia_compressed.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_Armenia_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_Armenia_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='7',
                         data=PDFbyte,
@@ -160,7 +160,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 3
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_Taliban_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_Taliban_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -175,11 +175,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_Taliban_compressed.pdf')
+                    show_pdf('../Published/LT_Taliban_compressed.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_Taliban_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_Taliban_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='11',
                         data=PDFbyte,
@@ -192,7 +192,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 4
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_WarExtremisim_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_WarExtremisim_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -207,11 +207,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='13'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_WarExtremisim_compressed.pdf')
+                    show_pdf('../Published/LT_WarExtremisim_compressed.pdf')
             with col2:
                 st.button('Close Article',key='14')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_WarExtremisim_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_WarExtremisim_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='15',
                         data=PDFbyte,
@@ -224,7 +224,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 5
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_TalibanVsISIS_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_TalibanVsISIS_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -239,11 +239,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='17'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_TalibanVsISIS_compressed.pdf')
+                    show_pdf('../Published/LT_TalibanVsISIS_compressed.pdf')
             with col2:
                 st.button('Close Article',key='18')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_TalibanVsISIS_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_TalibanVsISIS_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='19',
                         data=PDFbyte,
@@ -257,7 +257,7 @@ elif choose == "Articles":
 
 
             #Topic 1 Article 6
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\boris Johnson survived the No confidence vote.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\boris Johnson survived the No confidence vote.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -272,11 +272,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='21'):            
-                    show_pdf('D:/Documents/LTM Site Project/Unpublished/Boris Johnson survived the No confidence vote.pdf')
+                    show_pdf('../Unpublished/Boris Johnson survived the No confidence vote.pdf')
             with col2:
                 st.button('Close Article',key='22')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/Boris Johnson survived the No confidence vote.pdf", "rb") as pdf_file:
+                with open("../Unpublished/Boris Johnson survived the No confidence vote.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='23',
                         data=PDFbyte,
@@ -290,7 +290,7 @@ elif choose == "Articles":
 
 
             #Topic 1 Article 7
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\Imran Khan carried out Suicide Bombings throughout Pakistan.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\Imran Khan carried out Suicide Bombings throughout Pakistan.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -305,11 +305,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='25'):            
-                    show_pdf("D:/Documents/LTM Site Project/Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
+                    show_pdf("../Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
             with col2:
                 st.button('Close Article',key='26')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf", "rb") as pdf_file:
+                with open("../Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='27',
                         data=PDFbyte,
@@ -322,7 +322,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 8
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\UN must ensure Human Rights in Kashmir.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\UN must ensure Human Rights in Kashmir.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -337,11 +337,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='29'):            
-                    show_pdf("D:/Documents/LTM Site Project/Unpublished/UN must ensure Human Rights in Kashmir.pdf")
+                    show_pdf("../Unpublished/UN must ensure Human Rights in Kashmir.pdf")
             with col2:
                 st.button('Close Article',key='30')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/UN must ensure Human Rights in Kashmir.pdf", "rb") as pdf_file:
+                with open("../Unpublished/UN must ensure Human Rights in Kashmir.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='31',
                         data=PDFbyte,
@@ -357,7 +357,7 @@ elif choose == "Articles":
         #Topic 2
         elif topic=='India':
             #Topic 2 Article 1
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_Covid_Havoc_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_Covid_Havoc_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -372,11 +372,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_Covid_Havoc_compressed.pdf')
+                    show_pdf('../Published/LT_Covid_Havoc_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_Covid_Havoc_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_Covid_Havoc_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='3',
                         data=PDFbyte,
@@ -390,7 +390,7 @@ elif choose == "Articles":
 
 
             #Topic 2 Article 2
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -405,11 +405,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('D:/Documents/LTM Site Project/Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
+                    show_pdf('../Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf", "rb") as pdf_file:
+                with open("../Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='7',
                         data=PDFbyte,
@@ -422,7 +422,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 2 Article 3
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\India Qatar Relations.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\India Qatar Relations.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -437,11 +437,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('D:/Documents/LTM Site Project/Unpublished/India Qatar Relations.pdf')
+                    show_pdf('../Unpublished/India Qatar Relations.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/India Qatar Relations.pdf", "rb") as pdf_file:
+                with open("../Unpublished/India Qatar Relations.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='11',
                         data=PDFbyte,
@@ -454,7 +454,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 2 Article 4
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\Taliban-India.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\Taliban-India.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -469,11 +469,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='13'):            
-                    show_pdf('D:/Documents/LTM Site Project/Unpublished/Taliban-India.pdf')
+                    show_pdf('../Unpublished/Taliban-India.pdf')
             with col2:
                 st.button('Close Article',key='14')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/Taliban-India.pdf", "rb") as pdf_file:
+                with open("../Unpublished/Taliban-India.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='15',
                         data=PDFbyte,
@@ -489,7 +489,7 @@ elif choose == "Articles":
         #Topic 3
         elif topic=='History':
             #Topic 3 Article 1
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_Congress_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_Congress_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -504,11 +504,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_Congress_compressed.pdf')
+                    show_pdf('../Published/LT_Congress_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_Congress_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_Congress_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='3',
                         data=PDFbyte,
@@ -521,7 +521,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 3 Article 2
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_Naxal_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_Naxal_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -536,11 +536,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_Naxal_compressed.pdf')
+                    show_pdf('../Published/LT_Naxal_compressed.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_Naxal_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_Naxal_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='7',
                         data=PDFbyte,
@@ -554,7 +554,7 @@ elif choose == "Articles":
 
 
             #Topic 3 Article 3
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\Israel-Arab.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\Israel-Arab.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -569,11 +569,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('D:/Documents/LTM Site Project/Unpublished/Israel-Arab.pdf')
+                    show_pdf('../Unpublished/Israel-Arab.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Unpublished/Israel-Arab.pdf", "rb") as pdf_file:
+                with open("../Unpublished/Israel-Arab.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='11',
                         data=PDFbyte,
@@ -591,7 +591,7 @@ elif choose == "Articles":
         elif topic=='Others':
 
             #Topic 4 Article 1
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\Certificate.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\Certificate.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -606,7 +606,7 @@ elif choose == "Articles":
             st.write('---')
             
             #Topic 4 Article 2
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_BiharElection_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_BiharElection_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -621,11 +621,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='3'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_BiharElection_compressed.pdf')
+                    show_pdf('../Published/LT_BiharElection_compressed.pdf')
             with col2:
                 st.button('Close Article',key='4')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_BiharElection_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_BiharElection_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='5',
                         data=PDFbyte,
@@ -638,7 +638,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 4 Article 3
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_CalifornianWildfire_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_CalifornianWildfire_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -653,11 +653,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='7'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_CalifornianWildfire_compressed.pdf')
+                    show_pdf('../Published/LT_CalifornianWildfire_compressed.pdf')
             with col2:
                 st.button('Close Article',key='8')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_CalifornianWildfire_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_CalifornianWildfire_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='9',
                         data=PDFbyte,
@@ -671,7 +671,7 @@ elif choose == "Articles":
 
 
             #Topic 4 Article 4
-            feature_image1 = Image.open(r'D:\Documents\LTM Site Project\Cover Images\LT_SetuBharatam_compressed.jpg')
+            feature_image1 = Image.open(r'..\Cover Images\LT_SetuBharatam_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -686,11 +686,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='11'):            
-                    show_pdf('D:/Documents/LTM Site Project/Published/LT_SetuBharatam_compressed.pdf')
+                    show_pdf('../Published/LT_SetuBharatam_compressed.pdf')
             with col2:
                 st.button('Close Article',key='12')             
             with col3:
-                with open("D:/Documents/LTM Site Project/Published/LT_SetuBharatam_compressed.pdf", "rb") as pdf_file:
+                with open("../Published/LT_SetuBharatam_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='13',
                         data=PDFbyte,
