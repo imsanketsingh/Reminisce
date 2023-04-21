@@ -722,7 +722,7 @@ Finally, If you would like to connect with me further, I invite you to follow me
 Once again, thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
 
                 
-
+        print(webbrowser._browsers)
         
 
         def open_link(option):
