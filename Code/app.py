@@ -111,11 +111,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('../Published/LT_IranUS_compressed.pdf')
+                    show_pdf('/Published/LT_IranUS_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
-                with open("../Published/LT_IranUS_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_IranUS_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='3',
                         data=PDFbyte,
@@ -143,11 +143,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('../Published/LT_Armenia_compressed.pdf')
+                    show_pdf('/Published/LT_Armenia_compressed.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
-                with open("../Published/LT_Armenia_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_Armenia_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='7',
                         data=PDFbyte,
@@ -175,11 +175,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('../Published/LT_Taliban_compressed.pdf')
+                    show_pdf('/Published/LT_Taliban_compressed.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
-                with open("../Published/LT_Taliban_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_Taliban_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='11',
                         data=PDFbyte,
@@ -207,11 +207,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='13'):            
-                    show_pdf('../Published/LT_WarExtremisim_compressed.pdf')
+                    show_pdf('/Published/LT_WarExtremisim_compressed.pdf')
             with col2:
                 st.button('Close Article',key='14')             
             with col3:
-                with open("../Published/LT_WarExtremisim_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_WarExtremisim_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='15',
                         data=PDFbyte,
@@ -239,11 +239,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='17'):            
-                    show_pdf('../Published/LT_TalibanVsISIS_compressed.pdf')
+                    show_pdf('/Published/LT_TalibanVsISIS_compressed.pdf')
             with col2:
                 st.button('Close Article',key='18')             
             with col3:
-                with open("../Published/LT_TalibanVsISIS_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_TalibanVsISIS_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='19',
                         data=PDFbyte,
@@ -272,11 +272,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='21'):            
-                    show_pdf('../Unpublished/Boris Johnson survived the No confidence vote.pdf')
+                    show_pdf('/Unpublished/Boris Johnson survived the No confidence vote.pdf')
             with col2:
                 st.button('Close Article',key='22')             
             with col3:
-                with open("../Unpublished/Boris Johnson survived the No confidence vote.pdf", "rb") as pdf_file:
+                with open("/Unpublished/Boris Johnson survived the No confidence vote.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='23',
                         data=PDFbyte,
@@ -305,11 +305,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='25'):            
-                    show_pdf("../Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
+                    show_pdf("/Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
             with col2:
                 st.button('Close Article',key='26')             
             with col3:
-                with open("../Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf", "rb") as pdf_file:
+                with open("/Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='27',
                         data=PDFbyte,
@@ -337,11 +337,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='29'):            
-                    show_pdf("../Unpublished/UN must ensure Human Rights in Kashmir.pdf")
+                    show_pdf("/Unpublished/UN must ensure Human Rights in Kashmir.pdf")
             with col2:
                 st.button('Close Article',key='30')             
             with col3:
-                with open("../Unpublished/UN must ensure Human Rights in Kashmir.pdf", "rb") as pdf_file:
+                with open("/Unpublished/UN must ensure Human Rights in Kashmir.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='31',
                         data=PDFbyte,
@@ -372,11 +372,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('../Published/LT_Covid_Havoc_compressed.pdf')
+                    show_pdf('/Published/LT_Covid_Havoc_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
-                with open("../Published/LT_Covid_Havoc_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_Covid_Havoc_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='3',
                         data=PDFbyte,
@@ -405,11 +405,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('../Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
+                    show_pdf('/Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
-                with open("../Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf", "rb") as pdf_file:
+                with open("/Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='7',
                         data=PDFbyte,
@@ -437,11 +437,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('../Unpublished/India Qatar Relations.pdf')
+                    show_pdf('/Unpublished/India Qatar Relations.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
-                with open("../Unpublished/India Qatar Relations.pdf", "rb") as pdf_file:
+                with open("/Unpublished/India Qatar Relations.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='11',
                         data=PDFbyte,
@@ -469,11 +469,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='13'):            
-                    show_pdf('../Unpublished/Taliban-India.pdf')
+                    show_pdf('/Unpublished/Taliban-India.pdf')
             with col2:
                 st.button('Close Article',key='14')             
             with col3:
-                with open("../Unpublished/Taliban-India.pdf", "rb") as pdf_file:
+                with open("/Unpublished/Taliban-India.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='15',
                         data=PDFbyte,
@@ -504,11 +504,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('../Published/LT_Congress_compressed.pdf')
+                    show_pdf('/Published/LT_Congress_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
-                with open("../Published/LT_Congress_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_Congress_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='3',
                         data=PDFbyte,
@@ -536,11 +536,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('../Published/LT_Naxal_compressed.pdf')
+                    show_pdf('/Published/LT_Naxal_compressed.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
-                with open("../Published/LT_Naxal_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_Naxal_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='7',
                         data=PDFbyte,
@@ -569,11 +569,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('../Unpublished/Israel-Arab.pdf')
+                    show_pdf('/Unpublished/Israel-Arab.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
-                with open("../Unpublished/Israel-Arab.pdf", "rb") as pdf_file:
+                with open("/Unpublished/Israel-Arab.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='11',
                         data=PDFbyte,
@@ -621,11 +621,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='3'):            
-                    show_pdf('../Published/LT_BiharElection_compressed.pdf')
+                    show_pdf('/Published/LT_BiharElection_compressed.pdf')
             with col2:
                 st.button('Close Article',key='4')             
             with col3:
-                with open("../Published/LT_BiharElection_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_BiharElection_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='5',
                         data=PDFbyte,
@@ -653,11 +653,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='7'):            
-                    show_pdf('../Published/LT_CalifornianWildfire_compressed.pdf')
+                    show_pdf('/Published/LT_CalifornianWildfire_compressed.pdf')
             with col2:
                 st.button('Close Article',key='8')             
             with col3:
-                with open("../Published/LT_CalifornianWildfire_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_CalifornianWildfire_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='9',
                         data=PDFbyte,
@@ -686,11 +686,11 @@ elif choose == "Articles":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='11'):            
-                    show_pdf('../Published/LT_SetuBharatam_compressed.pdf')
+                    show_pdf('/Published/LT_SetuBharatam_compressed.pdf')
             with col2:
                 st.button('Close Article',key='12')             
             with col3:
-                with open("../Published/LT_SetuBharatam_compressed.pdf", "rb") as pdf_file:
+                with open("/Published/LT_SetuBharatam_compressed.pdf", "rb") as pdf_file:
                     PDFbyte = pdf_file.read()
                 st.download_button(label="Download PDF Article", key='13',
                         data=PDFbyte,
