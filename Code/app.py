@@ -728,8 +728,8 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         def open_link(option):
             if option == "GitHub":
                 url = "https://github.com/imsanketsingh"
-                chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-                webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path),1)
+                chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe %s"
+                webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))
                 webbrowser.get('chrome').open_new_tab(url)     
             elif option == "LinkedIn":
                 webbrowser.open("https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/")
