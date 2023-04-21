@@ -9,6 +9,7 @@ from streamlit_text_rating.st_text_rater import st_text_rater
 import random
 from streamlit_lottie import st_lottie 
 import json
+import webbrowser
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
@@ -722,7 +723,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
 
         
 
-        import webbrowser
+        
 
         def open_link(option):
             if option == "GitHub":
