@@ -727,7 +727,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
 
         def open_link(option):
             if option == "GitHub":
-                webbrowser.get('chrome').open("http://github.com/imsanketsingh")     
+                webbrowser.open("http://github.com/imsanketsingh")     
             elif option == "LinkedIn":
                 webbrowser.open("https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/")
             elif option == "Instagram":
