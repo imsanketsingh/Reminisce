@@ -1,7 +1,6 @@
 streamlit
 streamlit_option_menu
 Pillow
-PIL
 numpy
 pandas
 base64
