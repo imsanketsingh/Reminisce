@@ -10,7 +10,7 @@ import random
 from streamlit_lottie import st_lottie 
 import json
 
-st.set_page_config(page_title="Reminisce", page_icon="💎", theme="light")
+st.set_page_config(page_title="Reminisce", page_icon="💎")
 
 
 ##########################################################################################################################################################
