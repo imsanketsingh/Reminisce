@@ -33,6 +33,7 @@ with st.sidebar:
     st_lottie(
         lottie_hello,
         speed=1,
+        loop=False,
         reverse=False,
         quality="high",
         height=70,
