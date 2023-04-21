@@ -96,7 +96,7 @@ elif choose == "Articles":
         #Topic 1
         if topic=='Geopolitics':
             #Topic 1 Article 1
-            feature_image1 = Image.open(r'..\Cover Images\LT_IranUS_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_IranUS_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -128,7 +128,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 2
-            feature_image1 = Image.open(r'..\Cover Images\LT_Armenia_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_Armenia_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -160,7 +160,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 3
-            feature_image1 = Image.open(r'..\Cover Images\LT_Taliban_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_Taliban_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -192,7 +192,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 4
-            feature_image1 = Image.open(r'..\Cover Images\LT_WarExtremisim_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_WarExtremisim_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -224,7 +224,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 5
-            feature_image1 = Image.open(r'..\Cover Images\LT_TalibanVsISIS_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_TalibanVsISIS_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -257,7 +257,7 @@ elif choose == "Articles":
 
 
             #Topic 1 Article 6
-            feature_image1 = Image.open(r'..\Cover Images\boris Johnson survived the No confidence vote.jpg')
+            feature_image1 = Image.open(r'Cover Images\boris Johnson survived the No confidence vote.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -290,7 +290,7 @@ elif choose == "Articles":
 
 
             #Topic 1 Article 7
-            feature_image1 = Image.open(r'..\Cover Images\Imran Khan carried out Suicide Bombings throughout Pakistan.jpg')
+            feature_image1 = Image.open(r'Cover Images\Imran Khan carried out Suicide Bombings throughout Pakistan.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -322,7 +322,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 1 Article 8
-            feature_image1 = Image.open(r'..\Cover Images\UN must ensure Human Rights in Kashmir.jpg')
+            feature_image1 = Image.open(r'Cover Images\UN must ensure Human Rights in Kashmir.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -357,7 +357,7 @@ elif choose == "Articles":
         #Topic 2
         elif topic=='India':
             #Topic 2 Article 1
-            feature_image1 = Image.open(r'..\Cover Images\LT_Covid_Havoc_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_Covid_Havoc_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -390,7 +390,7 @@ elif choose == "Articles":
 
 
             #Topic 2 Article 2
-            feature_image1 = Image.open(r'..\Cover Images\Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.jpg')
+            feature_image1 = Image.open(r'Cover Images\Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -422,7 +422,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 2 Article 3
-            feature_image1 = Image.open(r'..\Cover Images\India Qatar Relations.jpg')
+            feature_image1 = Image.open(r'Cover Images\India Qatar Relations.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -454,7 +454,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 2 Article 4
-            feature_image1 = Image.open(r'..\Cover Images\Taliban-India.jpg')
+            feature_image1 = Image.open(r'Cover Images\Taliban-India.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -489,7 +489,7 @@ elif choose == "Articles":
         #Topic 3
         elif topic=='History':
             #Topic 3 Article 1
-            feature_image1 = Image.open(r'..\Cover Images\LT_Congress_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_Congress_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -521,7 +521,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 3 Article 2
-            feature_image1 = Image.open(r'..\Cover Images\LT_Naxal_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_Naxal_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -554,7 +554,7 @@ elif choose == "Articles":
 
 
             #Topic 3 Article 3
-            feature_image1 = Image.open(r'..\Cover Images\Israel-Arab.jpg')
+            feature_image1 = Image.open(r'Cover Images\Israel-Arab.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -591,7 +591,7 @@ elif choose == "Articles":
         elif topic=='Others':
 
             #Topic 4 Article 1
-            feature_image1 = Image.open(r'..\Cover Images\Certificate.jpg')
+            feature_image1 = Image.open(r'Cover Images\Certificate.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -606,7 +606,7 @@ elif choose == "Articles":
             st.write('---')
             
             #Topic 4 Article 2
-            feature_image1 = Image.open(r'..\Cover Images\LT_BiharElection_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_BiharElection_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -638,7 +638,7 @@ elif choose == "Articles":
             st.write('---')
 
             #Topic 4 Article 3
-            feature_image1 = Image.open(r'..\Cover Images\LT_CalifornianWildfire_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_CalifornianWildfire_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
@@ -671,7 +671,7 @@ elif choose == "Articles":
 
 
             #Topic 4 Article 4
-            feature_image1 = Image.open(r'..\Cover Images\LT_SetuBharatam_compressed.jpg')
+            feature_image1 = Image.open(r'Cover Images\LT_SetuBharatam_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
