@@ -34,7 +34,6 @@ with st.sidebar:
         lottie_hello,
         speed=1,
         reverse=False,
-        loop=True,
         quality="high",
         height=70,
         width=300,
@@ -257,7 +256,7 @@ elif choose == "Articles":
 
 
             #Topic 1 Article 6
-            feature_image1 = Image.open(r'./Cover Images/boris Johnson survived the No confidence vote.jpg')
+            feature_image1 = Image.open(r'./Cover Images/Boris Johnson survived the No confidence vote.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
