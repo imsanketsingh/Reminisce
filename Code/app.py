@@ -96,7 +96,7 @@ elif choose == "Articles":
         #Topic 1
         if topic=='Geopolitics':
             #Topic 1 Article 1
-            feature_image1 = Image.open(r'\Cover Images\LT_IranUS_compressed.jpg')
+            feature_image1 = Image.open(r'/Cover Images/LT_IranUS_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
                 with image_col:
