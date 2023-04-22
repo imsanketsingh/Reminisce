@@ -761,8 +761,7 @@ index = random.randint(0,(len(all_possible_categories)-1))
 category = all_possible_categories[index]
 # print(index, ": ", category)
 api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
-# response = requests.get(api_url, headers={'X-Api-Key': st.secrets["QUOTES_API_KEY"]})
-response = requests.get(api_url, headers={'X-Api-Key': "aaaa"})
+response = requests.get(api_url, headers={'X-Api-Key': st.secrets["QUOTES_API_KEY"]})
 if response.status_code == requests.codes.ok:
     st.sidebar.markdown("<p style='font-style: italic;'>{}</p>".format(response.json()[0]['quote']), unsafe_allow_html=True)
     st.sidebar.markdown("<p style='font-style: italic; text-align: right; margin-right: 2rem;'>{}</p>".format("- "+ response.json()[0]['author']), unsafe_allow_html=True)
