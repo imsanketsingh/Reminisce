@@ -734,7 +734,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         def open_link(option):
             if option == "GitHub":
                 st.markdown("Hii1")
-                webbrowser.open("http://github.com/imsanketsingh")
+                webbrowser.open("https://github.com/imsanketsingh")
                 st.markdown("Hii22")
             elif option == "LinkedIn":
                 webbrowser.open("https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/")
