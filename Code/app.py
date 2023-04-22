@@ -756,10 +756,8 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
             }
         """
 
-        # Display the CSS styles on your Streamlit app
         st.write(f"<style>{css}</style>", unsafe_allow_html=True)
-
-        # Define the HTML code for the navigation tools
+        
         github_button = """
             <a href="https://github.com/imsanketsingh" target="_blank" class="navigation-button">
                 <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="GitHub logo" width="20" height="20">
