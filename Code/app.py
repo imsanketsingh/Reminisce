@@ -746,6 +746,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
             .navigation-button:hover {
                 transform: translateY(-5px);
                 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+                text-decoration: none;
             }
 
             .navigation-button img {
