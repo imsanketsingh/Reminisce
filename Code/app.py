@@ -73,7 +73,7 @@ During my time at LTM, I contributed numerous articles on diverse topics, showca
 I also briefly worked with GJH, but due to conflicting priorities with my studies, I made the tough decision to leave. However, I have unpublished articles from my time at GJH that are available for you to read on this website.
 
 My goal with this website is to share my passion for writing, offer unique perspectives on important issues, and engage with readers like you. I hope you find my articles informative, thought-provoking, and engaging. Thank you for visiting the website and being a part of my journey so far!</p>
-<p style="color: #111111"; font-size: 5><i>Note: The site is still in testing phase and some Chromium browsers may block the display of the PDF. In that case Firefox would serve the purpose and work like a charm.<br>Inconvenience is deeply regretted.</p>""", unsafe_allow_html=True)
+<p style="color: #111111; font-size: 10px;"><i>Note: The site is still in testing phase and some Chromium browsers may block the display of the PDF. In that case Firefox would serve the purpose and work like a charm.<br>Inconvenience is deeply regretted.</p>""", unsafe_allow_html=True)
 
 
 elif choose == "Articles": 
