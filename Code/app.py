@@ -737,7 +737,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
                 text-align: center;
                 text-decoration: none;
                 border-radius: 10px;
-                padding: 10px 20px;
+                padding: 8px 25px;
                 margin: 10px;
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
                 transition: all 0.3s ease-in-out;
