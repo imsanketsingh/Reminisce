@@ -727,36 +727,79 @@ Finally, If you would like to connect with me further, I invite you to follow me
 
 Once again, thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
 
-                
-        
-        
 
-        def open_link(option):
-            if option == "GitHub":
-                webbrowser.open("https://github.com/imsanketsingh")
-            elif option == "LinkedIn":
-                webbrowser.open("https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/")
-            elif option == "Instagram":
-                webbrowser.open("https://instagram.com/imsanketsingh")
-            elif option == "Youtube":
-                webbrowser.open("https://www.youtube.com/channel/UCRQUUGw_P1uN4Bbg6xlM2Uw")
-            elif option == "🐱 Refresh it 🐯":
-                 st.balloons()
-                 return
+        css = """
+            .navigation-button {
+                display: inline-block;
+                background-color: #f4f4f4;
+                color: #000000;
+                font-size: 10px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 10px;
+                padding: 10px 20px;
+                margin: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease-in-out;
+            }
 
-        topic = option_menu(None, ["GitHub", "LinkedIn", "🐱 Refresh it 🐯", "Instagram", "Youtube"],
-                    icons=['github', 'linkedin', '*', 'instagram','youtube'],
-                    menu_icon="list", default_index=2,
-                    styles={
-                        "container": {"padding:3, background-color": "##f8f4f4"},
-                        "icon": {"color": "#046764", "font-size": "15px"}, 
-                        "nav-link": {"font-size": "10px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-                        "nav-link-selected": {"background-color": "#409324"},
-                    },
-                    orientation='horizontal',
-                    )
-        
-        open_link(topic)
+            .navigation-button:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .navigation-button img {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        """
+
+        # Display the CSS styles on your Streamlit app
+        st.write(f"<style>{css}</style>", unsafe_allow_html=True)
+
+        # Define the HTML code for the navigation tools
+        github_button = """
+            <a href="https://github.com/imsanketsingh" target="_blank" class="navigation-button">
+                <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="GitHub logo" width="20" height="20">
+                GitHub
+            </a>
+        """
+
+        linkedin_button = """
+            <a href="https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/" target="_blank" class="navigation-button">
+                <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn logo" width="20" height="20">
+                LinkedIn
+            </a>
+        """
+
+        instagram_button = """
+            <a href="https://instagram.com/imsanketsingh" target="_blank" class="navigation-button">
+                <img src="https://raw.githubusercontent.com/github/explore/06c46459e7947c8a25f72798af696d66e202ac39/topics/instagram/instagram.png" alt="Instagram logo" width="20" height="20">
+                Instagram
+            </a>
+        """
+
+        youtube_button = """
+            <a href="https://www.youtube.com/channel/UCRQUUGw_P1uN4Bbg6xlM2Uw" target="_blank" class="navigation-button">
+                <img src="https://raw.githubusercontent.com/github/explore/d744245de144b89f3e3462949e08bfc91eda7fcf/topics/youtube/youtube.png" alt="YouTube logo" width="20" height="20">
+                YouTube
+            </a>
+        """
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.markdown(github_button, unsafe_allow_html=True)
+
+        with col2:
+            st.markdown(linkedin_button, unsafe_allow_html=True)
+
+        with col3:
+            st.markdown(instagram_button, unsafe_allow_html=True)
+
+        with col4:
+            st.markdown(youtube_button, unsafe_allow_html=True)
+
         
 
 ##############################################################################QUOTES###############################################################################
