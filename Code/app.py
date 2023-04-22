@@ -10,7 +10,7 @@ import random
 from streamlit_lottie import st_lottie 
 import json
 import webbrowser
-import urllib.request
+
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
 
@@ -91,10 +91,10 @@ elif choose == "Articles":
 ######################################################DISPLAYING THE PDF#######################################################################################
 
         def show_pdf(file_path):
-            pdf_url = "https://drive.google.com/file/d/15z_wHLU9C1V1jM31JciHE8KtduRHf3Si/view?usp=sharing"
-            pdf_file = urllib.request.urlopen(pdf_url).read()
-            pdf_data = base64.b64encode(pdf_file).decode()
-            st.markdown(f'<embed src="data:application/pdf;base64,{pdf_data}" width="700" height="1000" type="application/pdf">', unsafe_allow_html=True)
+            with open(file_path,"rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
+            st.markdown(pdf_display, unsafe_allow_html=True)
         st.write('\n')
 
 ###############################################################################################################################################################
