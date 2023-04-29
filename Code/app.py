@@ -10,7 +10,6 @@ import streamlit.components.v1 as components
 import random
 from streamlit_lottie import st_lottie 
 import json
-from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
