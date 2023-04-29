@@ -6,10 +6,11 @@ import pandas as pd
 import base64
 import requests
 from streamlit_text_rating.st_text_rater import st_text_rater
+import streamlit.components.v1 as components
 import random
 from streamlit_lottie import st_lottie 
 import json
-import webbrowser
+from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
@@ -41,22 +42,225 @@ with st.sidebar:
         width=300,
         key=None,
     )
-    choose = option_menu("", ["Home", "Articles", "Connect"],
-                         icons=['house', 'file-text','person lines fill'],
+    choose = option_menu("", ["Home", "Reminisce", "Compendia",  "Connect"],
+                         icons=['house', 'bookmarks-fill','file-text', 'person lines fill'],
                          menu_icon="list", default_index=0,
                          styles={
         "container": {"padding": "5!important", "background-color": "#fafafa"},
         "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#24A608"},
     }
     ) 
     
-################################################################################################################################################################
+################################################################COMPENDIA######################################################################################
+
+def showthecontent(filepath):
+    with open(filepath, "r", encoding="utf-8") as file:
+        contents = file.read()
+        st.markdown(contents, unsafe_allow_html=True)
 
 
 
-if choose == "Home":
+
+
+if choose == "Compendia":
+    topic = option_menu(None, ["Books", "Tech", "Philosophy", "BeyondThePages"],
+                         icons=['book', 'laptop','lightning','journal-plus'],
+                         menu_icon="list", default_index=0,
+                         styles={
+        "container": {"padding": "10!important", "background-color": "#fafafa"},
+        "icon": {"color": "orange", "font-size": "10px"}, 
+        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"15px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#080000"},
+        },orientation='horizontal'
+        )
+    st.markdown(
+    """<style>
+        .element-container:nth-of-type(n) button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 120px;
+            background-color: #f0f5f4;
+            border: none;
+            border-radius: 8px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #597a75;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+            transition: all 0.2s ease-in-out;
+        }
+        .element-container:nth-of-type(n) button:hover {
+            background-color: #333333;
+            color: #f2f2f2;
+            cursor: pointer;
+        }
+        </style>""",
+    unsafe_allow_html=True,
+    )
+
+    st.markdown(
+    """<style>
+        .animate-charcter
+    {
+      background-image: linear-gradient(
+        -225deg,
+        #231557 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #fff800 100%
+      );
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2s linear infinite;
+      display: inline-block;
+      margin-left: 200px;
+          font-size: 50px;
+    }
+
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
+    }
+        </style>""",
+    unsafe_allow_html=True,
+    )
+
+    
+
+    
+    st.write('\n')
+
+
+    #Topic 1
+    if topic == "Books":
+
+        #Topic1 Book1
+        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+
+
+
+
+
+
+
+    
+    #Topic 2
+    elif topic == "Tech":
+
+        #Topic 2 Tech 1
+        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+    #Topic 3
+    elif topic == "Philosophy":
+
+        #Topic 3 Philosophy 1
+        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+    
+    #Topic 4
+    elif topic == "BeyondThePages":
+
+        #Topic 4 Content 1
+        feature_image1 = Image.open(r'./Cover Images/loremipsum.jpg')
+        with st.container():
+            image_col, text_col = st.columns((2,3))
+            with image_col:
+                st.image(feature_image1)
+            with text_col:
+                st.markdown(""" <style> .font {
+                font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
+                </style> """, unsafe_allow_html=True)
+                st.markdown('<p class="font">The Lorem Ipsum</p>', unsafe_allow_html=True)    
+                st.markdown('A general intro to Lorem Ipsum texts', unsafe_allow_html=True)
+            if st.button("Get into it", key="mybutton"):
+                showthecontent('./New/Beyondthepages/lipsum.html')
+                st.button("Are you done?", help="Close it")
+
+        for text in ["Did you like the article?"]:
+                response = st_text_rater(text=text, key='4')
+        st.write('---')
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##############################################################################################################################################################
+
+
+elif choose == "Home":
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:
         st.markdown(""" <style> .font {
@@ -73,10 +277,12 @@ During my time at LTM, I contributed numerous articles on diverse topics, showca
 I also briefly worked with GJH, but due to conflicting priorities with my studies, I made the tough decision to leave. However, I have unpublished articles from my time at GJH that are available for you to read on this website.
 
 My goal with this website is to share my passion for writing, offer unique perspectives on important issues, and engage with readers like you. I hope you find my articles informative, thought-provoking, and engaging. Thank you for visiting the website and being a part of my journey so far!</p>
-<p style="color: #8f8e8c; font-size: 14px; font-style:helvetica;"><i>Note: The site is still in testing phase and some Chromium browsers may block the display of the PDF. In that case Firefox would serve the purpose and work like a charm.<br>Inconvenience caused is deeply regretted.</p>""", unsafe_allow_html=True)
+<p style="color: #8f8e8c; font-size: 14px; font-style:helvetica;"><i>Note: The site is still in testing phase and some Chromium browsers may block the display of the PDF in the Reminisce tab. In that case Firefox would serve the purpose and work like a charm.<br>Inconvenience caused is deeply regretted.</p>""", unsafe_allow_html=True)
 
 
-elif choose == "Articles": 
+###############################################################################################################################################################
+
+elif choose == "Reminisce": 
         topic = option_menu(None, ["Geopolitics", "India", "History", "Others"],
                          icons=['book', 'book','book','book'],
                          menu_icon="list", default_index=0,
