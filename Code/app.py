@@ -200,7 +200,7 @@ if choose == "Compendia":
                 st.markdown(""" <style> .font {
                 font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
                 </style> """, unsafe_allow_html=True)
-                st.markdown('<p class="font">The Lorem Ipsum</p>', unsafe_allow_html=True)    
+                st.markdown('<p class="font">Dummy: The Lorem Ipsum</p>', unsafe_allow_html=True)    
                 st.markdown('A general intro to Lorem Ipsum texts', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
                 showthecontent('./New/Beyondthepages/lipsum.html')
