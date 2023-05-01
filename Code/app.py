@@ -10,6 +10,7 @@ import streamlit.components.v1 as components
 import random
 from streamlit_lottie import st_lottie 
 import json
+from emailit import secretdetails
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
@@ -58,8 +59,6 @@ def showthecontent(filepath):
     with open(filepath, "r", encoding="utf-8") as file:
         contents = file.read()
         st.markdown(contents, unsafe_allow_html=True)
-
-
 
 
 
@@ -198,13 +197,14 @@ if choose == "Compendia":
                 st.image(feature_image1)
             with text_col:
                 st.markdown(""" <style> .font {
-                font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
+                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
                 </style> """, unsafe_allow_html=True)
                 st.markdown('<p class="font">Dummy: The Lorem Ipsum</p>', unsafe_allow_html=True)    
                 st.markdown('A general intro to Lorem Ipsum texts', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
                 showthecontent('./New/Beyondthepages/lipsum.html')
                 st.button("Are you done?", help="Close it")
+                
 
         for text in ["Did you like the article?"]:
                 response = st_text_rater(text=text, key='4')
@@ -929,7 +929,7 @@ Thank you for visiting here and exploring my articles on geopolitics, domestic n
 
 While my writing focuses on specific topics and events, I believe that philosophical reflections can add depth and insight to any subject matter. Philosophy can help us ask critical questions, challenge and broaden our perspectives. For instance, when we analyze geopolitics, we can ask questions such as: What are the underlying values, interests, and power dynamics that shape international relations? Similarly, when we examine domestic news, we can ask questions such as: What are the ethical and political implications of current events and policies? How can we foster solidarity across diverse perspectives and interests? Finally, when we study historical events, we can ask questions such as: What are the root causes and consequences of historical conflicts? How can we learn from past mistakes and achievements to shape a better future? By asking these and other philosophical questions, we can deepen our understanding of the complex, dynamic, and interconnected nature of our world.
 
-Finally, If you would like to connect with me further, I invite you to follow me on various platforms. If you have any feedback, questions, or suggestions, please do not hesitate to reach out to me via <a href="mailto:imsanketsingh@gmail.com">Email</a>. I value your input and would love to hear from you.
+Finally, If you would like to connect with me further, I invite you to follow me on various platforms. If you have any feedback, questions, or suggestions, please do not hesitate to reach out to me via <a href="mailto:imsanketsingh@gmail.com">Email</a> or you can <b>use the message box below</b> to send me a message 😇. I value your input and would love to hear from you.
 
 Once again, thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
 
@@ -1005,7 +1005,43 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         with col4:
             st.markdown(youtube_button, unsafe_allow_html=True)
 
-        
+        st.write("___")
+
+        st.markdown(
+    """<style>
+        .element-container:nth-of-type(n) button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 120px;
+            background-color: #f0f5f4;
+            border: none;
+            border-radius: 8px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #597a75;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+            transition: all 0.2s ease-in-out;
+        }
+        .element-container:nth-of-type(n) button:hover {
+            background-color: #333333;
+            color: #f2f2f2;
+            cursor: pointer;
+        }
+        </style>""",
+    unsafe_allow_html=True,
+    )
+        message = st.text_area("Type your message here (Kindly mention topic name)")
+        if st.button("Send"):
+            if(message==""):
+                st.write("Can't send empty message")
+            else:
+                secretdetails(message)
+                st.write("Message sent successfully!")
 
 ##############################################################################QUOTES###############################################################################
 
