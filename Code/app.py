@@ -179,7 +179,7 @@ if choose == "Compendia":
     elif topic == "Philosophy":
 
         #Topic 3 Philosophy 1
-        feature_image1 = Image.open(r'./Cover Images/Charvak.jpg')
+        feature_image1 = Image.open(r'../Cover Images/Charvak.jpg')
         with st.container():
             image_col, text_col = st.columns((2,3))
             with image_col:
@@ -191,7 +191,7 @@ if choose == "Compendia":
                 st.markdown('<p class="font">The Charvaka Philosophy</p>', unsafe_allow_html=True)    
                 st.markdown('This article explores the philosophy of Charvaka, an ancient Indian school of thought. The article provides an overview of the Charvaka worldview, including their beliefs about the nature of reality, consciousness, and ethics.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Philosophy/Charvaka.html', 7180)
+                showthecontent('../New/Philosophy/Charvaka.html', 7180)
                 st.button("Are you done?", help="Close it")
                 
 

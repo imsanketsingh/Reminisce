@@ -1,118 +1,175 @@
 <style>
-    h1{
+    h1 {
         color: chocolate;
+        text-align: center;
         text-decoration: underline;
+        transition: all 0.3s ease-in-out;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     }
 
-    h3{
+    h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #ff4d4d;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    h3 {
         color: rgb(103, 103, 33);
     }
 
-    h4{
+    h4 {
         color: rgb(18, 51, 40);
     }
 
-    .liMain{
+    .liMain {
         font-weight: bold;
         color: rgb(103, 103, 33);
     }
 
-    i{
+    i {
         color: rgb(35, 4, 43);
     }
 
-    b{
+    b {
         color: rgb(2, 26, 18);
     }
 
-    .liShort{
+    .liShort {
         color: rgb(9, 3, 30);
     }
 
-    .liSubMain{
+    .liSubMain {
         color: rgb(35, 2, 2);
         font-weight: bold;
     }
 
-    .dakm{
+    .dakm {
         text-decoration: underline;
-    
+
     }
 
-    .list:hover{
+    .list:hover {
         font-weight: bold;
     }
-    h1:hover{
-        font-weight: bold;
+
+    h1:hover {
+        color: #ff4d4d;
+        text-shadow: none;
     }
-    h3:hover{
-        font-weight: bold;
+
+    h1:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
     }
-  </style>
+
+    h3:hover {
+        font-style: italic;
+    }
+</style>
 
 
 <div>
 
 
 
-<h1 style="text-align: center;">Charvaka Philosophy</h1>
+    <h1>Charvaka Philosophy</h1>
 
-<div style="display: inline-block; width: 40%; border: 1px solid rgb(8, 13, 32); border-radius: 3px; padding: 5px 5px 5px 5px; margin-left: 20px;">
-<h4 style="padding:10px 10px 1px 10px; line-height: 0.1; color: black;">Contents:</h4>
-<ol style="line-height: 1.4; color: rgb(12, 30, 50);">
-<li class ="list">Preparing the base</li>
-<li class ="list">Who were the Charvakas?</li>
-<li class ="list">Benefit of doubt</li>
-<li class ="list">Major References</li>
-<li class ="list">The core of the philosophy</li>
-<ol type="a"><li class ="list">The Epistemology</li>
-<li class ="list">The Metaphysics</li>
-<li class ="list">The Ethics</li>
-</ol>
-<li class ="list">The Conclusion</li>
-</ol>
-</div>
-
-<ol>
-<div>
-<li class="liMain"><h3>Preparing the base</h3></li>
-<div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
-<p>During the Vedic period, lots of people were engaged in Vedic rituals (also known as <i>Vedic Karmakanda</i>). At the same time the Upanishads were also being compiled and lots of people were going with that too.<br>
-While this all was happening, those who did not get the satisfactory explanation from either of the ways, chose to find a new way to explain the very nature of this world and other metaphysical aspects of it.<br>
-Those who followed this trend of seeking for something beyond Vedas were known as <i>Sharavana</i> (also known as <i>Nastikas</i> as they did not believe in the supremacy of Vedas). At some point of time, there were a total of 63 Sharavana schools of thought in India, out of which 3 were the most popular ones - The Buddhism, The Jainism and The Charvakas.</p>
-</div>
-</div>
-
-
-
-<div>
-    <li class="liMain"><h3>Who were the Charvakas?</h3></li>
-    <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
-    <p> The followers of one of the <i>Nastik darshan</i> (atheistic philosophy), Charvaka. Both the philosophy and the followers are known as Charvaka.</p>
-    <p> Charvaka philosophy is also known as <b>Lokayat</b> philosophy as a result of their belief in <i>Ehiloka</i> meaning "This world only". <br>
-        It's the only Indian philosophy that believes in the fact that there is just one world and that is currently where we are living. There is no world beyond this one. No <i>Ishwara</i> (God), No <i>Atma</i> (Soul), No <i>Swarga</i> (Heaven), No <i>Naraka</i> (Hell), No <i>Moksha</i> (Liberation).</p>
-        
-        <h4>Why the name Charvaka?</h4>
-        
-        <div style="padding: 1px 10px 10px 0px;">
-        <p>There are 3 perceptions of their name being Charvaka.</p>
-        <ol style="line-height: 1.4;">
-        <li>Many historians believe that it's made up of two words - <i>Charu</i> (beautiful) + <i>Wakk</i> (words).
-        So, they were the people of spoke beautiful words.
-        It's believed that they used to speak very interesting things and people were curious to listen to them.</li><br>
-        
-        <li>Some historians also believe that the name is made up of a Sanskrit root word, <i>Charv</i>, which means to chew. Those who oppose their philosophy, allege that they used to chew the ethics/morality of the society.</li><br>
-        
-        <li>The 3rd perception is very interesting. It's widely believed that Charvaka was initially a man before it came to exist as a thought or philosophy. It's a general acceptance among the historians that the Charvaka philosophy was introduced by <b>Rishi Vryahsapati</b>,  who is also regarded as the guru of all devatas. That's why Charvaka philosophy is also called <b>Vryahsapatya philosophy</b>.</li>
-        
-        <p> One question may arise, that why would the saint Vryahsapati believe in a philosophy which is so against the Vedic literatures?<br>
-        I mean the devatas used to believe in the Vedic philosophy so, why in any world their own guru would tend to differ from their belief.</p>
-        
-        <p>The reason intellectuals quote is that this literature was made to distract the <i>Asuras</i> and to keep them busy in their worldly possessions. So that they can never get par with the devatas.</p>
+    <div
+        style="display: inline-block; width: 40%; border: 1px solid rgb(8, 13, 32); border-radius: 3px; padding: 5px 5px 5px 5px; margin-left: 20px;">
+        <h4 style="padding:10px 10px 1px 10px; line-height: 0.1; color: black;">Contents:</h4>
+        <ol style="line-height: 1.4; color: rgb(12, 30, 50);">
+            <li class="list">Preparing the base</li>
+            <li class="list">Who were the Charvakas?</li>
+            <li class="list">Benefit of doubt</li>
+            <li class="list">Major References</li>
+            <li class="list">The core of the philosophy</li>
+            <ol type="a">
+                <li class="list">The Epistemology</li>
+                <li class="list">The Metaphysics</li>
+                <li class="list">The Ethics</li>
+            </ol>
+            <li class="list">The Conclusion</li>
         </ol>
+    </div>
+
+    <ol>
+        <div>
+            <li class="liMain">
+                <h3>Preparing the base</h3>
+            </li>
+            <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
+                <p>During the Vedic period, lots of people were engaged in Vedic rituals (also known as <i>Vedic
+                        Karmakanda</i>). At the same time the Upanishads were also being compiled and lots of people
+                    were going with that too.<br>
+                    While this all was happening, those who did not get the satisfactory explanation from either of the
+                    ways, chose to find a new way to explain the very nature of this world and other metaphysical
+                    aspects of it.<br>
+                    Those who followed this trend of seeking for something beyond Vedas were known as <i>Sharavana</i>
+                    (also known as <i>Nastikas</i> as they did not believe in the supremacy of Vedas). At some point of
+                    time, there were a total of 63 Sharavana schools of thought in India, out of which 3 were the most
+                    popular ones - The Buddhism, The Jainism and The Charvakas.</p>
+            </div>
         </div>
-</div>
-</div>
+
+
+
+        <div>
+            <li class="liMain">
+                <h3>Who were the Charvakas?</h3>
+            </li>
+            <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
+                <p> The followers of one of the <i>Nastik darshan</i> (atheistic philosophy), Charvaka. Both the
+                    philosophy and the followers are known as Charvaka.</p>
+                <p> Charvaka philosophy is also known as <b>Lokayat</b> philosophy as a result of their belief in
+                    <i>Ehiloka</i> meaning "This world only". <br>
+                    It's the only Indian philosophy that believes in the fact that there is just one world and that is
+                    currently where we are living. There is no world beyond this one. No <i>Ishwara</i> (God), No
+                    <i>Atma</i> (Soul), No <i>Swarga</i> (Heaven), No <i>Naraka</i> (Hell), No <i>Moksha</i>
+                    (Liberation).
+                </p>
+
+                <h4>Why the name Charvaka?</h4>
+
+                <div style="padding: 1px 10px 10px 0px;">
+                    <p>There are 3 perceptions of their name being Charvaka.</p>
+                    <ol style="line-height: 1.4;">
+                        <li>Many historians believe that it's made up of two words - <i>Charu</i> (beautiful) +
+                            <i>Wakk</i> (words).
+                            So, they were the people of spoke beautiful words.
+                            It's believed that they used to speak very interesting things and people were curious to
+                            listen to them.
+                        </li><br>
+
+                        <li>Some historians also believe that the name is made up of a Sanskrit root word, <i>Charv</i>,
+                            which means to chew. Those who oppose their philosophy, allege that they used to chew the
+                            ethics/morality of the society.</li><br>
+
+                        <li>The 3rd perception is very interesting. It's widely believed that Charvaka was initially a
+                            man before it came to exist as a thought or philosophy. It's a general acceptance among the
+                            historians that the Charvaka philosophy was introduced by <b>Rishi Vryahsapati</b>, who is
+                            also regarded as the guru of all devatas. That's why Charvaka philosophy is also called
+                            <b>Vryahsapatya philosophy</b>.
+                        </li>
+
+                        <p> One question may arise, that why would the saint Vryahsapati believe in a philosophy which
+                            is so against the Vedic literatures?<br>
+                            I mean the devatas used to believe in the Vedic philosophy so, why in any world their own
+                            guru would tend to differ from their belief.</p>
+
+                        <p>The reason intellectuals quote is that this literature was made to distract the <i>Asuras</i>
+                            and to keep them busy in their worldly possessions. So that they can never get par with the
+                            devatas.</p>
+                    </ol>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -122,174 +179,297 @@ Those who followed this trend of seeking for something beyond Vedas were known a
 
 
 
-<div>
-    <li class="liMain"><h3>Benefit of doubt</h3></li>
-    <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
-    <p> Although the Charvaka is the most criticized philosophy in against the Vedic philosophy, but it deserves a benefit of doubt in certain manners.
-        Currently, there exists no authentic source that can represent the actual beliefs of Charvaka philosophy.</p>
-    <h4>Why is so?</h4>
-    <p> It's believed that the Charvakas were very aggressive & outspoken people. They used to speak loudly & openly against the Vedas, the Vedic rituals, the purohits (Vedic priests).<br>
-        Hence, the people who were following the Vedic philosophy used to be very angry with the Charvakas. Perhaps in this tussle, the original literatures of Charvakas had been destroyed.</p>
-        
-        <h4>So how do we know about them?</h4>
-        First of all, it's actually very comical and sarcastic.<br>
-        No one is certain about the knowledge we have about the Charvakas. What the Charvakas believed, we don't know.
-        But what the other philosophers or Schools of thought wrote to criticize Charvakas is available and from that we get to know about what the Charvakas used to believe.<br>
-        It's like reading China's doctrine to understand Taiwanese values.
-        Anyway, we get to see the Charvakas being criticized in the literatures of every major Indian school of thought. Hence, it becomes very important to give Charvakas a benefit of doubt, because we don't know whether what's written about them is actually true or NOT.
-    </div>
-</div>
+        <div>
+            <li class="liMain">
+                <h3>Benefit of doubt</h3>
+            </li>
+            <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
+                <p> Although the Charvaka is the most criticized philosophy in against the Vedic philosophy, but it
+                    deserves a benefit of doubt in certain manners.
+                    Currently, there exists no authentic source that can represent the actual beliefs of Charvaka
+                    philosophy.</p>
+                <h4>Why is so?</h4>
+                <p> It's believed that the Charvakas were very aggressive & outspoken people. They used to speak loudly
+                    & openly against the Vedas, the Vedic rituals, the purohits (Vedic priests).<br>
+                    Hence, the people who were following the Vedic philosophy used to be very angry with the Charvakas.
+                    Perhaps in this tussle, the original literatures of Charvakas had been destroyed.</p>
 
-
-
-          
-	
-<div>
-    <li class="liMain"><h3>Major References</h3></li>
-    <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
-    <p> The first literature that talks about Charvakas dates back to 9th century AD (After approximately 1500 years).
-        A book called <i>"Tatva Viplav Sangh"</i> by Jai Rashi Bhatt has a little description about who the Charvakas actually were.<br>
-        
-        The next mentioning of the Charvakas can be found straight 200 years after that. A small play in Sanskrit called <i>"Prabodh Chandrodaya"</i> by Krishna Mishra in 11th century AD. It's the one and only literature written in the favor of Charvakas.<br>
-        
-        The major literature that accounts for almost 90% of the information we have today about the Charvakas come from a book called <i>"Sarva Darshan Sangraha"</i> in 14th century AD by <b>Madhavacharya Vidyaranya</b>, the head of the <i>Sringeri Sharada Peetham</i>, a prominent center of learning in South India.
-        That book was a collection of all the major philosophies in India.<br>
-        
-        All the Charvaka sutras mainly come from that one single book of Madhavacharya only. But the thing to note is that the book was a critic of Charvaka philosophy.</p>
-    </div>
-</div>
+                <h4>So how do we know about them?</h4>
+                First of all, it's actually very comical and sarcastic.<br>
+                No one is certain about the knowledge we have about the Charvakas. What the Charvakas believed, we don't
+                know.
+                But what the other philosophers or Schools of thought wrote to criticize Charvakas is available and from
+                that we get to know about what the Charvakas used to believe.<br>
+                It's like reading China's doctrine to understand Taiwanese values.
+                Anyway, we get to see the Charvakas being criticized in the literatures of every major Indian school of
+                thought. Hence, it becomes very important to give Charvakas a benefit of doubt, because we don't know
+                whether what's written about them is actually true or NOT.
+            </div>
+        </div>
 
 
 
 
-<div>
-    <li class="liMain"><h3>The core of the philosophy</h3></li>
-    <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
-    <p> The core of a philosophical system generally consists of three components:
-        <ol type="a" style="line-height: 2;">
-        <li class="liShort">Epistemology: Deals with how we acquire knowledge, what constitutes knowledge, and the limitations of knowledge.</li>
-        
-        <li class="liShort">Metaphysics: Deals with the nature of reality, including questions about the existence of gods, the afterlife, and the ultimate nature of the universe.</li>
-        
-        <li class="liShort">Ethics: Deals with questions about moral values, principles, and behavior.</li>
-        </ol>
-        
-        <p>Let's discuss it one by one.</p>
-        <ol type="a">
-        <li class="liSubMain">Epistemology:</li>
-        
-        <p>Epistemology lit. theory of knowledge or <i>gyan-mimansa</i>. It tells us about the nature, origin & scope of knowledge within the realm of that philosophy.
-        Talking about Charvakas, they believed on one single sutra -</p>
-            
-        <div style="text-align: center;"><i>Pratiyakshameva ekam pramanam</i></div>
-        <div style="text-align: center; font-size: 70%;">What's perceived is the only evidence.</div>
-        
-        <h4>What does this mean?</h4>
-        
-        <p>Believe what you see, don't accept anything that you can't see or feel and sensory experience is the only means of gaining knowledge.</p>
-        <p>According to Vedanta or Vedic philosophy, there are 6 forms of evidence.</p>
-        <ol type="i">
-            <li><i>Pratyaksha</i></li>
-            <li><i>Anumana</i></li>
-            <li><i>Upamana</i></li>
-            <li><i>Shabda</i></li>
-            <li><i>Arthapatti</i></li>
-            <li><i>Anupalabdhi</i></li>
-        </ol> <br>
-        <a href="https://www.hindu-blog.com/2019/09/six-types-of-evidence-accepted-in.html" target="_blank">Read more about these forms of evidence here.</a><br>
-        The Charvakas were the only one who believed in just one form of evidence i.e. perception (<i>Pratyaksha</i>).<br><br>
-        
-        
-        <li class="liSubMain">Metaphysics:</li>
-        <p>The metaphysics or <i>tatva-mimansa</i> of Charvakas revolve around the concept of materialism.
-        The main question that metaphysics deals with is to now if the ultimate reality is physical (material) or it is conscious.<br>
-        Now, consciousness is not visible through eyes, hence for Charvakas the ultimate reality lies in the material nature of this world.</p>
-        
-        <h4>What constitutes this material world (acc. to Charvakas)?</h4>
-        <p>Vedic philosophy believes in 5 elements including Space (Akasha). But since the space can't be perceived hence Charvakas would not count it.</p>
-        <div style="text-align: center;"><i>Prithivya-apa-tejoh-vayur-iti tatvani</i></div>
-        <div style="text-align: center; font-size: 70%;">Earth (Prithvi or Prithivya), Water (Apa), Fire (Tejoh or Tez), Air (Vayu) are the only elements (Tatvas).</div>
-        
-        
-        <p>Everything that is physical is made up of different combinations of the 4 elements.</p>
-        
-        <h4>Now a simple question arises that who makes up these different combinations?</h4>
-        <p>Since Charvakas did not believe in the existence of God (<i>Ishwara</i>), hence the explanation given by them was <i>"The very nature of these elements is such that they mix up on their own in different proportions to constitute to different materials"</i>.<br>
-        The Charvakas believed in mechanical theory i.e. the universe was not created by any god but it was a product of material elements, and consciousness was simply a by-product of the physical brain.</p>
-        
-        <h4>Concept of soul</h4>
-        <p>7 out of the 9 major philosophies in India believes in the concept of soul except Buddhism and the Charvaka philosophy.
-        According to Buddhism, soul is nothing but the flow of consciousness.
-        For Charvakas, the following lines catter their belief about soul -</p>
-        <div style="text-align: center;"><i>Chaitanya-vishistho deh eva aatma,<br>kshinam sukhadukhanvitam</i></div>
-        <div style="text-align: center; font-size: 70%;">Consciousness (<i>chaitanya</i>) is present within the body as the soul (atma), which is subject to pleasure and pain.</div>
-    
-        
-        <li class="liSubMain">Ethics:</li>
-        <p>In my views, ethics is the most important component of a philosophy, because it deals with questions about moral values, principles, and behavior, which are central to how individuals and societies make decisions and live their lives.<br>
-        In the case of Charvaka philosophy, their ethics emphasized the importance of pleasure and enjoyment in life, with little concern for morality beyond the immediate satisfaction of desires.</p>
-        
-        <h4>Views on Purusharthas</h4>
-        <p>In Vedic philosophy, the four types of Purusharthas are <i>Dharma</i>, <i>Artha</i>, <i>Kama</i>, and <i>Moksha</i>. These four aims or goals are considered the primary objectives of human life.</p>
-        <ul>
-            <p><li class="dakm"><i>Dharma</i></li>This refers to righteous conduct or duty. It is the moral and ethical foundation of life, encompassing social and personal responsibilities, duties, and obligations. It includes following the codes of conduct prescribed by one's social status, family, and community.</p>
-            <p><li class="dakm"><i>Artha</i></li>This refers to material wealth, power, and success. It includes the pursuit of financial prosperity, social status, and political power. However, it is also expected that these pursuits should be conducted with ethical means and in accordance with dharma.</p>
-            <p><li class="dakm"><i>Kama</i></li>This refers to sensual pleasure or desire. It includes fulfilling one's desires, such as romantic love, physical pleasure, and enjoyment of arts, music, and beauty. However, like artha, it is also expected that these desires should be fulfilled within the framework of dharma.</p>
-            <p><li class="dakm"><i>Moksha</i></li>This refers to liberation or freedom from the cycle of birth and death, and the attainment of spiritual enlightenment. It is the ultimate goal of human life and involves transcending the limitations of the ego and realizing the true nature of the self.</p>
-        </ul> 
-        
-        <p>These four Purusharthas are interrelated and interdependent, and it is believed that the pursuit of each is necessary for a fulfilling life. However, the ultimate aim is the attainment of Moksha or spiritual liberation.<br>        
-        The Charvakas believed that the pursuit of material wealth (Artha) and sensual pleasure (Kama) were the only goals worth pursuing in life. They rejected the notion of Dharma and Moksha as mere fantasies or illusions.</p>
 
-        <div style="text-align: center;"><i>Kama eva ekah purushartha</i></div>
-        <div style="text-align: center; font-size: 70%;"><a href="https://en.wikipedia.org/wiki/Kama" target="_blank"><i>Kama</i></a> is the only purushartha.</div>
-        
-        <h4>About Life after Death</h4>
-        <p>According to the Charvaka philosophy, life is short and unpredictable, and there is no life after death. Therefore, one should enjoy life to the fullest and pursue material pleasures and success while ignoring any consideration of religious, moral, or ethical duties. They believed that there is no higher purpose to human life other than the pursuit of pleasure and the avoidance of pain.</p>
-        
+        <div>
+            <li class="liMain">
+                <h3>Major References</h3>
+            </li>
+            <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
+                <p> The first literature that talks about Charvakas dates back to 9th century AD (After approximately
+                    1500 years).
+                    A book called <i>"Tatva Viplav Sangh"</i> by Jai Rashi Bhatt has a little description about who the
+                    Charvakas actually were.<br>
 
-        <div style="text-align: center;"><i>Peetva peetva punah peetva,<br>Yavaj jivet sukham jivet,<br>rinam kritva ghritam pibet,<br>Bhasmibhutasya dehasya kutah punaragamanam.</i></div>
-        <div style="text-align: center; font-size: 70%;">Drink and drink again and again, as long as you live happily. As long as you live, live happily and drink ghee even if you need to borrow money for that. For who knows if this body will turn to ashes and come back again?</div>
+                    The next mentioning of the Charvakas can be found straight 200 years after that. A small play in
+                    Sanskrit called <i>"Prabodh Chandrodaya"</i> by Krishna Mishra in 11th century AD. It's the one and
+                    only literature written in the favor of Charvakas.<br>
 
-        
-        <p>This verse emphasizes the Charvaka's philosophy of hedonism, which stresses the importance of pursuing pleasure and enjoyment in life. The verse suggests that one should enjoy life as much as possible and indulge in pleasures such as drinking, as life is unpredictable and fleeting.</p>
+                    The major literature that accounts for almost 90% of the information we have today about the
+                    Charvakas come from a book called <i>"Sarva Darshan Sangraha"</i> in 14th century AD by
+                    <b>Madhavacharya Vidyaranya</b>, the head of the <i>Sringeri Sharada Peetham</i>, a prominent center
+                    of learning in South India.
+                    That book was a collection of all the major philosophies in India.<br>
 
-        
-        <h4>About Heaven and Hell</h4>
-
-        <div style="text-align: center;"><i>Sukhamev swargam, dukhamev narakam</i></div>
-        <div style="text-align: center; font-size: 70%;">Happiness is heaven, and sorrow is hell.</div>
-
-        <p>The idea that <i>Sukhamev swargam, dukhamev narakam</i> continues to be relevant even in our modern society, as individuals continue to seek happiness and fulfilment in their lives, and the pursuit of happiness is seen as a fundamental human right.</p>
-        
-        <h4>About Dharma</h4>
-        <p>The Charvaka school of thought saw religion as a form of a mental disease or a delusion that prevented individuals from living their lives to the fullest.
-        From the perspective of the Charvakas, religion was seen as a human invention that was used to exploit and control people.<br>They believed that priests and religious leaders used the <b>fear of punishment</b> in the afterlife or the promise of reward to manipulate people into following their teachings and obeying their commands.</p>
-        
-        <h4>About the quality of pleasure</h4>
-        <p>Charvakas believed that all pleasures are of equal value and that pleasure should be the ultimate aim of human life. They did not believe in any distinction between higher or lower pleasures, nor did they consider any pleasure to be inherently bad or sinful. They asserted that pleasure is the ultimate good and pain the ultimate evil, and that one should seek pleasure and avoid pain in all aspects of life.</p>
-        <p>A real-life example that supports Charvaka belief that pleasure is the ultimate good could be someone who chooses to pursue a career in a field that brings them immense joy and satisfaction, even if it may not pay as well as other careers that they are not passionate about. For instance, a person who enjoys painting may choose to pursue a career as an artist, even if it means making less money than they would in a different profession. This person is prioritizing their pleasure and satisfaction over material wealth or status, which aligns with Charvaka philosophy.<br><br>
-        One possible real-life negative example related to Charvakas belief that all pleasures are of equal value is the behaviour of someone who indulges in excessive or unhealthy habits in pursuit of pleasure. For instance, a person who spends all their money and time partying, drinking excessively or using drugs may enjoy the immediate pleasure, but these activities can have negative consequences on their health, relationships, and financial stability.</p></ol> </p>
-    </div>
-</div>
+                    All the Charvaka sutras mainly come from that one single book of Madhavacharya only. But the thing
+                    to note is that the book was a critic of Charvaka philosophy.
+                </p>
+            </div>
+        </div>
 
 
 
-<div>
-    <li class="liMain"><h3>The Conclusion</h3></li>
-    <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
-    <p>While the rejection of traditional religious beliefs may be seen as controversial or even offensive by some, it is important to understand that their beliefs were rooted in a specific philosophical and cultural context.<br> The Charvaka philosophy emerged during a period of intense social and religious change in ancient India, and their ideas can be seen as a response to the dominant philosophical and religious traditions of the time.<br>
-        While Charvakas are still assumed as the people who lacked spiritual or transcendent dimension, who had a very limited perspective of the world, who emphasized on materialism, who rejected the moral and ethical codes but despite these facts Indian philosophy will always be grateful to the Charvakas. There are several reasons for that.<br>
-        First, the Charvaka philosophy challenged traditional religious and philosophical beliefs and encouraged <b>critical thinking and skepticism</b>, which helped to stimulate intellectual curiosity and openness in Indian thought.<br>
-        Second, the Charvaka philosophy emphasized personal experience and empirical evidence, which helped to promote a scientific and rational approach to understanding the world.<br>
-        Third, the Charvaka philosophy promoted <b>individual freedom and autonomy</b>, which helped to foster a sense of personal agency and responsibility.
-        Finally, the Charvaka philosophy played an important role in shaping the development of Indian philosophy by contributing to debates and discussions about the nature of reality, consciousness, and ethics, which helped to enrich and diversify Indian philosophical thought.<br>
-        It is true that all of what we know about Charvaka philosophy is based on the writings of other philosophers and scholars who were critical of their ideas. This means that our understanding of Charvaka philosophy is <b>unarguably biased and incomplete</b>. Without access to original Charvaka texts and sources, it is difficult to know with certainty what their beliefs and ideas were.</p>
-    </div>
-</div>
 
-</ol>
+        <div>
+            <li class="liMain">
+                <h3>The core of the philosophy</h3>
+            </li>
+            <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
+                <p> The core of a philosophical system generally consists of three components:
+                <ol type="a" style="line-height: 2;">
+                    <li class="liShort">Epistemology: Deals with how we acquire knowledge, what constitutes knowledge,
+                        and the limitations of knowledge.</li>
 
-<p>So this was all about the Charvaka philosophy. I hope you enjoyed while reading, if so, please send me a note. Kindly visit the bottom of the <b>Connect</b> section. <br><br>Thank You!!!</p>
+                    <li class="liShort">Metaphysics: Deals with the nature of reality, including questions about the
+                        existence of gods, the afterlife, and the ultimate nature of the universe.</li>
+
+                    <li class="liShort">Ethics: Deals with questions about moral values, principles, and behavior.</li>
+                </ol>
+
+                <p>Let's discuss it one by one.</p>
+                <ol type="a">
+                    <li class="liSubMain">Epistemology:</li>
+
+                    <p>Epistemology lit. theory of knowledge or <i>gyan-mimansa</i>. It tells us about the nature,
+                        origin & scope of knowledge within the realm of that philosophy.
+                        Talking about Charvakas, they believed on one single sutra -</p>
+
+                    <div style="text-align: center;"><i>Pratiyakshameva ekam pramanam</i></div>
+                    <div style="text-align: center; font-size: 70%;">What's perceived is the only evidence.</div>
+
+                    <h4>What does this mean?</h4>
+
+                    <p>Believe what you see, don't accept anything that you can't see or feel and sensory experience is
+                        the only means of gaining knowledge.</p>
+                    <p>According to Vedanta or Vedic philosophy, there are 6 forms of evidence.</p>
+                    <ol type="i">
+                        <li><i>Pratyaksha</i></li>
+                        <li><i>Anumana</i></li>
+                        <li><i>Upamana</i></li>
+                        <li><i>Shabda</i></li>
+                        <li><i>Arthapatti</i></li>
+                        <li><i>Anupalabdhi</i></li>
+                    </ol> <br>
+                    <a href="https://www.hindu-blog.com/2019/09/six-types-of-evidence-accepted-in.html"
+                        target="_blank">Read more about these forms of evidence here.</a><br>
+                    The Charvakas were the only one who believed in just one form of evidence i.e. perception
+                    (<i>Pratyaksha</i>).<br><br>
+
+
+                    <li class="liSubMain">Metaphysics:</li>
+                    <p>The metaphysics or <i>tatva-mimansa</i> of Charvakas revolve around the concept of materialism.
+                        The main question that metaphysics deals with is to now if the ultimate reality is physical
+                        (material) or it is conscious.<br>
+                        Now, consciousness is not visible through eyes, hence for Charvakas the ultimate reality lies in
+                        the material nature of this world.</p>
+
+                    <h4>What constitutes this material world (acc. to Charvakas)?</h4>
+                    <p>Vedic philosophy believes in 5 elements including Space (Akasha). But since the space can't be
+                        perceived hence Charvakas would not count it.</p>
+                    <div style="text-align: center;"><i>Prithivya-apa-tejoh-vayur-iti tatvani</i></div>
+                    <div style="text-align: center; font-size: 70%;">Earth (Prithvi or Prithivya), Water (Apa), Fire
+                        (Tejoh or Tez), Air (Vayu) are the only elements (Tatvas).</div>
+
+
+                    <p>Everything that is physical is made up of different combinations of the 4 elements.</p>
+
+                    <h4>Now a simple question arises that who makes up these different combinations?</h4>
+                    <p>Since Charvakas did not believe in the existence of God (<i>Ishwara</i>), hence the explanation
+                        given by them was <i>"The very nature of these elements is such that they mix up on their own in
+                            different proportions to constitute to different materials"</i>.<br>
+                        The Charvakas believed in mechanical theory i.e. the universe was not created by any god but it
+                        was a product of material elements, and consciousness was simply a by-product of the physical
+                        brain.</p>
+
+                    <h4>Concept of soul</h4>
+                    <p>7 out of the 9 major philosophies in India believes in the concept of soul except Buddhism and
+                        the Charvaka philosophy.
+                        According to Buddhism, soul is nothing but the flow of consciousness.
+                        For Charvakas, the following lines catter their belief about soul -</p>
+                    <div style="text-align: center;"><i>Chaitanya-vishistho deh eva aatma,<br>kshinam
+                            sukhadukhanvitam</i></div>
+                    <div style="text-align: center; font-size: 70%;">Consciousness (<i>chaitanya</i>) is present within
+                        the body as the soul (atma), which is subject to pleasure and pain.</div>
+
+
+                    <li class="liSubMain">Ethics:</li>
+                    <p>In my views, ethics is the most important component of a philosophy, because it deals with
+                        questions about moral values, principles, and behavior, which are central to how individuals and
+                        societies make decisions and live their lives.<br>
+                        In the case of Charvaka philosophy, their ethics emphasized the importance of pleasure and
+                        enjoyment in life, with little concern for morality beyond the immediate satisfaction of
+                        desires.</p>
+
+                    <h4>Views on Purusharthas</h4>
+                    <p>In Vedic philosophy, the four types of Purusharthas are <i>Dharma</i>, <i>Artha</i>, <i>Kama</i>,
+                        and <i>Moksha</i>. These four aims or goals are considered the primary objectives of human life.
+                    </p>
+                    <ul>
+                        <p>
+                            <li class="dakm"><i>Dharma</i></li>This refers to righteous conduct or duty. It is the moral
+                            and ethical foundation of life, encompassing social and personal responsibilities, duties,
+                            and obligations. It includes following the codes of conduct prescribed by one's social
+                            status, family, and community.
+                        </p>
+                        <p>
+                            <li class="dakm"><i>Artha</i></li>This refers to material wealth, power, and success. It
+                            includes the pursuit of financial prosperity, social status, and political power. However,
+                            it is also expected that these pursuits should be conducted with ethical means and in
+                            accordance with dharma.
+                        </p>
+                        <p>
+                            <li class="dakm"><i>Kama</i></li>This refers to sensual pleasure or desire. It includes
+                            fulfilling one's desires, such as romantic love, physical pleasure, and enjoyment of arts,
+                            music, and beauty. However, like artha, it is also expected that these desires should be
+                            fulfilled within the framework of dharma.
+                        </p>
+                        <p>
+                            <li class="dakm"><i>Moksha</i></li>This refers to liberation or freedom from the cycle of
+                            birth and death, and the attainment of spiritual enlightenment. It is the ultimate goal of
+                            human life and involves transcending the limitations of the ego and realizing the true
+                            nature of the self.
+                        </p>
+                    </ul>
+
+                    <p>These four Purusharthas are interrelated and interdependent, and it is believed that the pursuit
+                        of each is necessary for a fulfilling life. However, the ultimate aim is the attainment of
+                        Moksha or spiritual liberation.<br>
+                        The Charvakas believed that the pursuit of material wealth (Artha) and sensual pleasure (Kama)
+                        were the only goals worth pursuing in life. They rejected the notion of Dharma and Moksha as
+                        mere fantasies or illusions.</p>
+
+                    <div style="text-align: center;"><i>Kama eva ekah purushartha</i></div>
+                    <div style="text-align: center; font-size: 70%;"><a href="https://en.wikipedia.org/wiki/Kama"
+                            target="_blank"><i>Kama</i></a> is the only purushartha.</div>
+
+                    <h4>About Life after Death</h4>
+                    <p>According to the Charvaka philosophy, life is short and unpredictable, and there is no life after
+                        death. Therefore, one should enjoy life to the fullest and pursue material pleasures and success
+                        while ignoring any consideration of religious, moral, or ethical duties. They believed that
+                        there is no higher purpose to human life other than the pursuit of pleasure and the avoidance of
+                        pain.</p>
+
+
+                    <div style="text-align: center;"><i>Peetva peetva punah peetva,<br>Yavaj jivet sukham
+                            jivet,<br>rinam kritva ghritam pibet,<br>Bhasmibhutasya dehasya kutah punaragamanam.</i>
+                    </div>
+                    <div style="text-align: center; font-size: 70%;">Drink and drink again and again, as long as you
+                        live happily. As long as you live, live happily and drink ghee even if you need to borrow money
+                        for that. For who knows if this body will turn to ashes and come back again?</div>
+
+
+                    <p>This verse emphasizes the Charvaka's philosophy of hedonism, which stresses the importance of
+                        pursuing pleasure and enjoyment in life. The verse suggests that one should enjoy life as much
+                        as possible and indulge in pleasures such as drinking, as life is unpredictable and fleeting.
+                    </p>
+
+
+                    <h4>About Heaven and Hell</h4>
+
+                    <div style="text-align: center;"><i>Sukhamev swargam, dukhamev narakam</i></div>
+                    <div style="text-align: center; font-size: 70%;">Happiness is heaven, and sorrow is hell.</div>
+
+                    <p>The idea that <i>Sukhamev swargam, dukhamev narakam</i> continues to be relevant even in our
+                        modern society, as individuals continue to seek happiness and fulfilment in their lives, and the
+                        pursuit of happiness is seen as a fundamental human right.</p>
+
+                    <h4>About Dharma</h4>
+                    <p>The Charvaka school of thought saw religion as a form of a mental disease or a delusion that
+                        prevented individuals from living their lives to the fullest.
+                        From the perspective of the Charvakas, religion was seen as a human invention that was used to
+                        exploit and control people.<br>They believed that priests and religious leaders used the <b>fear
+                            of punishment</b> in the afterlife or the promise of reward to manipulate people into
+                        following their teachings and obeying their commands.</p>
+
+                    <h4>About the quality of pleasure</h4>
+                    <p>Charvakas believed that all pleasures are of equal value and that pleasure should be the ultimate
+                        aim of human life. They did not believe in any distinction between higher or lower pleasures,
+                        nor did they consider any pleasure to be inherently bad or sinful. They asserted that pleasure
+                        is the ultimate good and pain the ultimate evil, and that one should seek pleasure and avoid
+                        pain in all aspects of life.</p>
+                    <p>A real-life example that supports Charvaka belief that pleasure is the ultimate good could be
+                        someone who chooses to pursue a career in a field that brings them immense joy and satisfaction,
+                        even if it may not pay as well as other careers that they are not passionate about. For
+                        instance, a person who enjoys painting may choose to pursue a career as an artist, even if it
+                        means making less money than they would in a different profession. This person is prioritizing
+                        their pleasure and satisfaction over material wealth or status, which aligns with Charvaka
+                        philosophy.<br><br>
+                        One possible real-life negative example related to Charvakas belief that all pleasures are of
+                        equal value is the behaviour of someone who indulges in excessive or unhealthy habits in pursuit
+                        of pleasure. For instance, a person who spends all their money and time partying, drinking
+                        excessively or using drugs may enjoy the immediate pleasure, but these activities can have
+                        negative consequences on their health, relationships, and financial stability.</p>
+                </ol>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div>
+            <li class="liMain">
+                <h3>The Conclusion</h3>
+            </li>
+            <div style="padding: 1px 10px 1px 8px; line-height: 1.4;">
+                <p>While the rejection of traditional religious beliefs may be seen as controversial or even offensive
+                    by some, it is important to understand that their beliefs were rooted in a specific philosophical
+                    and cultural context.<br> The Charvaka philosophy emerged during a period of intense social and
+                    religious change in ancient India, and their ideas can be seen as a response to the dominant
+                    philosophical and religious traditions of the time.<br>
+                    While Charvakas are still assumed as the people who lacked spiritual or transcendent dimension, who
+                    had a very limited perspective of the world, who emphasized on materialism, who rejected the moral
+                    and ethical codes but despite these facts Indian philosophy will always be grateful to the
+                    Charvakas. There are several reasons for that.<br>
+                    First, the Charvaka philosophy challenged traditional religious and philosophical beliefs and
+                    encouraged <b>critical thinking and skepticism</b>, which helped to stimulate intellectual curiosity
+                    and openness in Indian thought.<br>
+                    Second, the Charvaka philosophy emphasized personal experience and empirical evidence, which helped
+                    to promote a scientific and rational approach to understanding the world.<br>
+                    Third, the Charvaka philosophy promoted <b>individual freedom and autonomy</b>, which helped to
+                    foster a sense of personal agency and responsibility.
+                    Finally, the Charvaka philosophy played an important role in shaping the development of Indian
+                    philosophy by contributing to debates and discussions about the nature of reality, consciousness,
+                    and ethics, which helped to enrich and diversify Indian philosophical thought.<br>
+                    It is true that all of what we know about Charvaka philosophy is based on the writings of other
+                    philosophers and scholars who were critical of their ideas. This means that our understanding of
+                    Charvaka philosophy is <b>unarguably biased and incomplete</b>. Without access to original Charvaka
+                    texts and sources, it is difficult to know with certainty what their beliefs and ideas were.</p>
+            </div>
+        </div>
+
+    </ol>
+
+    <p>So this was all about the Charvaka philosophy. I hope you enjoyed while reading, if so, please send me a note.
+        Kindly visit the bottom of the <b>Connect</b> section. <br><br>Thank You!!!</p>
 
 </div>
