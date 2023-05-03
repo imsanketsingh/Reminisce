@@ -15,6 +15,9 @@ from emailit import secretdetails
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
 
+
+
+
 ##########################################################################################################################################################
 
 with st.sidebar:
@@ -55,10 +58,10 @@ with st.sidebar:
     
 ################################################################COMPENDIA######################################################################################
 
-def showthecontent(filepath):
-    with open(filepath, "r", encoding="utf-8") as file:
-        contents = file.read()
-        st.markdown(contents, unsafe_allow_html=True)
+def showthecontent(filepath, height):
+    with open(filepath, "r") as f:
+        html_string = f.read()
+    components.html(html_string, height=height)
 
 
 
@@ -176,8 +179,25 @@ if choose == "Compendia":
     elif topic == "Philosophy":
 
         #Topic 3 Philosophy 1
-        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+        feature_image1 = Image.open(r'../Cover Images/Charvak.jpg')
+        with st.container():
+            image_col, text_col = st.columns((2,3))
+            with image_col:
+                st.image(feature_image1)
+            with text_col:
+                st.markdown(""" <style> .font {
+                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+                </style> """, unsafe_allow_html=True)
+                st.markdown('<p class="font">The Charvaka Philosophy</p>', unsafe_allow_html=True)    
+                st.markdown('This article explores the philosophy of Charvaka, an ancient Indian school of thought. The article provides an overview of the Charvaka worldview, including their beliefs about the nature of reality, consciousness, and ethics.', unsafe_allow_html=True)
+            if st.button("Get into it", key="mybutton"):
+                showthecontent('../New/Philosophy/Charvaka.html', 7180)
+                st.button("Are you done?", help="Close it")
+                
 
+        for text in ["Did you like the article?"]:
+                response = st_text_rater(text=text, key='4')
+        st.write('---')
 
 
 
