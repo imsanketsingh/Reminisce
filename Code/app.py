@@ -210,7 +210,7 @@ if choose == "Compendia":
     elif topic == "BeyondThePages":
 
         #Topic 4 Content 1
-        feature_image1 = Image.open(r'./Cover Images/loremipsum.jpg')
+        feature_image1 = Image.open(r'./Cover Images/painofpeople.jpg')
         with st.container():
             image_col, text_col = st.columns((2,3))
             with image_col:
@@ -219,10 +219,10 @@ if choose == "Compendia":
                 st.markdown(""" <style> .font {
                 font-size:22px ; font-family: 'Black'; color: #FFFFF;}
                 </style> """, unsafe_allow_html=True)
-                st.markdown('<p class="font">Dummy: The Lorem Ipsum</p>', unsafe_allow_html=True)    
-                st.markdown('A general intro to Lorem Ipsum texts', unsafe_allow_html=True)
+                st.markdown('<p class="font">The Pain of People</p>', unsafe_allow_html=True)    
+                st.markdown('Pain is a prevalent issue that can affect people from all walks of life. Acknowledging the pain of others is essential for building empathy and understanding, as it helps us to connect with others on a deeper level.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Beyondthepages/lipsum.html', 1050)
+                showthecontent('./New/Beyondthepages/The Pain of People.html', 3533)
                 st.button("Are you done?", help="Close it")
                 
 
