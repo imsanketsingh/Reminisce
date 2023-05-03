@@ -179,7 +179,7 @@ if choose == "Compendia":
     elif topic == "Philosophy":
 
         #Topic 3 Philosophy 1
-        feature_image1 = Image.open(r'./Cover Images/Charvak.jpg')
+        feature_image1 = Image.open(r'./Cover Images/Charvakas.jpg')
         with st.container():
             image_col, text_col = st.columns((2,3))
             with image_col:
