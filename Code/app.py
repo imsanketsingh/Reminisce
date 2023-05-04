@@ -192,7 +192,7 @@ if choose == "Compendia":
                 st.markdown('This article explores the philosophy of Charvaka, an ancient Indian school of thought. The article provides an overview of the Charvaka worldview, including their beliefs about the nature of reality, consciousness, and ethics.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
                 showthecontent('./New/Philosophy/Charvaka.html', 7180)
-                st.button("Are you done?", help="Close it")
+                st.button("Wrap it up!", help="Close it")
                 
 
         for text in ["Did you like the article?"]:
@@ -223,7 +223,7 @@ if choose == "Compendia":
                 st.markdown('Pain is a prevalent issue that can affect people from all walks of life. Acknowledging the pain of others is essential for building empathy and understanding, as it helps us to connect with others on a deeper level.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
                 showthecontent('./New/Beyondthepages/The Pain of People.html', 3533)
-                st.button("Are you done?", help="Close it")
+                st.button("Wrap it up!", help="Close it")
                 
 
         for text in ["Did you like the article?"]:
