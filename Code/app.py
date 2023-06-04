@@ -66,7 +66,7 @@ def showthecontent(filepath, height):
 
 
 if choose == "Compendia":
-    topic = option_menu(None, ["Books", "Tech", "Philosophy", "BeyondThePages"],
+    topic = option_menu(None, ["Books", "Tech", "Philosophy", "BeyondThePages", "BeMyGuest"],
                          icons=['book', 'laptop','lightning','journal-plus'],
                          menu_icon="list", default_index=0,
                          styles={
@@ -231,6 +231,12 @@ if choose == "Compendia":
         st.write('---')
         
 
+    
+    #Topic 5
+    elif topic == "BeMyGuest":
+
+        #Topic 5 Content 1
+        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
 
 
 
