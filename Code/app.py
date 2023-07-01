@@ -997,7 +997,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         """
 
         linkedin_button = """
-            <a href="https://www.linkedin.com/in/sanket-kumar-singh-b698191b8/" target="_blank" class="navigation-button">
+            <a href="https://www.linkedin.com/in/imsanketsingh/" target="_blank" class="navigation-button">
                 <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn logo" width="20" height="20">
                 LinkedIn
             </a>
