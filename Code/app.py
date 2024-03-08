@@ -1013,13 +1013,13 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         medium_button = """
             <a href="https://medium.com/@imsanketsingh" target="_blank" class="navigation-button">
             
-                <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*jfdwtvU6V6g99q3G7gq7dQ.png" alt="YouTube logo" width="20" height="20">
+                <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*jfdwtvU6V6g99q3G7gq7dQ.png" alt="Medium logo" width="20" height="20">
                 Medium
             </a>
         """
     
 
-        col1, col2, col3, col4, col5 = st.columns(5)
+        col1, col2, col3, col4 = st.columns(4)
 
         with col1:
             st.markdown(github_button, unsafe_allow_html=True)
