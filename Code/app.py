@@ -1017,7 +1017,14 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
             </a>
         """
 
-        col1, col2, col3, col4 = st.columns(4)
+        medium_button = """
+                <a href="https://www.youtube.com/channel/UCRQUUGw_P1uN4Bbg6xlM2Uw" target="_blank" class="navigation-button">
+                    <img src="https://raw.githubusercontent.com/github/explore/d744245de144b89f3e3462949e08bfc91eda7fcf/topics/youtube/youtube.png" alt="YouTube logo" width="20" height="20">
+                    YouTube
+                </a>
+            """
+
+        col1, col2, col3, col4, col5 = st.columns(4)
 
         with col1:
             st.markdown(github_button, unsafe_allow_html=True)
@@ -1028,6 +1035,9 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         with col3:
             st.markdown(instagram_button, unsafe_allow_html=True)
 
+        with col4:
+            st.markdown(youtube_button, unsafe_allow_html=True)
+            
         with col4:
             st.markdown(youtube_button, unsafe_allow_html=True)
 
