@@ -1030,10 +1030,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
             st.markdown(instagram_button, unsafe_allow_html=True)
 
         with col4:
-            st.markdown(youtube_button, unsafe_allow_html=True)
-            
-        with col4:
-            st.markdown(youtube_button, unsafe_allow_html=True)
+            st.markdown(medium_button, unsafe_allow_html=True)
 
         st.write("___")
 
