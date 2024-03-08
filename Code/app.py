@@ -1013,10 +1013,11 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         medium_button = """
             <a href="https://medium.com/@imsanketsingh" target="_blank" class="navigation-button">
             
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fblogging-guide%2Fmediums-new-logo-2020-unfinished-ellipses-logomark-e24c059871e7&psig=AOvVaw2SbpMu54CvpYwUZ-SDYvVz&ust=1709981488828000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIjGls2_5IQDFQAAAAAdAAAAABAE" alt="YouTube logo" width="20" height="20">
+                <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*jfdwtvU6V6g99q3G7gq7dQ.png" alt="YouTube logo" width="20" height="20">
                 Medium
             </a>
         """
+    
 
         col1, col2, col3, col4, col5 = st.columns(5)
 
