@@ -1012,8 +1012,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
 
         medium_button = """
             <a href="https://medium.com/@imsanketsingh" target="_blank" class="navigation-button">
-            
-                <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*jfdwtvU6V6g99q3G7gq7dQ.png" alt="Medium logo" width="20" height="20">
+                
                 Medium
             </a>
         """
