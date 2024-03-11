@@ -149,7 +149,25 @@ if choose == "Compendia":
     if topic == "Books":
 
         #Topic1 Book1
-        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+        feature_image1 = Image.open(r'./Cover Images/Rashmirathi.jpg')
+        with st.container():
+            image_col, text_col = st.columns((2,3))
+            with image_col:
+                st.image(feature_image1)
+            with text_col:
+                st.markdown(""" <style> .font {
+                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+                </style> """, unsafe_allow_html=True)
+                st.markdown('<p class="font">The Charvaka Philosophy</p>', unsafe_allow_html=True)    
+                st.markdown('This article explores "Rashmirathi" by Ramdhari Singh Dinkar, delving into its philosophical and literary themes, offering insights into duty, morality, and the complexities of the Mahabharata characters.', unsafe_allow_html=True)
+            if st.button("Get into it", key="mybutton"):
+                showthecontent('./New/Books/Rashmirathi.html', 7180)
+                st.button("Wrap it up!", help="Close it")
+                
+
+        for text in ["Did you like the article?"]:
+                response = st_text_rater(text=text, key='4')
+        st.write('---')
 
 
 
