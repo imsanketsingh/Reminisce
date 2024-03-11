@@ -159,9 +159,9 @@ if choose == "Compendia":
                 font-size:22px ; font-family: 'Black'; color: #FFFFF;}
                 </style> """, unsafe_allow_html=True)
                 st.markdown('<p class="font">Rashmirathi : Part 1</p>', unsafe_allow_html=True)    
-                st.markdown('This article explores "Rashmirathi" by Ramdhari Singh Dinkar, delving into its philosophical and literary themes, offering insights into duty, morality, and the complexities of the Mahabharata character, Karna.', unsafe_allow_html=True)
+                st.markdown('This is the first article of the series "Rashmirathi" that explores the great epic "Rashmirathi" by Ramdhari Singh Dinkar, delving into its philosophical and literary themes, offering insights into duty, morality, and the complexities of the Mahabharata character, Karna.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Books/Rashmirathi.html', 4180)
+                showthecontent('./New/Books/Rashmirathi.html', 4120)
                 st.button("Wrap it up!", help="Close it")
                 
 
