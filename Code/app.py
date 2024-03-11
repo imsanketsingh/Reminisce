@@ -309,7 +309,7 @@ elif choose == "Home":
         st.markdown(""" <style> .font {
         font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
         </style> """, unsafe_allow_html=True)
-        st.markdown('<p style="color: #767196; font-size: 33px; font-weight:Bold; font-style:helvetica;">About this work</p>', unsafe_allow_html=True)    
+        # st.markdown('<p style="color: #767196; font-size: 33px; font-weight:Bold; font-style:helvetica;">About this work</p>', unsafe_allow_html=True)    
     st.markdown("""<p style="margin: 0cm 0cm 8pt; font-size: 11pt; font-family: Calibri, sans-serif; text-align: center;"><strong><u><span style="font-size: 26px; color: rgb(184, 49, 47); font-family: Georgia, serif;">About Rashmirathi</span></u></strong></p>
 <p style="margin: 0cm 0cm 8pt; font-size: 11pt; font-family: Calibri, sans-serif; text-align: center;"><br></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-family: Georgia, serif;"><strong><span style="font-size: 16px;">Rashmirathi</span></strong></span><span style="font-size: 16px; font-family: Georgia, serif;">, whose literal meaning is <em>&ldquo;The Suns charioteer&rdquo;</em>, is an epic that retells the story of <strong>Karna</strong>, a significant character from the Indian epic, the Mahabharata.</span></p>
