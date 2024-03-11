@@ -158,7 +158,7 @@ if choose == "Compendia":
                 st.markdown(""" <style> .font {
                 font-size:22px ; font-family: 'Black'; color: #FFFFF;}
                 </style> """, unsafe_allow_html=True)
-                st.markdown('<p class="font">The Charvaka Philosophy</p>', unsafe_allow_html=True)    
+                st.markdown('<p class="font">Rashmirathi</p>', unsafe_allow_html=True)    
                 st.markdown('This article explores "Rashmirathi" by Ramdhari Singh Dinkar, delving into its philosophical and literary themes, offering insights into duty, morality, and the complexities of the Mahabharata characters.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
                 showthecontent('./New/Books/Rashmirathi.html', 7180)
