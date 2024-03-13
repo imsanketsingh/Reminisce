@@ -254,45 +254,9 @@ if choose == "Compendia":
     elif topic == "BeMyGuest":
 
         #Topic 5 Content 1
-        html_code = """
-                    <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Coming Soon Animation</title>
-                    <style>
-                        @keyframes slideIn {
-                            0% {
-                                transform: translateY(-50px);
-                                opacity: 0;
-                            }
-                            100% {
-                                transform: translateY(0);
-                                opacity: 1;
-                            }
-                        }
-
-                        .coming-soon {
-                            font-size: 30px;
-                            text-align: center;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            animation: slideIn 1.5s ease forwards;
-                            font-weight: bold;
-                            color: #FF5733; /* Orange color */
-                        }
-                    </style>
-                    </head>
-                    <body>
-                        <div class="coming-soon">Coming Soon</div>
-                    </body>
-                    </html>
-                    """
-
-    st.markdown(html_code, unsafe_allow_html=True)
+        st.markdown("""
+    <iframe src="coming_soon_animation.html" width="500" height="300" frameborder="0" scrolling="no"></iframe>
+""", unsafe_allow_html=True)
 
 
 
