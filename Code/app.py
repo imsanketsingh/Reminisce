@@ -58,10 +58,10 @@ with st.sidebar:
     
 ################################################################COMPENDIA######################################################################################
 
-# def showthecontent(filepath, height):
-#     with open(filepath, "r") as f:
-#         html_string = f.read()
-#     components.html(html_string, scrolling = True, height=50)
+def showthecontent(filepath, height):
+    with open(filepath, "r") as f:
+        html_string = f.read()
+    components.html(html_string, scrolling = True, height=height)
 
 
 
