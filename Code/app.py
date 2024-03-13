@@ -261,7 +261,7 @@ if choose == "Compendia":
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 5vh;
         }
 
         h4.animate-charcter {
