@@ -254,9 +254,29 @@ if choose == "Compendia":
     elif topic == "BeMyGuest":
 
         #Topic 5 Content 1
-        st.markdown("""
-    <iframe src="coming_soon_animation.html" width="500" height="300" frameborder="0" scrolling="no"></iframe>
-""", unsafe_allow_html=True)
+        html_code = """
+<style>
+    .coming-soon {
+        font-family: Arial, sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        animation: colorChange 5s infinite alternate;
+    }
+
+    @keyframes colorChange {
+        0% { color: red; }
+        25% { color: blue; }
+        50% { color: green; }
+        75% { color: orange; }
+        100% { color: purple; }
+    }
+</style>
+
+<div class="coming-soon">**Coming Soon**</div>
+"""
+
+        st.markdown(html_code, unsafe_allow_html=True)
 
 
 
