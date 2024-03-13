@@ -63,6 +63,31 @@ def showthecontent(filepath):
         html_string = f.read()
     components.html(html_string, scrolling = True, height=700)
 
+def comingSoonDisplay():
+    html_code = """
+<style>
+    .coming-soon {
+        font-family: Arial, sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        animation: colorChange 3s infinite alternate;
+    }
+
+    @keyframes colorChange {
+        0% { color: red; }
+        25% { color: yellow; }
+        50% { color: green; }
+        75% { color: orange; }
+        100% { color: purple; }
+    }
+</style>
+
+<div class="coming-soon">Coming Soon</div>
+"""
+
+    st.markdown(html_code, unsafe_allow_html=True)
+
 
 
 if choose == "Compendia":
@@ -180,7 +205,7 @@ if choose == "Compendia":
     elif topic == "Tech":
 
         #Topic 2 Tech 1
-        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+        comingSoonDisplay()
 
 
 
@@ -254,29 +279,7 @@ if choose == "Compendia":
     elif topic == "BeMyGuest":
 
         #Topic 5 Content 1
-        html_code = """
-<style>
-    .coming-soon {
-        font-family: Arial, sans-serif;
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        animation: colorChange 3s infinite alternate;
-    }
-
-    @keyframes colorChange {
-        0% { color: red; }
-        25% { color: blue; }
-        50% { color: green; }
-        75% { color: orange; }
-        100% { color: purple; }
-    }
-</style>
-
-<div class="coming-soon">Coming Soon</div>
-"""
-
-        st.markdown(html_code, unsafe_allow_html=True)
+        comingSoonDisplay()
 
 
 
