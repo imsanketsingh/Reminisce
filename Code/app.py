@@ -258,10 +258,10 @@ if choose == "Compendia":
 <style>
     .coming-soon {
         font-family: Arial, sans-serif;
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: bold;
         text-align: center;
-        animation: colorChange 5s infinite alternate;
+        animation: colorChange 3s infinite alternate;
     }
 
     @keyframes colorChange {
@@ -273,7 +273,7 @@ if choose == "Compendia":
     }
 </style>
 
-<div class="coming-soon">**Coming Soon**</div>
+<div class="coming-soon">Coming Soon</div>
 """
 
         st.markdown(html_code, unsafe_allow_html=True)
