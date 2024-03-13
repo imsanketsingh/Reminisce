@@ -65,26 +65,26 @@ def showthecontent(filepath):
 
 def comingSoonDisplay():
     html_code = """
-<style>
-    .coming-soon {
-        font-family: Arial, sans-serif;
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        animation: colorChange 3s infinite alternate;
-    }
+                    <style>
+                        .coming-soon {
+                            font-family: Arial, sans-serif;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            text-align: center;
+                            animation: colorChange 3s infinite alternate;
+                        }
 
-    @keyframes colorChange {
-        0% { color: red; }
-        25% { color: yellow; }
-        50% { color: green; }
-        75% { color: orange; }
-        100% { color: purple; }
-    }
-</style>
+                        @keyframes colorChange {
+                            0% { color: red; }
+                            25% { color: yellow; }
+                            50% { color: grey; }
+                            75% { color: orange; }
+                            100% { color: purple; }
+                        }
+                    </style>
 
-<div class="coming-soon">Coming Soon</div>
-"""
+                    <div class="coming-soon">Coming Soon</div>
+                """
 
     st.markdown(html_code, unsafe_allow_html=True)
 
