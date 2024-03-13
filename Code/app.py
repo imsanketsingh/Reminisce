@@ -61,7 +61,7 @@ with st.sidebar:
 def showthecontent(filepath, height):
     with open(filepath, "r") as f:
         html_string = f.read()
-    components.html(html_string, scrolling = True, height=height)
+    components.html(html_string, scrolling = True, height=None)
 
 
 
