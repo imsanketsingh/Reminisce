@@ -58,7 +58,7 @@ with st.sidebar:
     
 ################################################################COMPENDIA######################################################################################
 
-def showthecontent(filepath, height):
+def showthecontent(filepath):
     with open(filepath, "r") as f:
         html_string = f.read()
     components.html(html_string, scrolling = True, height=700)
@@ -161,7 +161,7 @@ if choose == "Compendia":
                 st.markdown('<p class="font">Rashmirathi : Part 1</p>', unsafe_allow_html=True)    
                 st.markdown('This is the first article of the series "Rashmirathi" that explores the great epic "Rashmirathi" by Ramdhari Singh Dinkar, delving into its philosophical and literary themes, offering insights into duty, morality, and the complexities of the Mahabharata character, Karna.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Books/Rashmirathi.html', 4960)
+                showthecontent('./New/Books/Rashmirathi.html')
                 st.button("Wrap it up!", help="Close it")
                 
 
@@ -209,7 +209,7 @@ if choose == "Compendia":
                 st.markdown('<p class="font">The Charvaka Philosophy</p>', unsafe_allow_html=True)    
                 st.markdown('This article explores the philosophy of Charvaka, an ancient Indian school of thought. The article provides an overview of the Charvaka worldview, including their beliefs about the nature of reality, consciousness, and ethics.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Philosophy/Charvaka.html', 7180)
+                showthecontent('./New/Philosophy/Charvaka.html')
                 st.button("Wrap it up!", help="Close it")
                 
 
@@ -240,7 +240,7 @@ if choose == "Compendia":
                 st.markdown('<p class="font">The Pain of People</p>', unsafe_allow_html=True)    
                 st.markdown('Pain is a prevalent issue that can affect people from all walks of life. Acknowledging the pain of others is essential for building empathy and understanding, as it helps us to connect with others on a deeper level.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Beyondthepages/The Pain of People.html', 3533)
+                showthecontent('./New/Beyondthepages/The Pain of People.html')
                 st.button("Wrap it up!", help="Close it")
                 
 
