@@ -277,7 +277,7 @@ if choose == "Compendia":
         </style>
         </head>
         <body>
-        <h4 class="animate-charcter">Coming Soon</h4>
+        <h4 class="animate-character">Coming Soon</h4>
         </body>
         </html>
         """, unsafe_allow_html=True)
