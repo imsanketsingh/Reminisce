@@ -270,10 +270,6 @@ if choose == "Compendia":
         height: 5vh;
         margin: 0;
         }
-
-        h4 class="animate-charcter"{
-        animation: fadeIn 2s;
-        }
         100% {
             opacity: 1;
         }
@@ -281,7 +277,7 @@ if choose == "Compendia":
         </style>
         </head>
         <body>
-        <h4>Coming Soon</h4>
+        <h4 class="animate-charcter">Coming Soon</h4>
         </body>
         </html>
         """, unsafe_allow_html=True)
