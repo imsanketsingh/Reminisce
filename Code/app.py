@@ -271,7 +271,7 @@ if choose == "Compendia":
         margin: 0;
         }
 
-        h4 {
+        h4 class="animate-charcter"{
         animation: fadeIn 2s;
         }
         100% {
@@ -290,43 +290,7 @@ if choose == "Compendia":
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
 
 
 
