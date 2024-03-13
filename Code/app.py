@@ -256,15 +256,22 @@ if choose == "Compendia":
         #Topic 5 Content 1
 
         st.markdown("""
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coming Soon</title>
         <style>
-        .container {
+        body {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 5vh;
+        margin: 0;
         }
 
-        h4.animate-charcter {
+        h4 {
         animation: fadeIn 2s;
         }
 
@@ -277,11 +284,13 @@ if choose == "Compendia":
         }
         }
         </style>
-
-        <div class="container">
-        <h4 class="animate-charcter">Coming Soon</h4>
-        </div>
+        </head>
+        <body>
+        <h4>Coming Soon</h4>
+        </body>
+        </html>
         """, unsafe_allow_html=True)
+
 
 
 
