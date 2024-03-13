@@ -254,7 +254,35 @@ if choose == "Compendia":
     elif topic == "BeMyGuest":
 
         #Topic 5 Content 1
-        st.markdown('<div class="container"> <div class="row"> <div class="col-md-12 text-center"> <h4 class="animate-charcter"> Coming Soon </h4> </div> </div> </div>', unsafe_allow_html=True)
+
+        st.markdown("""
+        <style>
+        .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+
+        h4.animate-charcter {
+        animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+        </style>
+
+        <div class="container">
+        <h4 class="animate-charcter">Coming Soon</h4>
+        </div>
+        """, unsafe_allow_html=True)
+
 
 
 
