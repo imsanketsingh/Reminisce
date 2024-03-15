@@ -63,8 +63,10 @@ def showthecontent(filepath):
         html_string = f.read()
     components.html(html_string, scrolling = True, height=700)
 
-def comingSoonDisplay():
-    html_code = """
+def comingSoonDisplay(isEmpty):
+    html_code = """"."""
+    if(isEmpty):
+        html_code = """
                     <style>
                         .coming-soon {
                             font-family: Arial, sans-serif;
@@ -85,6 +87,29 @@ def comingSoonDisplay():
 
                     <div class="coming-soon">Coming Soon</div>
                 """
+    else:
+        html_code = """
+                    <style>
+                        .coming-soon {
+                            font-family: Arial, sans-serif;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            text-align: center;
+                            animation: colorChange 3s infinite alternate;
+                        }
+
+                        @keyframes colorChange {
+                            0% { color: red; }
+                            25% { color: yellow; }
+                            50% { color: grey; }
+                            75% { color: orange; }
+                            100% { color: purple; }
+                        }
+                    </style>
+
+                    <div class="coming-soon">More Articles Coming Soon</div>
+                """
+    
 
     st.markdown(html_code, unsafe_allow_html=True)
 
@@ -205,7 +230,25 @@ if choose == "Compendia":
     elif topic == "Tech":
 
         #Topic 2 Tech 1
-        comingSoonDisplay()
+        feature_image1 = Image.open(r'./Cover Images/statistics.jpg')
+        with st.container():
+            image_col, text_col = st.columns((2,3))
+            with image_col:
+                st.image(feature_image1)
+            with text_col:
+                st.markdown(""" <style> .font {
+                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+                </style> """, unsafe_allow_html=True)
+                st.markdown('<p class="font">The Role of Statistics in Data Science</p>', unsafe_allow_html=True)    
+                st.markdown('Discover the crucial role of statistics in Data Science, Machine Learning, and Deep Learning. Explore how statistical techniques empower data exploration, cleaning, hypothesis testing, predictive modeling, feature selection, model evaluation, training, and uncertainty estimation.', unsafe_allow_html=True)
+            if st.button("Get into it", key="mybutton"):
+                showthecontent('./New/Tech/RoleofStats.html')
+                st.button("Wrap it up!", help="Close it")
+                
+
+        for text in ["Did you like the article?"]:
+                response = st_text_rater(text=text, key='4')
+        st.write('---')
 
 
 
@@ -241,6 +284,8 @@ if choose == "Compendia":
         for text in ["Did you like the article?"]:
                 response = st_text_rater(text=text, key='4')
         st.write('---')
+
+        comingSoonDisplay(False)
 
 
 
@@ -279,7 +324,7 @@ if choose == "Compendia":
     elif topic == "BeMyGuest":
 
         #Topic 5 Content 1
-        comingSoonDisplay()
+        comingSoonDisplay(True)
 
 
 
