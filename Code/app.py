@@ -219,6 +219,8 @@ if choose == "Compendia":
                 response = st_text_rater(text=text, key='4')
         st.write('---')
 
+        comingSoonDisplay(False)
+
 
 
 
@@ -249,6 +251,8 @@ if choose == "Compendia":
         for text in ["Did you like the article?"]:
                 response = st_text_rater(text=text, key='4')
         st.write('---')
+
+        comingSoonDisplay(False)
 
 
 
@@ -311,6 +315,8 @@ if choose == "Compendia":
         for text in ["Did you like the article?"]:
                 response = st_text_rater(text=text, key='4')
         st.write('---')
+
+        comingSoonDisplay(False)
         
 
     
