@@ -255,12 +255,6 @@ if choose == "Compendia":
 
 
 
-
-
-
-
-
-
     #Topic 3
     elif topic == "Philosophy":
 
