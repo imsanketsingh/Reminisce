@@ -242,7 +242,7 @@ if choose == "Compendia":
                 font-size:22px ; font-family: 'Black'; color: #FFFFF;}
                 </style> """, unsafe_allow_html=True)
                 st.markdown('<p class="font">The Role of Statistics in Data Science</p>', unsafe_allow_html=True)    
-                st.markdown('Discover the crucial role of statistics in Data Science, Machine Learning, and Deep Learning. Explore how statistical techniques empower data exploration, cleaning, hypothesis testing, predictive modeling, feature selection, model evaluation, training, and uncertainty estimation.', unsafe_allow_html=True)
+                st.markdown('Discover the crucial role of statistics in Data Science. Explore how statistical techniques empower data exploration, cleaning, hypothesis testing, predictive modeling, feature selection, model evaluation, training, and uncertainty estimation.', unsafe_allow_html=True)
             if st.button("Get into it", key="mybutton"):
                 showthecontent('./New/Tech/RoleofStats.html')
                 st.button("Wrap it up!", help="Close it")
