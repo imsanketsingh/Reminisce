@@ -220,7 +220,7 @@ if choose == "Compendia":
         st.write('---')
 
         comingSoonDisplay(False)
-
+ 
 
 
 
