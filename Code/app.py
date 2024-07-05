@@ -1043,9 +1043,7 @@ Thank you for visiting here and exploring my articles on geopolitics, domestic n
 
 While my writing focuses on specific topics and events, I believe that philosophical reflections can add depth and insight to any subject matter. Philosophy can help us ask critical questions, challenge and broaden our perspectives. For instance, when we analyze geopolitics, we can ask questions such as: What are the underlying values, interests, and power dynamics that shape international relations? Similarly, when we examine domestic news, we can ask questions such as: What are the ethical and political implications of current events and policies? How can we foster solidarity across diverse perspectives and interests? Finally, when we study historical events, we can ask questions such as: What are the root causes and consequences of historical conflicts? How can we learn from past mistakes and achievements to shape a better future? By asking these and other philosophical questions, we can deepen our understanding of the complex, dynamic, and interconnected nature of our world.
 
-Finally, If you would like to connect with me further, I invite you to check me on various platforms. If you have any feedbacks, questions, or suggestions, you can <b>use the message box below</b> to send me a message 😇. I value your input and would love to hear from you.
-
-Once again, thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
+Finally, If you would like to connect with me further, I invite you to check me on various platforms. Thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
 
 
         css = """
@@ -1091,13 +1089,6 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
             </a>
         """
 
-        instagram_button = """
-            <a href="https://instagram.com/imsanketsingh" target="_blank" class="navigation-button">
-                <img src="https://raw.githubusercontent.com/github/explore/06c46459e7947c8a25f72798af696d66e202ac39/topics/instagram/instagram.png" alt="Instagram logo" width="20" height="20">
-                Instagram
-            </a>
-        """
-
         medium_button = """
             <a href="https://medium.com/@imsanketsingh" target="_blank" class="navigation-button">
                 <img src="https://avatars.githubusercontent.com/u/923954?s=200&v=4" alt="Medium logo" width="20" height="20">
@@ -1106,7 +1097,7 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
         """
     
 
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
 
         with col1:
             st.markdown(github_button, unsafe_allow_html=True)
@@ -1115,48 +1106,45 @@ Once again, thank you for your interest and engagement with my writing.</p>""", 
             st.markdown(linkedin_button, unsafe_allow_html=True)
 
         with col3:
-            st.markdown(instagram_button, unsafe_allow_html=True)
-
-        with col4:
             st.markdown(medium_button, unsafe_allow_html=True)
 
         st.write("___")
 
-        st.markdown(
-    """<style>
-        .element-container:nth-of-type(n) button {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 30px;
-            width: 120px;
-            background-color: #f0f5f4;
-            border: none;
-            border-radius: 8px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #597a75;
-            font-size: 20px;
-            font-weight: bold;
-            color: #333333;
-            transition: all 0.2s ease-in-out;
-        }
-        .element-container:nth-of-type(n) button:hover {
-            background-color: #333333;
-            color: #f2f2f2;
-            cursor: pointer;
-        }
-        </style>""",
-    unsafe_allow_html=True,
-    )
-        message = st.text_area("Type your message here (Kindly mention topic name)")
-        if st.button("Send"):
-            if(message==""):
-                st.write("Can't send empty message")
-            else:
-                secretdetails(message)
-                st.write("Message sent successfully!")
+    #     st.markdown(
+    # """<style>
+    #     .element-container:nth-of-type(n) button {
+    #         display: flex;
+    #         flex-direction: column;
+    #         justify-content: center;
+    #         align-items: center;
+    #         height: 30px;
+    #         width: 120px;
+    #         background-color: #f0f5f4;
+    #         border: none;
+    #         border-radius: 8px;
+    #         border-width: 1px;
+    #         border-style: solid;
+    #         border-color: #597a75;
+    #         font-size: 20px;
+    #         font-weight: bold;
+    #         color: #333333;
+    #         transition: all 0.2s ease-in-out;
+    #     }
+    #     .element-container:nth-of-type(n) button:hover {
+    #         background-color: #333333;
+    #         color: #f2f2f2;
+    #         cursor: pointer;
+    #     }
+    #     </style>""",
+    # unsafe_allow_html=True,
+    # )
+    #     message = st.text_area("Type your message here (Kindly mention topic name)")
+    #     if st.button("Send"):
+    #         if(message==""):
+    #             st.write("Can't send empty message")
+    #         else:
+    #             secretdetails(message)
+    #             st.write("Message sent successfully!")
 
 ##############################################################################QUOTES###############################################################################
 
