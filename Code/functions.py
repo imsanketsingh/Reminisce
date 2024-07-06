@@ -7,6 +7,8 @@ from io import BytesIO
 from streamlit_lottie import st_lottie
 import json
 import random
+import base64
+
 
 @st.cache
 def load_lottiefile(filepath: str):

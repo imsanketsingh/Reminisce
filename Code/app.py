@@ -3,7 +3,6 @@ from streamlit_option_menu import option_menu
 from  PIL import Image
 import numpy as np
 import pandas as pd
-import base64
 import requests
 from streamlit_text_rating.st_text_rater import st_text_rater
 import streamlit.components.v1 as components
