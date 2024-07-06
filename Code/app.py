@@ -24,7 +24,7 @@ if choose == "Home":
 elif choose == "Reminisce": 
         topic = reminisceTopics()
 
-        st.write('\n')
+        # st.write('\n')
         #Topic 1
         if topic=='Geopolitics':
             #Topic 1 Article 1
