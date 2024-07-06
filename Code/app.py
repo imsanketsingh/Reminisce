@@ -7,52 +7,15 @@ import base64
 import requests
 from streamlit_text_rating.st_text_rater import st_text_rater
 import streamlit.components.v1 as components
-import random
-from streamlit_lottie import st_lottie 
-import json
+
+
 # from emailit import details
-from functions import homePage, displayWriting, sidebar, message
+from functions import homePage, displayWriting, sidebar, message, getQuote
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
 ###################################################################################################################
-
-with st.sidebar:
-    def load_lottiefile(filepath: str):
-        with open(filepath, "r") as f:
-            return json.load(f)
-
-
-    def load_lottieurl(url: str):
-        r = requests.get(url)
-        if r.status_code != 200:
-            return None
-        return r.json()
-
-
-    lottie_hello = load_lottiefile("Code/lottieHi.json")
-
-    st_lottie(
-        lottie_hello,
-        speed=1,
-        loop=False,
-        reverse=False,
-        quality="high",
-        height=70,
-        width=300,
-        key=None,
-    )
-    choose = option_menu("", ["Home", "Reminisce", "Compendia",  "Connect"],
-                         icons=['house', 'bookmarks-fill','file-text', 'person lines fill'],
-                         menu_icon="list", default_index=0,
-                         styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#24A608"},
-    }
-    ) 
     
 ################################################################COMPENDIA######################################################################################
 
@@ -1124,32 +1087,11 @@ Finally, If you would like to connect with me further, I invite you to check me 
     #             details(message)
     #             st.write("Message sent successfully!")
 
-##############################################################################QUOTES###############################################################################
+##############################################################################QUOTES#######################
 
+getQuote()
 
-all_possible_categories = ['age', 'alone', 'amazing', 'anger', 'architecture', 'art', 'attitude', 'beauty', 'best', 'birthday', 'business', 'car', 'change', 'communications', 'computers', 'cool', 'courage', 'dad', 'dating', 'death', 'design', 'dreams', 'education', 'environmental', 'equality', 'experience', 'failure', 'faith', 'family', 'famous', 'fear', 'fitness', 'food', 'forgiveness', 'freedom', 'friendship', 'funny', 'future', 'god', 'good', 'government', 'graduation', 'great', 'happiness', 'health', 'history', 'home', 'hope', 'humor', 'imagination', 'inspirational', 'intelligence', 'jealousy', 'knowledge', 'leadership', 'learning', 'legal', 'life', 'love', 'marriage', 'men', 'mom', 'money', 'morning', 'movies', 'success']  #length= 67
-
-index = random.randint(0,(len(all_possible_categories)-1))
-category = all_possible_categories[index]
-# print(index, ": ", category)
-api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
-response = requests.get(api_url, headers={'X-Api-Key': st.secrets["QUOTES_API_KEY"]})
-if response.status_code == requests.codes.ok:
-    st.sidebar.markdown("<p style='font-style: italic;'>{}</p>".format(response.json()[0]['quote']), unsafe_allow_html=True)
-    st.sidebar.markdown("<p style='font-style: italic; text-align: right; margin-right: 2rem;'>{}</p>".format("- "+ response.json()[0]['author']), unsafe_allow_html=True)
-else:
-    print("Error:", response.status_code, response.text)
-
-
-
-st.sidebar.markdown("""
-<div style='text-align: center; position: relative; bottom: 0px; width: 100%;'>
-    <span style='color: #04376e; font-family: Helvetica; font-weight: bold;'>Made with ✨ by Sanket</span>
-</div>
-""", unsafe_allow_html=True)
-
-###################################################################################################################################################################
-
+###########################################################################################################
 
 hide_st_style = """
             <style>
@@ -1158,5 +1100,4 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-
-###################################################################################################################################################################
+###########################################################################################################

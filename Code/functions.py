@@ -4,6 +4,36 @@ import streamlit.components.v1 as components
 from streamlit_option_menu import option_menu
 import requests
 from io import BytesIO
+from streamlit_lottie import st_lottie
+import json
+import random
+
+
+def lottieWork():
+    def load_lottiefile(filepath: str):
+        with open(filepath, "r") as f:
+            return json.load(f)
+
+
+    def load_lottieurl(url: str):
+        r = requests.get(url)
+        if r.status_code != 200:
+            return None
+        return r.json()
+
+
+    lottie_hello = load_lottiefile("Code/lottieHi.json")
+
+    st_lottie(
+        lottie_hello,
+        speed=1,
+        loop=False,
+        reverse=False,
+        quality="high",
+        height=70,
+        width=300,
+        key=None,
+    )
 
 
 def homePage(title, message):
@@ -89,7 +119,12 @@ def sidebar():
         "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#24A608"},
     }
-    ) 
+    )
+    st.sidebar.markdown("""
+<div style='text-align: center; position: relative; bottom: 0px; width: 100%;'>
+    <span style='color: #04376e; font-family: Helvetica; font-weight: bold;'>Made with ✨ by Sanket</span>
+</div>
+""", unsafe_allow_html=True)
     return choose
 
 
@@ -105,3 +140,19 @@ I also briefly worked with GJH, but due to conflicting priorities with my studie
 
 My goal with this website is to share my passion for writing, offer unique perspectives on important issues, and engage with readers like you. I hope you find my articles informative, thought-provoking, and engaging. Thank you for visiting the website and being a part of my journey so far!</p>
 <p style="color: #8f8e8c; font-size: 14px; font-style:helvetica;"><i>Note: The site is still in testing phase and some Chromium browsers may block the display of the PDF in the Reminisce tab. In that case Firefox would serve the purpose and work like a charm.<br>Inconvenience caused is deeply regretted.</p>"""
+
+
+
+def getQuote():
+    all_possible_categories = ['age', 'alone', 'amazing', 'anger', 'architecture', 'art', 'attitude', 'beauty', 'best', 'birthday', 'business', 'car', 'change', 'communications', 'computers', 'cool', 'courage', 'dad', 'dating', 'death', 'design', 'dreams', 'education', 'environmental', 'equality', 'experience', 'failure', 'faith', 'family', 'famous', 'fear', 'fitness', 'food', 'forgiveness', 'freedom', 'friendship', 'funny', 'future', 'god', 'good', 'government', 'graduation', 'great', 'happiness', 'health', 'history', 'home', 'hope', 'humor', 'imagination', 'inspirational', 'intelligence', 'jealousy', 'knowledge', 'leadership', 'learning', 'legal', 'life', 'love', 'marriage', 'men', 'mom', 'money', 'morning', 'movies', 'success']  #length= 67
+
+    index = random.randint(0,(len(all_possible_categories)-1))
+    category = all_possible_categories[index]
+    # print(index, ": ", category)
+    api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
+    response = requests.get(api_url, headers={'X-Api-Key': st.secrets["QUOTES_API_KEY"]})
+    if response.status_code == requests.codes.ok:
+        st.sidebar.markdown("<p style='font-style: italic;'>{}</p>".format(response.json()[0]['quote']), unsafe_allow_html=True)
+        st.sidebar.markdown("<p style='font-style: italic; text-align: right; margin-right: 2rem;'>{}</p>".format("- "+ response.json()[0]['author']), unsafe_allow_html=True)
+    else:
+        print("Error:", response.status_code, response.text)
