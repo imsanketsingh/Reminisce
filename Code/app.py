@@ -7,14 +7,12 @@ import requests
 from streamlit_text_rating.st_text_rater import st_text_rater
 import streamlit.components.v1 as components
 
-
-# from emailit import details
 from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, showPDF, reminisceTopics
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
-
 choose = sidebar()
+topic = reminisceTopics()
 
 ###################################################################################################################
 
@@ -25,10 +23,7 @@ if choose == "Home":
 ###################################################################################################################
 
 elif choose == "Reminisce": 
-        topic = reminisceTopics()
-
-
-##################################################################################################################
+        
 
         st.write('\n')
         #Topic 1
