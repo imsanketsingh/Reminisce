@@ -338,3 +338,16 @@ def showPDF(file_path):
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
     pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
+
+
+def reminisceTopics():
+    return option_menu(None, ["Geopolitics", "India", "History", "Others"],
+                         icons=['book', 'book','book','book'],
+                         menu_icon="list", default_index=0,
+                         styles={
+        "container": {"padding": "5!important", "background-color": "#fafafa"},
+        "icon": {"color": "orange", "font-size": "20px"}, 
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#080000"},
+        },orientation='horizontal'
+        ) 

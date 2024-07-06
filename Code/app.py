@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 
 
 # from emailit import details
-from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, showPDF
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, showPDF, reminisceTopics
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -25,16 +25,7 @@ if choose == "Home":
 ###################################################################################################################
 
 elif choose == "Reminisce": 
-        topic = option_menu(None, ["Geopolitics", "India", "History", "Others"],
-                         icons=['book', 'book','book','book'],
-                         menu_icon="list", default_index=0,
-                         styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "20px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#080000"},
-        },orientation='horizontal'
-        ) 
+        topic = reminisceTopics()
 
 
 ##################################################################################################################
