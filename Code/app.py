@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 
 
 # from emailit import details
-from functions import homePage, displayWriting, sidebar, message, getQuote
+from functions import homePage, displayWriting, sidebar, message, getQuoteAndSign
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -1091,7 +1091,7 @@ Finally, If you would like to connect with me further, I invite you to check me 
 
 ##############################################################################QUOTES#######################
 
-getQuote()
+getQuoteAndSign()
 
 ###########################################################################################################
 
