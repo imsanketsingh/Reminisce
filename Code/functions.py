@@ -139,11 +139,6 @@ My goal with this website is to share my passion for writing, offer unique persp
 
 
 def getQuoteAndSign():
-    st.sidebar.markdown("""
-<div style='text-align: center; position: relative; bottom: 0px; width: 100%;'>
-    <span style='color: #04376e; font-family: Helvetica; font-weight: bold;'>Made with ✨ by Sanket</span>
-</div>
-""", unsafe_allow_html=True)
     all_possible_categories = ['age', 'alone', 'amazing', 'anger', 'architecture', 'art', 'attitude', 'beauty', 'best', 'birthday', 'business', 'car', 'change', 'communications', 'computers', 'cool', 'courage', 'dad', 'dating', 'death', 'design', 'dreams', 'education', 'environmental', 'equality', 'experience', 'failure', 'faith', 'family', 'famous', 'fear', 'fitness', 'food', 'forgiveness', 'freedom', 'friendship', 'funny', 'future', 'god', 'good', 'government', 'graduation', 'great', 'happiness', 'health', 'history', 'home', 'hope', 'humor', 'imagination', 'inspirational', 'intelligence', 'jealousy', 'knowledge', 'leadership', 'learning', 'legal', 'life', 'love', 'marriage', 'men', 'mom', 'money', 'morning', 'movies', 'success']  #length= 67
 
     index = random.randint(0,(len(all_possible_categories)-1))
@@ -156,3 +151,8 @@ def getQuoteAndSign():
         st.sidebar.markdown("<p style='font-style: italic; text-align: right; margin-right: 2rem;'>{}</p>".format("- "+ response.json()[0]['author']), unsafe_allow_html=True)
     else:
         print("Error:", response.status_code, response.text)
+    st.sidebar.markdown("""
+<div style='text-align: center; position: relative; bottom: 0px; width: 100%;'>
+    <span style='color: #04376e; font-family: Helvetica; font-weight: bold;'>Made with ✨ by Sanket</span>
+</div>
+""", unsafe_allow_html=True)
