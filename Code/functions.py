@@ -338,14 +338,25 @@ def showPDF(file_path):
     pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
 
-
+def displayImg(featureImagePath, title, metaDescription):
+    feature_image = Image.open(featureImagePath)
+    with st.container():
+        image_col, text_col = st.columns((2, 3))
+        with image_col:
+            st.image(feature_image)
+        with text_col:
+            st.markdown(""" <style> .font {
+            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+            </style> """, unsafe_allow_html=True)
+            st.markdown(f'<p class="font">{title}</p>', unsafe_allow_html=True)
+            st.markdown(f'{metaDescription}', unsafe_allow_html=True)
 
 def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription):
     feature_image = Image.open(featureImagePath)
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(feature_image)
+            st.image(feature_image, caption='Unpublished')
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}

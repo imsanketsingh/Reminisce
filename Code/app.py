@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, displayPDF, reminisceTopics
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, displayPDF, reminisceTopics, displayImg
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -48,233 +48,29 @@ elif choose == "Reminisce":
         #Topic 2
         elif topic=='India':
             #Topic 2 Article 1
-            feature_image1 = Image.open(r'./Cover Images/LT_Covid_Havoc_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Is PM Modi Responsible for the COVID Havoc?</p>', unsafe_allow_html=True)    
-                    st.markdown('Almost everyone in this country had seen Pictures of PM Modi addressing huge crowds who were mostly without masks or social distancing, gathered for his recent election rallies in West Bengal...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='1'):            
-                    showPDF('./Published/LT_Covid_Havoc_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='2')             
-            with col3:
-                with open("./Published/LT_Covid_Havoc_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='3',
-                        data=PDFbyte,
-                        file_name="Is PM Modi Responsible for the COVID Havoc?.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='4')
-
-            st.write('---')
-
+            displayPDF("RI1", './Cover Images/LT_Covid_Havoc_compressed.jpg', './Published/LT_Covid_Havoc_compressed.pdf', 'Is PM Modi Responsible for the COVID Havoc?', 'Almost everyone in this country had seen Pictures of PM Modi addressing huge crowds who were mostly without masks or social distancing, gathered for his recent election rallies in West Bengal...')
 
             #Topic 2 Article 2
-            feature_image1 = Image.open(r'./Cover Images/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Dutch Minister Slams Arab Nations Over the Controversial Remarks on Prophet Mohammad</p>', unsafe_allow_html=True)    
-                    st.markdown('The matter of the controversial statement of former BJP spokesperson Nupur Sharma on Prophet Mohammad PBUH has spread all over the world. Many Arab and Islamic countries condemned this statement...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='5'):            
-                    showPDF('./Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
-            with col2:
-                st.button('Close Article',key='6')             
-            with col3:
-                with open("./Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='7',
-                        data=PDFbyte,
-                        file_name="Dutch Minister Slams Arab Nations Over Controversial Remarks on Prophet Mohammad.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='8')
-
-            st.write('---')
+            displayPDF("RI2", './Cover Images/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.jpg', './Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf', 'Dutch Minister Slams Arab Nations Over the Controversial Remarks on Prophet Mohammad', 'The matter of the controversial statement of former BJP spokesperson Nupur Sharma on Prophet Mohammad PBUH has spread all over the world. Many Arab and Islamic countries condemned this statement...')
 
             #Topic 2 Article 3
-            feature_image1 = Image.open(r'./Cover Images/India Qatar Relations.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">India Qatar Relations</p>', unsafe_allow_html=True)    
-                    st.markdown('The foreign ministry awared Qatar by stating "vested interests that are against India-Qatar relations have been inciting the people using these derogatory comments. We should work together against such mischievous elements who aim to undercut the strength of our bilateral ties"...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='9'):            
-                    showPDF('./Unpublished/India Qatar Relations.pdf')
-            with col2:
-                st.button('Close Article',key='10')             
-            with col3:
-                with open("./Unpublished/India Qatar Relations.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='11',
-                        data=PDFbyte,
-                        file_name="India Qatar Relations.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='12')
-
-            st.write('---')
+            displayPDF("RI3", './Cover Images/India Qatar Relations.jpg', './Unpublished/India Qatar Relations.pdf', 'India Qatar Relations', 'The foreign ministry awared Qatar by stating "vested interests that are against India-Qatar relations have been inciting the people using these derogatory comments. We should work together against such mischievous elements who aim to undercut the strength of our bilateral ties"...')
 
             #Topic 2 Article 4
-            feature_image1 = Image.open(r'./Cover Images/Taliban-India.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">The growing ties between India and The Afghanistan Taliban</p>', unsafe_allow_html=True)    
-                    st.markdown("Most decisions in international relations are for long-term gains. India may not get any benefit, but there should be no loss. It's because India's two enemies, China and Pakistan, are engaged in making their hold in Afghanistan...<b>[Read More👇]</b>", unsafe_allow_html=True)
+            displayPDF("RI4", './Cover Images/Taliban-India.jpg', './Unpublished/Taliban-India.pdf', 'The growing ties between India and The Afghanistan Taliban', 'Most decisions in international relations are for long-term gains. India may not get any benefit, but there should be no loss. It\'s because India\'s two enemies, China and Pakistan, are engaged in making their hold in Afghanistan...')
 
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='13'):            
-                    showPDF('./Unpublished/Taliban-India.pdf')
-            with col2:
-                st.button('Close Article',key='14')             
-            with col3:
-                with open("./Unpublished/Taliban-India.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='15',
-                        data=PDFbyte,
-                        file_name="The growing ties between India and The Afghanistan Taliban.pdf",
-                        mime='application/octet-stream')
 
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='16')
-
-            st.write('---')
-        
 
         #Topic 3
         elif topic=='History':
             #Topic 3 Article 1
-            feature_image1 = Image.open(r'./Cover Images/LT_Congress_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">The Fall of Indian National Congress: Then and Now</p>', unsafe_allow_html=True)    
-                    st.markdown('Indian National Congress, founded in 1885 is believed to be one of the oldest political parties in the world. An organization that has the distinction of cooperation in providing independence to India...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='1'):            
-                    showPDF('./Published/LT_Congress_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='2')             
-            with col3:
-                with open("./Published/LT_Congress_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='3',
-                        data=PDFbyte,
-                        file_name="The Fall of Indian National Congress: Then and Now.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='4')
-
-            st.write('---')
+            displayPDF("RH1", './Cover Images/LT_Congress_compressed.jpg', './Published/LT_Congress_compressed.pdf', 'The Fall of Indian National Congress: Then and Now', 'Indian National Congress, founded in 1885 is believed to be one of the oldest political parties in the world. An organization that has the distinction of cooperation in providing independence to India...')
 
             #Topic 3 Article 2
-            feature_image1 = Image.open(r'./Cover Images/LT_Naxal_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">A Brief History of Naxalism in India</p>', unsafe_allow_html=True)    
-                    st.markdown('Charu Majumdar was not only a political leader but a great writer also. His “Historic Eight Documents” formed the basis of Naxalite ideology in India. This was a big reason that not only Rural or Tribal but Urban elites were also attracted towards this ideology...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='5'):            
-                    showPDF('./Published/LT_Naxal_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='6')             
-            with col3:
-                with open("./Published/LT_Naxal_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='7',
-                        data=PDFbyte,
-                        file_name="A Brief History of Naxalism in India.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='8')
-
-            st.write('---')
-
+            displayPDF("RH2", './Cover Images/LT_Naxal_compressed.jpg', './Published/LT_Naxal_compressed.pdf', 'A Brief History of Naxalism in India', 'Charu Majumdar was not only a political leader but a great writer also. His “Historic Eight Documents” formed the basis of Naxalite ideology in India. This was a big reason that not only Rural or Tribal but Urban elites were also attracted towards this ideology...')
 
             #Topic 3 Article 3
-            feature_image1 = Image.open(r'./Cover Images/Israel-Arab.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Israel & Arab: A Beginning of Normalisation of Relationship</p>', unsafe_allow_html=True)    
-                    st.markdown('One of the most protracted and bloody dispute of the post WW II Era, based on the claims of two religious communities over one piece land. The Arab-Israeli conflict is one of the major concerns in the field of security and stability in the Middle East...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='9'):            
-                    showPDF('./Unpublished/Israel-Arab.pdf')
-            with col2:
-                st.button('Close Article',key='10')             
-            with col3:
-                with open("./Unpublished/Israel-Arab.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='11',
-                        data=PDFbyte,
-                        file_name="Israel & Arab: A Beginning of Normalisation of Relationship.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='12')
-
-            st.write('---')
+            displayPDF("RH3", './Cover Images/Israel-Arab.jpg', './Unpublished/Israel-Arab.pdf', 'Israel & Arab: A Beginning of Normalisation of Relationship', 'One of the most protracted and bloody dispute of the post WW II Era, based on the claims of two religious communities over one piece land. The Arab-Israeli conflict is one of the major concerns in the field of security and stability in the Middle East...')
 
 
 
@@ -282,116 +78,17 @@ elif choose == "Reminisce":
         elif topic=='Others':
 
             #Topic 4 Article 1
-            feature_image1 = Image.open(r'./Cover Images/Certificate.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption="Certificate")
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Certificate of Appreciation</p>', unsafe_allow_html=True)    
-                    st.markdown('A Certificate of Appreciation from the co-founders and Editor-in-Chief of The LookThrou Magazine.', unsafe_allow_html=True)          
+            displayPDF("RO1", './Cover Images/LT_BiharElection_compressed.jpg', './Published/LT_BiharElection_compressed.pdf', 'Bihar Assembly Elections 2020: An Analysis', 'A Full-Page advertisements in different newspapers in the mid of March 2020 caught the attention of many, with a young lady staring at readers along with the caption…CM Candidate of Bihar 2020...')
 
-            st.write('---')
-            
             #Topic 4 Article 2
-            feature_image1 = Image.open(r'./Cover Images/LT_BiharElection_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Bihar Assembly Elections 2020: An Analysis</p>', unsafe_allow_html=True)    
-                    st.markdown('A Full-Page advertisements in different newspapers in the mid of March 2020 caught the attention of many, with a young lady staring at readers along with the caption…CM Candidate of Bihar 2020...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='3'):            
-                    showPDF('./Published/LT_BiharElection_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='4')             
-            with col3:
-                with open("./Published/LT_BiharElection_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='5',
-                        data=PDFbyte,
-                        file_name="Bihar Assembly Elections 2020: An Analysis.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='6')
-
-            st.write('---')
+            displayPDF("RO2", './Cover Images/LT_CalifornianWildfire_compressed.jpg', './Published/LT_CalifornianWildfire_compressed.pdf', 'Deadly Climatic Extremes: The Californian Wildfire', 'It\'s the changing Climate. Thousands of lightning strikes have sparked hundreds of fires across California. The average daily temperature are about 3° or 4° F warmer..')
 
             #Topic 4 Article 3
-            feature_image1 = Image.open(r'./Cover Images/LT_CalifornianWildfire_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Deadly Climatic Extremes: The Californian Wildfire</p>', unsafe_allow_html=True)    
-                    st.markdown('It’s the changing Climate. Thousands of lightning strikes have sparked hundreds of fires across California. The average daily temperature are about 3° or 4° F warmer..<b>[Read More👇]</b>', unsafe_allow_html=True)
+            displayPDF("RO3", './Cover Images/LT_SetuBharatam_compressed.jpg', './Published/LT_SetuBharatam_compressed.pdf', 'Setu Bharatam Project', 'The Setu Bharatam Project is a government initiative in India that aims to make all national highways free of railway crossings by the year 2024. The project was launched by Prime Minister Narendra Modi in March 2016...')
 
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='7'):            
-                    showPDF('./Published/LT_CalifornianWildfire_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='8')             
-            with col3:
-                with open("./Published/LT_CalifornianWildfire_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='9',
-                        data=PDFbyte,
-                        file_name="Deadly Climatic Extremes: The Californian Wildfire.pdf",
-                        mime='application/octet-stream')
+            #Topic 4 Certificate
+            displayImg('./Cover Images/Certificate.jpg','Certificate of Appreciation', 'A Certificate of Appreciation from the co-founders and Editor-in-Chief of The LookThrou Magazine.')
 
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='10')
-
-            st.write('---')
-
-
-            #Topic 4 Article 4
-            feature_image1 = Image.open(r'./Cover Images/LT_SetuBharatam_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Setu Bharatam Project</p>', unsafe_allow_html=True)    
-                    st.markdown('The Setu Bharatam Project is a government initiative in India that aims to make all national highways free of railway crossings by the year 2024. The project was launched by Prime Minister Narendra Modi in March 2016...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='11'):            
-                    showPDF('./Published/LT_SetuBharatam_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='12')             
-            with col3:
-                with open("./Published/LT_SetuBharatam_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='13',
-                        data=PDFbyte,
-                        file_name="Setu Bharatam Project.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='14')
-
-            st.write('---')
 
 ###################################################################################################################
 
@@ -617,4 +314,3 @@ elif choose == "Connect":
 
 getQuoteAndSign()
 hideFooter()
-
