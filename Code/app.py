@@ -21,7 +21,7 @@ elif choose == "Reminisce":
             #Topic 1 Article 1
 
             
-            displayPDF("RG1", './Cover Images/LT_IranUS_compressed.jpg', './Published/LT_IranUS_compressed.pdf', 'Joe Biden and the future of Iran', 'During his campaign, President Biden expressed a desire to return to the Joint Comprehensive Plan of Action (JCPOA), also known as the Iran nuclear deal, signed in 2015 under the Obama administration... ')
+            displayPDF("RG1", './Cover Images/LT_IranUS_compressed.jpg', './Published/LT_IranUS_compressed.pdf', 'Joe Biden and the future of Iransss', 'During his campaign, President Biden expressed a desire to return to the Joint Comprehensive Plan of Action (JCPOA), also known as the Iran nuclear deal, signed in 2015 under the Obama administration... ')
 
 
 
