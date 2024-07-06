@@ -28,166 +28,21 @@ elif choose == "Reminisce":
             displayPDF("RG3", './Cover Images/LT_Taliban_compressed.jpg', './Published/LT_Taliban_compressed.pdf', 'The rising terror of Taliban and other nations ignoring it?', 'The Taliban\'s resurgence in Afghanistan and the increase in violence and terrorism is a cause for concern for the global community. Since the US withdrawal...')
 
             #Topic 1 Article 4
-            feature_image1 = Image.open(r'./Cover Images/LT_WarExtremisim_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown("<p class='font'>Europe's War Against Radical Extremism</p>", unsafe_allow_html=True)    
-                    st.markdown("From the beheading of a school teacher in Paris followed by an attack in Nice and the same in Vienna, the whole of Europe is in shock amid...<b>[Read More👇]</b>", unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='13'):            
-                    showPDF('./Published/LT_WarExtremisim_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='14')             
-            with col3:
-                with open("./Published/LT_WarExtremisim_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='15',
-                        data=PDFbyte,
-                        file_name="Europe's War Against Radical Extremism.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='16')
-
-            st.write('---')
+            displayPDF("RG4", './Cover Images/LT_WarExtremisim_compressed.jpg', './Published/LT_WarExtremisim_compressed.pdf', 'Europe\'s War Against Radical Extremism', 'From the beheading of a school teacher in Paris followed by an attack in Nice and the same in Vienna, the whole of Europe is in shock amid...')
 
             #Topic 1 Article 5
-            feature_image1 = Image.open(r'./Cover Images/LT_TalibanVsISIS_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown("<p class='font'>Taliban's rivalry with ISIS is shaping Afghan peace talks</p>", unsafe_allow_html=True)    
-                    st.markdown("The ongoing rivalry between the Taliban and ISIS is playing a significant role in shaping the current Afghan peace talks. The two groups have different objectives and...<b>[Read More👇]</b>", unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='17'):            
-                    showPDF('./Published/LT_TalibanVsISIS_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='18')             
-            with col3:
-                with open("./Published/LT_TalibanVsISIS_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='19',
-                        data=PDFbyte,
-                        file_name="Taliban's rivalry with ISIS is shaping Afghan peace talks.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='20')
-
-            st.write('---')
+            displayPDF("RG5", './Cover Images/LT_TalibanVsISIS_compressed.jpg', './Published/LT_TalibanVsISIS_compressed.pdf', 'Taliban\'s rivalry with ISIS is shaping Afghan peace talks', 'The ongoing rivalry between the Taliban and ISIS is playing a significant role in shaping the current Afghan peace talks. The two groups have different objectives and...')
 
 
             #Topic 1 Article 6
-            feature_image1 = Image.open(r'./Cover Images/Boris Johnson survived the No confidence vote.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown("<p class='font'>Boris Johnsons survived the No confidence vote</p>", unsafe_allow_html=True)    
-                    st.markdown("Boris Johnson, the British Prime Minister, faced a no-confidence vote in September 2019, shortly after taking office. However, he survived the vote, which was...<b>[Read More👇]</b>", unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='21'):            
-                    showPDF('./Unpublished/Boris Johnson survived the No confidence vote.pdf')
-            with col2:
-                st.button('Close Article',key='22')             
-            with col3:
-                with open("./Unpublished/Boris Johnson survived the No confidence vote.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='23',
-                        data=PDFbyte,
-                        file_name="Boris Johnson survived the No confidence vote.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='24')
-
-            st.write('---')
-
+            displayPDF("RG6", './Cover Images/Boris Johnson survived the No confidence vote.jpg', './Unpublished/Boris Johnson survived the No confidence vote.pdf', 'Boris Johnsons survived the No confidence vote', 'Boris Johnson, the British Prime Minister, faced a no-confidence vote in September 2019, shortly after taking office. However, he survived the vote, which was...')
 
             #Topic 1 Article 7
-            feature_image1 = Image.open(r'./Cover Images/Imran Khan carried out Suicide Bombings throughout Pakistan.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown("<p class='font'>Imran Khan carried out 'Suicide Bombings' throughout Pakistan</p>", unsafe_allow_html=True)    
-                    st.markdown("Former Pak prime minister and leader of Pakistan Muslim League-Nawaz (PML-N), Shahid Khaqan Abbasi, launched a blistering attack...<b>[Read More👇]</b>", unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='25'):            
-                    showPDF("./Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
-            with col2:
-                st.button('Close Article',key='26')             
-            with col3:
-                with open("./Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='27',
-                        data=PDFbyte,
-                        file_name="Imran Khan carried out Suicide Bombings throughout Pakistan.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='28')
-
-            st.write('---')
+            displayPDF("RG7", './Cover Images/Imran Khan carried out Suicide Bombings throughout Pakistan.jpg', './Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf', 'Imran Khan carried out \'Suicide Bombings\' throughout Pakistan', 'Former Pak prime minister and leader of Pakistan Muslim League-Nawaz (PML-N), Shahid Khaqan Abbasi, launched a blistering attack...')
 
             #Topic 1 Article 8
-            feature_image1 = Image.open(r'./Cover Images/UN must ensure Human Rights in Kashmir.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1, caption='Unpublished')
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown("<p class='font'>UN must ensure 'Human Rights' in Kashmir</p>", unsafe_allow_html=True)    
-                    st.markdown("At a joint press conference with his Pakistani counterpart Bilawal Bhutto in Islamabad on Tuesday, Baerbock assured journalists that the UN has a role to play in ensuring 'human rights' in Kashmir...<b>[Read More👇]</b>", unsafe_allow_html=True)
+            displayPDF("RG8", './Cover Images/UN must ensure Human Rights in Kashmir.jpg', './Unpublished/UN must ensure Human Rights in Kashmir.pdf', 'UN must ensure \'Human Rights\' in Kashmir', 'At a joint press conference with his Pakistani counterpart Bilawal Bhutto in Islamabad on Tuesday, Baerbock assured journalists that the UN has a role to play in ensuring \'human rights\' in Kashmir...')
 
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='29'):            
-                    showPDF("./Unpublished/UN must ensure Human Rights in Kashmir.pdf")
-            with col2:
-                st.button('Close Article',key='30')             
-            with col3:
-                with open("./Unpublished/UN must ensure Human Rights in Kashmir.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='31',
-                        data=PDFbyte,
-                        file_name="UN must ensure Human Rights in Kashmir.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='32')
-
-            st.write('---')
 
 
         #Topic 2
