@@ -13,7 +13,7 @@ def homePage(title, message):
         st.markdown(""" <style> .font {
         font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
         </style> """, unsafe_allow_html=True)
-        st.markdown(f'<p style="color: #767196; font-size: 27px; font-style:helvetica;">{title}</p>', unsafe_allow_html=True)    
+        st.markdown(f'<p style="color: #767196; font-size: 33px; font-weight:Bold; font-style:helvetica;">{title}/p>', unsafe_allow_html=True)
     st.markdown(f"""{message}""", unsafe_allow_html=True)
 
 
