@@ -8,6 +8,7 @@ from streamlit_lottie import st_lottie
 import json
 import random
 import base64
+from streamlit_text_rating.st_text_rater import st_text_rater
 
 
 @st.cache
@@ -54,12 +55,12 @@ def showthecontent(filepath):
 def displayWriting(uniqueKey, coverImageUrl, heading, metaDescription, contentPath):
     response = requests.get(coverImageUrl)
     image_data = BytesIO(response.content)
-    learningCoverImage1 = Image.open(image_data)
-    learningCoverImage1 = learningCoverImage1.resize((320, 240))
+    learningCoverImage = Image.open(image_data)
+    learningCoverImage = learningCoverImage.resize((320, 240))
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(learningCoverImage1)
+            st.image(learningCoverImage)
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
@@ -333,11 +334,48 @@ def comingSoonDisplay(isEmpty):
     st.markdown(html_code, unsafe_allow_html=True)
 
 
+
+
 def showPDF(file_path):
     with open(file_path,"rb") as f:
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
     pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
+
+
+
+def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription):
+    feature_image = Image.open(featureImagePath)
+    with st.container():
+        image_col, text_col = st.columns((2, 3))
+        with image_col:
+            st.image(feature_image)
+        with text_col:
+            st.markdown(""" <style> .font {
+            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+            </style> """, unsafe_allow_html=True)
+            st.markdown(f'<p class="font">{title}</p>', unsafe_allow_html=True)
+            st.markdown(f'{metaDescription}<b>[Read More👇]</b>', unsafe_allow_html=True)
+
+    col1, col2,col3= st.columns(3)
+    with col1:  
+        if st.button('Open Article',key = str(uniqueKey)+'1'):            
+            showPDF(contentPath)
+    with col2:
+        st.button('Close Article',key= str(uniqueKey)+'2')             
+    with col3:
+        with open(contentPath, "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+        st.download_button(label="Download PDF Article", key= str(uniqueKey)+'3',
+                data=PDFbyte,
+                file_name= str(title)+".pdf",
+                mime='application/octet-stream')
+
+    for text in ["Did you like the article?"]:
+            response = st_text_rater(text=text, key= str(uniqueKey)+'4')
+    st.write('---')
+
+
 
 
 def reminisceTopics():

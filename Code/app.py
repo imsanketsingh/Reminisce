@@ -3,11 +3,9 @@ from streamlit_option_menu import option_menu
 from  PIL import Image
 import numpy as np
 import pandas as pd
-import requests
-from streamlit_text_rating.st_text_rater import st_text_rater
 import streamlit.components.v1 as components
 
-from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, showPDF, reminisceTopics
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, displayPDF, reminisceTopics
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -24,10 +22,15 @@ if choose == "Home":
 elif choose == "Reminisce": 
         topic = reminisceTopics()
 
-        # st.write('\n')
         #Topic 1
         if topic=='Geopolitics':
             #Topic 1 Article 1
+
+            
+            displayPDF("RG1", './Cover Images/LT_IranUS_compressed.jpg', './Published/LT_IranUS_compressed.pdf', 'Joe Biden and the future of Iran', 'During his campaign, President Biden expressed a desire to return to the Joint Comprehensive Plan of Action (JCPOA), also known as the Iran nuclear deal, signed in 2015 under the Obama administration... ')
+
+
+
             feature_image1 = Image.open(r'./Cover Images/LT_IranUS_compressed.jpg')
             with st.container():
                 image_col, text_col = st.columns((2,3))
