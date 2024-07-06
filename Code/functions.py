@@ -207,10 +207,6 @@ def userMessage():
 def connectMedia():
     st.markdown("")
     st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
 
     css = """
             .navigation-button {
