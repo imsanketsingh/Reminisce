@@ -151,7 +151,7 @@ def getQuoteAndSign():
         st.sidebar.markdown("<p style='font-style: italic; text-align: right; margin-right: 2rem;'>{}</p>".format("- "+ response.json()[0]['author']), unsafe_allow_html=True)
     else:
         print("Error:", response.status_code, response.text)
-    st.markdown("")
+    # st.markdown("")
     st.sidebar.markdown("""
 <div style='text-align: center; position: relative; bottom: 0px; width: 100%;'>
     <span style='color: #04376e; font-family: Helvetica; font-weight: bold;'>Made with ✨ by Sanket</span>
