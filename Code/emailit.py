@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 
-class secretdetails:
+class details:
     def __init__(self, message):
         self.sendmail(message)
     

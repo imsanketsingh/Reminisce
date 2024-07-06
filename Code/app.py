@@ -10,13 +10,62 @@ import streamlit.components.v1 as components
 import random
 from streamlit_lottie import st_lottie 
 import json
-from emailit import secretdetails
+# from emailit import details
+from functions import homePage, displayWriting, sidebar, getQuote, message
+
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 
 
 
+######################################   OPEN   ##############################################################
 
+# import streamlit as st
+# from functions import homePage, displayWriting, sidebar, getQuote, message
+
+# st.set_page_config(page_title="Tat Tvam Asi", page_icon="🕉")
+# choose = sidebar()
+
+# ##########################################################################################################################################################
+
+# if choose == "Why This?":
+#     #Arguments: title, messsage
+#     title, message = message()
+#     homePage(title, message)
+
+# ##########################################################################################################################################################
+
+# elif choose == "Few Learnings":
+#     pass
+#     #Arguments: uniqueKey, coverImageUrl, heading, metaDescription, contentPath
+#     #writing 1: 
+    
+    
+# ##########################################################################################################################################################
+
+# elif choose == "Great Learners": 
+#         pass
+
+# ##########################################################################################################################################################
+
+# elif choose == "Miscellaneous": 
+#         displayWriting("M1", 'https://raw.githubusercontent.com/imsanketsingh/Tat-Tvam-Asi/main/Images/krishna.jpg?token=GHSAT0AAAAAACTI3SZHDKV3JNJ2KMKALBD4ZTIMR4A', 'The Krishna of Dwarika and The Krishna of Mathura', "Exploring the distinct aspects of Lord Krishna's life and teachings in Dwarika and Mathura. Trying to understand the differences and significance of Krishna's roles in these two sacred cities.", './Writings/Miscellaneous/krishnaOfDwarikaAndMathura.html')
+
+# ##########################################################################################################################################################
+
+# st.sidebar.markdown("<p style='font-style: italic;'>{}</p>".format(getQuote()[0]), unsafe_allow_html=True)
+# st.sidebar.markdown("<p style='font-style: italic; text-align: right; margin-right: 2rem;'>{}</p>".format("- "+ getQuote()[1]), unsafe_allow_html=True)
+
+# hide_st_style = """
+#             <style>
+#             footer {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_st_style, unsafe_allow_html=True)
+
+##########################################################################################################################################################
+
+#####################################   CLOSED   ##############################################################
 
 ##########################################################################################################################################################
 
@@ -374,23 +423,8 @@ if choose == "Compendia":
 
 
 elif choose == "Home":
-    col1, col2 = st.columns( [0.8, 0.2])
-    with col1:
-        st.markdown(""" <style> .font {
-        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
-        </style> """, unsafe_allow_html=True)
-        st.markdown('<p style="color: #767196; font-size: 33px; font-weight:Bold; font-style:helvetica;">About this work</p>', unsafe_allow_html=True)    
-    st.markdown("""<p>
-Welcome!
-
-As a student with a passion for writing, I have been actively involved in addressing a wide range of issues such as geopolitical matters, domestic affairs, current events, and historical events. I have had the opportunity to work with various platforms, including a blogging startup called The LookThrou Magazine and a YouTube channel called Gyan Jara Hatke.
-
-During my time at LTM, I contributed numerous articles on diverse topics, showcasing my dedication to exploring complex issues and providing thought-provoking insights. Although LTM eventually closed down, I have preserved my articles here on this website, so you can explore and engage with them.
-
-I also briefly worked with GJH, but due to conflicting priorities with my studies, I made the tough decision to leave. However, I have unpublished articles from my time at GJH that are available for you to read on this website.
-
-My goal with this website is to share my passion for writing, offer unique perspectives on important issues, and engage with readers like you. I hope you find my articles informative, thought-provoking, and engaging. Thank you for visiting the website and being a part of my journey so far!</p>
-<p style="color: #8f8e8c; font-size: 14px; font-style:helvetica;"><i>Note: The site is still in testing phase and some Chromium browsers may block the display of the PDF in the Reminisce tab. In that case Firefox would serve the purpose and work like a charm.<br>Inconvenience caused is deeply regretted.</p>""", unsafe_allow_html=True)
+    title, message = message()
+    homePage(title, message)
 
 
 ###############################################################################################################################################################
@@ -1143,7 +1177,7 @@ Finally, If you would like to connect with me further, I invite you to check me 
     #         if(message==""):
     #             st.write("Can't send empty message")
     #         else:
-    #             secretdetails(message)
+    #             details(message)
     #             st.write("Message sent successfully!")
 
 ##############################################################################QUOTES###############################################################################
