@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 
 
 # from emailit import details
-from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, showPDF
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -38,15 +38,6 @@ elif choose == "Reminisce":
         ) 
 
 
-#################################DISPLAYING THE PDF###############################################################
-
-        def show_pdf(file_path):
-            with open(file_path,"rb") as f:
-                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="1000" type="application/pdf"></iframe>'
-            st.markdown(pdf_display, unsafe_allow_html=True)
-        
-
 ##################################################################################################################
 
         st.write('\n')
@@ -68,7 +59,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('./Published/LT_IranUS_compressed.pdf')
+                    showPDF('./Published/LT_IranUS_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
@@ -100,7 +91,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('./Published/LT_Armenia_compressed.pdf')
+                    showPDF('./Published/LT_Armenia_compressed.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
@@ -132,7 +123,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('./Published/LT_Taliban_compressed.pdf')
+                    showPDF('./Published/LT_Taliban_compressed.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
@@ -164,7 +155,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='13'):            
-                    show_pdf('./Published/LT_WarExtremisim_compressed.pdf')
+                    showPDF('./Published/LT_WarExtremisim_compressed.pdf')
             with col2:
                 st.button('Close Article',key='14')             
             with col3:
@@ -196,7 +187,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='17'):            
-                    show_pdf('./Published/LT_TalibanVsISIS_compressed.pdf')
+                    showPDF('./Published/LT_TalibanVsISIS_compressed.pdf')
             with col2:
                 st.button('Close Article',key='18')             
             with col3:
@@ -229,7 +220,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='21'):            
-                    show_pdf('./Unpublished/Boris Johnson survived the No confidence vote.pdf')
+                    showPDF('./Unpublished/Boris Johnson survived the No confidence vote.pdf')
             with col2:
                 st.button('Close Article',key='22')             
             with col3:
@@ -262,7 +253,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='25'):            
-                    show_pdf("./Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
+                    showPDF("./Unpublished/Imran Khan carried out Suicide Bombings throughout Pakistan.pdf")
             with col2:
                 st.button('Close Article',key='26')             
             with col3:
@@ -294,7 +285,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='29'):            
-                    show_pdf("./Unpublished/UN must ensure Human Rights in Kashmir.pdf")
+                    showPDF("./Unpublished/UN must ensure Human Rights in Kashmir.pdf")
             with col2:
                 st.button('Close Article',key='30')             
             with col3:
@@ -329,7 +320,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('./Published/LT_Covid_Havoc_compressed.pdf')
+                    showPDF('./Published/LT_Covid_Havoc_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
@@ -362,7 +353,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('./Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
+                    showPDF('./Unpublished/Dutch Minister slams Arab Nations over the controversial remarks on Prophet Mohammad.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
@@ -394,7 +385,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('./Unpublished/India Qatar Relations.pdf')
+                    showPDF('./Unpublished/India Qatar Relations.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
@@ -426,7 +417,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='13'):            
-                    show_pdf('./Unpublished/Taliban-India.pdf')
+                    showPDF('./Unpublished/Taliban-India.pdf')
             with col2:
                 st.button('Close Article',key='14')             
             with col3:
@@ -461,7 +452,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='1'):            
-                    show_pdf('./Published/LT_Congress_compressed.pdf')
+                    showPDF('./Published/LT_Congress_compressed.pdf')
             with col2:
                 st.button('Close Article',key='2')             
             with col3:
@@ -493,7 +484,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='5'):            
-                    show_pdf('./Published/LT_Naxal_compressed.pdf')
+                    showPDF('./Published/LT_Naxal_compressed.pdf')
             with col2:
                 st.button('Close Article',key='6')             
             with col3:
@@ -526,7 +517,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='9'):            
-                    show_pdf('./Unpublished/Israel-Arab.pdf')
+                    showPDF('./Unpublished/Israel-Arab.pdf')
             with col2:
                 st.button('Close Article',key='10')             
             with col3:
@@ -578,7 +569,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='3'):            
-                    show_pdf('./Published/LT_BiharElection_compressed.pdf')
+                    showPDF('./Published/LT_BiharElection_compressed.pdf')
             with col2:
                 st.button('Close Article',key='4')             
             with col3:
@@ -610,7 +601,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='7'):            
-                    show_pdf('./Published/LT_CalifornianWildfire_compressed.pdf')
+                    showPDF('./Published/LT_CalifornianWildfire_compressed.pdf')
             with col2:
                 st.button('Close Article',key='8')             
             with col3:
@@ -643,7 +634,7 @@ elif choose == "Reminisce":
             col1, col2,col3= st.columns(3)
             with col1:  
                 if st.button('Open Article',key='11'):            
-                    show_pdf('./Published/LT_SetuBharatam_compressed.pdf')
+                    showPDF('./Published/LT_SetuBharatam_compressed.pdf')
             with col2:
                 st.button('Close Article',key='12')             
             with col3:
@@ -879,7 +870,7 @@ elif choose == "Connect":
     displayMessage(titleEnd, messageEnd)
     connectMedia()
 
-##################################################################################################################
+###################################################################################################################
 
 getQuoteAndSign()
 hideFooter()
