@@ -31,7 +31,7 @@ with st.sidebar:
         return r.json()
 
 
-    lottie_hello = load_lottiefile("Code\lottieHi.json")
+    lottie_hello = load_lottiefile("Code/lottieHi.json")
 
     st_lottie(
         lottie_hello,
