@@ -13,7 +13,6 @@ def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
 
-@st.cache
 def lottieWork():
     # Load the Lottie animation from file or URL
     lottie_hello = load_lottiefile("Code/lottieHi.json")
