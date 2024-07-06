@@ -74,6 +74,7 @@ def displayWriting(uniqueKey, coverImageUrl, heading, metaDescription, contentPa
     st.write('---')
 
 def sidebar():
+    lottieWork()
     st.markdown("""
     <style>
     .sidebar .sidebar-content {
