@@ -43,9 +43,7 @@ def displayMessage(title, message):
         font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
         </style> """, unsafe_allow_html=True)
         
-        st.markdown(f'<div style="text-align: center; position: relative; bottom: 10px; width: 100%;">
-        <span style="color: #046764; font-family: cursive; font-weight: bold;font-size:20px; text-decoration: underline;">{title}</span>
-        </div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; position: relative; bottom: 10px; width: 100%;"> <span style="color: #046764; font-family: cursive; font-weight: bold;font-size:20px;text-decoration: underline;">{title}</span> </div>', unsafe_allow_html=True)
     st.markdown(f"""{message}""", unsafe_allow_html=True)
 
 
