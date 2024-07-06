@@ -12,7 +12,6 @@ from functions import displayMessage, displayWriting, sidebar, message, getQuote
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
 choose = sidebar()
-topic = reminisceTopics()
 
 ###################################################################################################################
 
@@ -23,7 +22,7 @@ if choose == "Home":
 ###################################################################################################################
 
 elif choose == "Reminisce": 
-        
+        topic = reminisceTopics()
 
         st.write('\n')
         #Topic 1
