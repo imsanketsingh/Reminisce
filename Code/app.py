@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 
 
 # from emailit import details
-from functions import homePage, displayWriting, sidebar, message, getQuoteAndSign
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -332,8 +332,8 @@ if choose == "Compendia":
 
 
 elif choose == "Home":
-    title, message = message()
-    homePage(title, message)
+    titleHome, titleEnd, messageHome, messageEnd = message()
+    displayMessage(titleHome, messageHome)
 
 
 ###############################################################################################################################################################
@@ -974,122 +974,16 @@ elif choose == "Reminisce":
 
 
 
-elif choose == "Connect": 
-        st.markdown("""
-        <div style='text-align: center; position: relative; bottom: 10px; width: 100%;'>
-        <span style='color: #046764; font-family: cursive; font-weight: bold;font-size:20px; text-decoration: underline;'>You are awesome</span>
-        </div>
-""", unsafe_allow_html=True)
+elif choose == "Connect":
+    titleHome, titleEnd, messageHome, messageEnd = message()
+    displayMessage(titleEnd, messageEnd)
+
+
         
-        st.markdown("""<p>
-Thank you for visiting here and exploring my articles on geopolitics, domestic news, and historical events. As a writer, It's always my aim to offer thoughtful, informative, and nuanced perspectives on these complex issues.
-
-While my writing focuses on specific topics and events, I believe that philosophical reflections can add depth and insight to any subject matter. Philosophy can help us ask critical questions, challenge and broaden our perspectives. For instance, when we analyze geopolitics, we can ask questions such as: What are the underlying values, interests, and power dynamics that shape international relations? Similarly, when we examine domestic news, we can ask questions such as: What are the ethical and political implications of current events and policies? How can we foster solidarity across diverse perspectives and interests? Finally, when we study historical events, we can ask questions such as: What are the root causes and consequences of historical conflicts? How can we learn from past mistakes and achievements to shape a better future? By asking these and other philosophical questions, we can deepen our understanding of the complex, dynamic, and interconnected nature of our world.
-
-Finally, If you would like to connect with me further, I invite you to check me on various platforms. Thank you for your interest and engagement with my writing.</p>""", unsafe_allow_html=True)
 
 
-        css = """
-            .navigation-button {
-                display: inline-block;
-                background-color: #f4f4f4;
-                color: #000000;
-                font-size: 10px;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 10px;
-                padding: 8px 25px;
-                margin: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-                transition: all 0.3s ease-in-out;
-            }
 
-            .navigation-button:hover {
-                transform: translateY(-5px);
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-                text-decoration: none;
-            }
-
-            .navigation-button img {
-                vertical-align: middle;
-                margin-right: 10px;
-            }
-        """
-
-        st.write(f"<style>{css}</style>", unsafe_allow_html=True)
-        
-        github_button = """
-            <a href="https://github.com/imsanketsingh" target="_blank" class="navigation-button">
-                <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="GitHub logo" width="20" height="20">
-                GitHub
-            </a>
-        """
-
-        linkedin_button = """
-            <a href="https://www.linkedin.com/in/imsanketsingh/" target="_blank" class="navigation-button">
-                <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-512.png" alt="LinkedIn logo" width="20" height="20">
-                LinkedIn
-            </a>
-        """
-
-        medium_button = """
-            <a href="https://medium.com/@imsanketsingh" target="_blank" class="navigation-button">
-                <img src="https://avatars.githubusercontent.com/u/923954?s=200&v=4" alt="Medium logo" width="20" height="20">
-                Medium
-            </a>
-        """
-    
-
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            st.markdown(github_button, unsafe_allow_html=True)
-
-        with col2:
-            st.markdown(linkedin_button, unsafe_allow_html=True)
-
-        with col3:
-            st.markdown(medium_button, unsafe_allow_html=True)
-
-        st.write("___")
-
-    #     st.markdown(
-    # """<style>
-    #     .element-container:nth-of-type(n) button {
-    #         display: flex;
-    #         flex-direction: column;
-    #         justify-content: center;
-    #         align-items: center;
-    #         height: 30px;
-    #         width: 120px;
-    #         background-color: #f0f5f4;
-    #         border: none;
-    #         border-radius: 8px;
-    #         border-width: 1px;
-    #         border-style: solid;
-    #         border-color: #597a75;
-    #         font-size: 20px;
-    #         font-weight: bold;
-    #         color: #333333;
-    #         transition: all 0.2s ease-in-out;
-    #     }
-    #     .element-container:nth-of-type(n) button:hover {
-    #         background-color: #333333;
-    #         color: #f2f2f2;
-    #         cursor: pointer;
-    #     }
-    #     </style>""",
-    # unsafe_allow_html=True,
-    # )
-    #     message = st.text_area("Type your message here (Kindly mention topic name)")
-    #     if st.button("Send"):
-    #         if(message==""):
-    #             st.write("Can't send empty message")
-    #         else:
-    #             details(message)
-    #             st.write("Message sent successfully!")
-
-##############################################################################QUOTES#######################
+###########################################################################################################
 
 getQuoteAndSign()
 
