@@ -18,107 +18,14 @@ elif choose == "Reminisce":
 
         #Topic 1
         if topic=='Geopolitics':
-            #Topic 1 Article 1
-
-            
-            displayPDF("RG1", './Cover Images/LT_IranUS_compressed.jpg', './Published/LT_IranUS_compressed.pdf', 'Joe Biden and the future of Iransss', 'During his campaign, President Biden expressed a desire to return to the Joint Comprehensive Plan of Action (JCPOA), also known as the Iran nuclear deal, signed in 2015 under the Obama administration... ')
-
-
-
-            feature_image1 = Image.open(r'./Cover Images/LT_IranUS_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Joe Biden and the future of Iran</p>', unsafe_allow_html=True)    
-                    st.markdown('During his campaign, President Biden expressed a desire to return to the Joint Comprehensive Plan of Action (JCPOA), also known as the Iran nuclear deal, signed in 2015 under the Obama administration... <b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='1'):            
-                    showPDF('./Published/LT_IranUS_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='2')             
-            with col3:
-                with open("./Published/LT_IranUS_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='3',
-                        data=PDFbyte,
-                        file_name="Joe Biden and the future of Iran.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='4')
-
-            st.write('---')
+            #Topic 1 Article 1         
+            displayPDF("RG1", './Cover Images/LT_IranUS_compressed.jpg', './Published/LT_IranUS_compressed.pdf', 'Joe Biden and the future of Iran', 'During his campaign, President Biden expressed a desire to return to the Joint Comprehensive Plan of Action (JCPOA), also known as the Iran nuclear deal, signed in 2015 under the Obama administration...')
 
             #Topic 1 Article 2
-            feature_image1 = Image.open(r'./Cover Images/LT_Armenia_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">Armenia vs Azerbaijan : The Nagorno-Karabakh conflict</p>', unsafe_allow_html=True)    
-                    st.markdown('A long-standing dispute between Armenia and Azerbaijan over the Nagorno-Karabakh region, which is internationally recognized as part of Azerbaijan but...<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='5'):            
-                    showPDF('./Published/LT_Armenia_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='6')             
-            with col3:
-                with open("./Published/LT_Armenia_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='7',
-                        data=PDFbyte,
-                        file_name="Armenia vs Azerbaijan : The Nagorno-Karabakh conflict.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='8')
-
-            st.write('---')
+            displayPDF("RG2", './Cover Images/LT_Armenia_compressed.jpg', './Published/LT_Armenia_compressed.pdf', 'Armenia vs Azerbaijan : The Nagorno-Karabakh conflict', 'A long-standing dispute between Armenia and Azerbaijan over the Nagorno-Karabakh region, which is internationally recognized as part of Azerbaijan but...')
 
             #Topic 1 Article 3
-            feature_image1 = Image.open(r'./Cover Images/LT_Taliban_compressed.jpg')
-            with st.container():
-                image_col, text_col = st.columns((2,3))
-                with image_col:
-                    st.image(feature_image1)
-                with text_col:
-                    st.markdown(""" <style> .font {
-                    font-size:22px ; font-family: 'Black'; color: #FFFFF;} 
-                    </style> """, unsafe_allow_html=True)
-                    st.markdown('<p class="font">The rising terror of Taliban and other nations ignoring it?</p>', unsafe_allow_html=True)    
-                    st.markdown("The Taliban's resurgence in Afghanistan and the increase in violence and terrorism is a cause for concern for the global community. Since the US withdrawal...<b>[Read More👇]</b>", unsafe_allow_html=True)
-
-            col1, col2,col3= st.columns(3)
-            with col1:  
-                if st.button('Open Article',key='9'):            
-                    showPDF('./Published/LT_Taliban_compressed.pdf')
-            with col2:
-                st.button('Close Article',key='10')             
-            with col3:
-                with open("./Published/LT_Taliban_compressed.pdf", "rb") as pdf_file:
-                    PDFbyte = pdf_file.read()
-                st.download_button(label="Download PDF Article", key='11',
-                        data=PDFbyte,
-                        file_name="The rising terror of Taliban and other nations ignoring it?.pdf",
-                        mime='application/octet-stream')
-
-            for text in ["Did you like the article?"]:
-                    response = st_text_rater(text=text, key='12')
-
-            st.write('---')
+            displayPDF("RG3", './Cover Images/LT_Taliban_compressed.jpg', './Published/LT_Taliban_compressed.pdf', 'The rising terror of Taliban and other nations ignoring it?', 'The Taliban\'s resurgence in Afghanistan and the increase in violence and terrorism is a cause for concern for the global community. Since the US withdrawal...')
 
             #Topic 1 Article 4
             feature_image1 = Image.open(r'./Cover Images/LT_WarExtremisim_compressed.jpg')
