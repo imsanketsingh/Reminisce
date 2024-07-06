@@ -8,7 +8,7 @@ from streamlit_lottie import st_lottie
 import json
 import random
 
-
+@st.cache
 def lottieWork():
     def load_lottiefile(filepath: str):
         with open(filepath, "r") as f:
