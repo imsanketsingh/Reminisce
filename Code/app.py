@@ -11,7 +11,7 @@ import random
 from streamlit_lottie import st_lottie 
 import json
 # from emailit import details
-from functions import homePage, displayWriting, sidebar, getQuote, message
+from functions import homePage, displayWriting, sidebar, message
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
