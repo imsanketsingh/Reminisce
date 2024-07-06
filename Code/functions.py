@@ -356,7 +356,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription)
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(feature_image)
+            st.image(feature_image, caption= None)
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
