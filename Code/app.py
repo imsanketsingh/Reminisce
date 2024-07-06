@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 
 
 # from emailit import details
-from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -977,6 +977,7 @@ elif choose == "Reminisce":
 elif choose == "Connect":
     titleHome, titleEnd, messageHome, messageEnd = message()
     displayMessage(titleEnd, messageEnd)
+    connectMedia()
 
 
         
