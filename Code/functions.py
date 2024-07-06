@@ -351,12 +351,12 @@ def displayImg(featureImagePath, title, metaDescription):
             st.markdown(f'<p class="font">{title}</p>', unsafe_allow_html=True)
             st.markdown(f'{metaDescription}', unsafe_allow_html=True)
 
-def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription):
+def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription, caption):
     feature_image = Image.open(featureImagePath)
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(feature_image, caption= None)
+            st.image(feature_image, caption= caption)
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
