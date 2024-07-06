@@ -74,7 +74,6 @@ def displayWriting(uniqueKey, coverImageUrl, heading, metaDescription, contentPa
     st.write('---')
 
 def sidebar():
-    lottieWork()
     st.markdown("""
     <style>
     .sidebar .sidebar-content {
@@ -112,6 +111,7 @@ def sidebar():
 """, unsafe_allow_html=True)
     
     with st.sidebar:
+        lottieWork()
         choose = option_menu("", ["Home", "Reminisce", "Compendia",  "Connect"],
                          icons=['house', 'bookmarks-fill','file-text', 'person lines fill'],
                          menu_icon="list", default_index=0,
