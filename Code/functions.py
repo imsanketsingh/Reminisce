@@ -95,7 +95,9 @@ def sidebar():
 
 
 def message():
-    return st.markdown('<p style="color: #767196; font-size: 33px; font-weight:Bold; font-style:helvetica;">About this work</p>', unsafe_allow_html=True), st.markdown("""<p>
+    return st.markdown(""" <style> .font {
+        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
+        </style> """, unsafe_allow_html=True), st.markdown('<p style="color: #767196; font-size: 33px; font-weight:Bold; font-style:helvetica;">About this work</p>', unsafe_allow_html=True), st.markdown("""<p>
 Welcome!
 
 As a student with a passion for writing, I have been actively involved in addressing a wide range of issues such as geopolitical matters, domestic affairs, current events, and historical events. I have had the opportunity to work with various platforms, including a blogging startup called The LookThrou Magazine and a YouTube channel called Gyan Jara Hatke.
