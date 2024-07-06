@@ -9,21 +9,17 @@ import json
 import random
 
 @st.cache
+def load_lottiefile(filepath: str):
+    with open(filepath, "r") as f:
+        return json.load(f)
+
 def lottieWork():
-    def load_lottiefile(filepath: str):
-        with open(filepath, "r") as f:
-            return json.load(f)
-
-
-    def load_lottieurl(url: str):
-        r = requests.get(url)
-        if r.status_code != 200:
-            return None
-        return r.json()
-
-
+    # Load the Lottie animation from file or URL
     lottie_hello = load_lottiefile("Code/lottieHi.json")
+    # Alternatively, load from URL if needed:
+    # lottie_hello = load_lottieurl("https://example.com/lottie.json")
 
+    # Display the Lottie animation using st_lottie
     st_lottie(
         lottie_hello,
         speed=1,
