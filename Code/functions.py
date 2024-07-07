@@ -64,11 +64,8 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
         if st.button("Get into it", key=str(uniqueKey)+'1'):
             showthecontent(contentPath)
             st.button("Wrap it up!", help="Close it")
-    for text in ["Did you like the article?"]:
-        response = st_text_rater(text=text, key= str(uniqueKey)+'2')
-        if(response=='liked'): st.balloons()
-        else:
-            pass
+
+    textRator()
     st.write('---')
 
 def sidebar():
@@ -381,9 +378,15 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 file_name= str(title)+".pdf",
                 mime='application/octet-stream')
 
-    for text in ["Did you like the article?"]:
-            response = st_text_rater(text=text, key= str(uniqueKey)+'4')
+    textRator()
     st.write('---')
+
+def textRator():
+    for text in ["Did you like the articlesss?"]:
+        response = st_text_rater(text=text, key= str(uniqueKey)+'4')
+        if(response=='liked'): st.balloons()
+        else:
+            pass
 
 
 
@@ -401,7 +404,7 @@ def reminisceTopics():
         ) 
 
 def compendiaTopics():
-    return option_menu(None, ["Bookisss", "Tech", "Philosophy", "BeyondThePages", "BeMyGuest"],
+    return option_menu(None, ["Books", "Tech", "Philosophy", "BeyondThePages", "BeMyGuest"],
                          icons=['book', 'laptop','lightning','journal-plus'],
                          menu_icon="list", default_index=0,
                          styles={

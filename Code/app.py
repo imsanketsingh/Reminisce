@@ -137,7 +137,7 @@ elif choose == "Compendia":
     elif topic == "BeMyGuest":
 
         #Topic 5 BeMyGuest 1
-        
+
         comingSoonDisplay(True)
 
 ####################################################################################################
@@ -151,68 +151,3 @@ elif choose == "Connect":
 
 getQuoteAndSign()
 hideFooter()
-
-
-
-# st.markdown(
-#     """<style>
-#         .element-container:nth-of-type(n) button {
-#             display: flex;
-#             flex-direction: column;
-#             justify-content: center;
-#             align-items: center;
-#             height: 30px;
-#             width: 120px;
-#             background-color: #f0f5f4;
-#             border: none;
-#             border-radius: 8px;
-#             border-width: 1px;
-#             border-style: solid;
-#             border-color: #597a75;
-#             font-size: 20px;
-#             font-weight: bold;
-#             color: #333333;
-#             transition: all 0.2s ease-in-out;
-#         }
-#         .element-container:nth-of-type(n) button:hover {
-#             background-color: #333333;
-#             color: #f2f2f2;
-#             cursor: pointer;
-#         }
-#         </style>""",
-#     unsafe_allow_html=True,
-#     )
-
-#     st.markdown(
-#     """<style>
-#         .animate-charcter
-#     {
-#       background-image: linear-gradient(
-#         -225deg,
-#         #231557 0%,
-#         #44107a 29%,
-#         #ff1361 67%,
-#         #fff800 100%
-#       );
-#       background-size: auto auto;
-#       background-clip: border-box;
-#       background-size: 200% auto;
-#       color: #fff;
-#       background-clip: text;
-#       text-fill-color: transparent;
-#       -webkit-background-clip: text;
-#       -webkit-text-fill-color: transparent;
-#       animation: textclip 2s linear infinite;
-#       display: inline-block;
-#       margin-left: 200px;
-#           font-size: 50px;
-#     }
-
-#     @keyframes textclip {
-#       to {
-#         background-position: 200% center;
-#       }
-#     }
-#         </style>""",
-#     unsafe_allow_html=True,
-#     )
