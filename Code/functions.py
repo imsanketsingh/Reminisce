@@ -67,6 +67,8 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     for text in ["Did you like the article?"]:
         response = st_text_rater(text=text, key= str(uniqueKey)+'2')
         if(response=='liked'): st.balloons()
+        else:
+            pass
     st.write('---')
 
 def sidebar():

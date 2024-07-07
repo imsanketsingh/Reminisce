@@ -102,41 +102,14 @@ elif choose == "Compendia":
 
         comingSoonDisplay(False)
 
-        
-
-
-
-
-
     
+
     #Topic 2
     elif topic == "Tech":
-
         #Topic 2 Tech 1
-        feature_image1 = Image.open(r'./Cover Images/statistics.jpg')
-        with st.container():
-            image_col, text_col = st.columns((2,3))
-            with image_col:
-                st.image(feature_image1)
-            with text_col:
-                st.markdown(""" <style> .font {
-                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-                </style> """, unsafe_allow_html=True)
-                st.markdown('<p class="font">The Role of Statistics in Data Science</p>', unsafe_allow_html=True)    
-                st.markdown('Discover the crucial role of statistics in Data Science. Explore how statistical techniques empower data exploration, cleaning, hypothesis testing, predictive modeling, feature selection, and model evaluation.', unsafe_allow_html=True)
-            if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Tech/RoleofStats.html')
-                st.button("Wrap it up!", help="Close it")
-                
-
-        for text in ["Did you like the article?"]:
-                response = st_text_rater(text=text, key='4')
-        st.write('---')
+        displayWriting("CT1", './Cover Images/statistics.jpg', './New/Tech/RoleofStats.html', 'The Role of Statistics in Data Science', 'Discover the crucial role of statistics in Data Science. Explore how statistical techniques empower data exploration, cleaning, hypothesis testing, predictive modeling, feature selection, and model evaluation.', None)
 
         comingSoonDisplay(False)
-
-
-
 
 
 
@@ -144,58 +117,17 @@ elif choose == "Compendia":
     elif topic == "Philosophy":
 
         #Topic 3 Philosophy 1
-        feature_image1 = Image.open(r'./Cover Images/Charvakas.jpg')
-        with st.container():
-            image_col, text_col = st.columns((2,3))
-            with image_col:
-                st.image(feature_image1)
-            with text_col:
-                st.markdown(""" <style> .font {
-                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-                </style> """, unsafe_allow_html=True)
-                st.markdown('<p class="font">The Charvaka Philosophy</p>', unsafe_allow_html=True)    
-                st.markdown('This article explores the philosophy of Charvaka, an ancient Indian school of thought. The article provides an overview of the Charvaka worldview, including their beliefs about the nature of reality, consciousness, and ethics.', unsafe_allow_html=True)
-            if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Philosophy/Charvaka.html')
-                st.button("Wrap it up!", help="Close it")
-                
-
-        for text in ["Did you like the article?"]:
-                response = st_text_rater(text=text, key='4')
-        st.write('---')
+        displayWriting("CP1", './Cover Images/Charvakas.jpg', './New/Philosophy/Charvaka.html', 'The Charvaka Philosophy', 'This article explores the philosophy of Charvaka, an ancient Indian school of thought. The article provides an overview of the Charvaka worldview, including their beliefs about the nature of reality, consciousness, and ethics.', None)
 
         comingSoonDisplay(False)
-
-
-
-
-
 
 
     
     #Topic 4
     elif topic == "BeyondThePages":
 
-        #Topic 4 Content 1
-        feature_image1 = Image.open(r'./Cover Images/painofpeople.jpg')
-        with st.container():
-            image_col, text_col = st.columns((2,3))
-            with image_col:
-                st.image(feature_image1)
-            with text_col:
-                st.markdown(""" <style> .font {
-                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-                </style> """, unsafe_allow_html=True)
-                st.markdown('<p class="font">The Pain of People</p>', unsafe_allow_html=True)    
-                st.markdown('Pain is a prevalent issue that can affect people from all walks of life. Acknowledging the pain of others is essential for building empathy and understanding, as it helps us to connect with others on a deeper level.', unsafe_allow_html=True)
-            if st.button("Get into it", key="mybutton"):
-                showthecontent('./New/Beyondthepages/The Pain of People.html')
-                st.button("Wrap it up!", help="Close it")
-                
-
-        for text in ["Did you like the article?"]:
-                response = st_text_rater(text=text, key='4')
-        st.write('---')
+        #Topic 4 BeyondThePages 1
+        displayWriting("CBTP1", './Cover Images/painofpeople.jpg', './New/Beyondthepages/The Pain of People.html', 'The Pain of People', 'Pain is a prevalent issue that can affect people from all walks of life. Acknowledging the pain of others is essential for building empathy and understanding, as it helps us to connect with others on a deeper level.', None)
 
         comingSoonDisplay(False)
         
@@ -204,7 +136,8 @@ elif choose == "Compendia":
     #Topic 5
     elif topic == "BeMyGuest":
 
-        #Topic 5 Content 1
+        #Topic 5 BeMyGuest 1
+        
         comingSoonDisplay(True)
 
 ####################################################################################################
