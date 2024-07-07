@@ -48,24 +48,27 @@ def showthecontent(filepath):
     components.html(html_string, scrolling = True, height = 700)
 
 
-def displayWriting(uniqueKey, coverImageUrl, heading, metaDescription, contentPath):
+def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
     response = requests.get(coverImageUrl)
     image_data = BytesIO(response.content)
-    learningCoverImage = Image.open(image_data)
-    learningCoverImage = learningCoverImage.resize((320, 240))
+    coverImage = Image.open(image_data)
+    coverImage = coverImage.resize((320, 240))
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(learningCoverImage)
+            st.image(coverImage)
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
             </style> """, unsafe_allow_html=True)
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
-        if st.button("Get into it", key=uniqueKey):
+        if st.button("Get into it", key=str(uniqueKey)+'1'):
             showthecontent(contentPath)
             st.button("Wrap it up!", help="Close it")
+    for text in ["Did you like the article?"]:
+        response = st_text_rater(text=text, key= str(uniqueKey)+'2')
+        st.balloons()
     st.write('---')
 
 def sidebar():
@@ -396,3 +399,15 @@ def reminisceTopics():
         "nav-link-selected": {"background-color": "#080000"},
         },orientation='horizontal'
         ) 
+
+def compendiaTopics():
+    return option_menu(None, ["Bookisss", "Tech", "Philosophy", "BeyondThePages", "BeMyGuest"],
+                         icons=['book', 'laptop','lightning','journal-plus'],
+                         menu_icon="list", default_index=0,
+                         styles={
+        "container": {"padding": "10!important", "background-color": "#fafafa"},
+        "icon": {"color": "orange", "font-size": "10px"}, 
+        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"15px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#080000"},
+        },orientation='horizontal'
+        )
