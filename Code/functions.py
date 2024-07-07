@@ -65,7 +65,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             showthecontent(contentPath)
             st.button("Wrap it up!", help="Close it")
 
-    textRator()
+    textRator(uniqueKey)
     st.write('---')
 
 def sidebar():
@@ -378,10 +378,10 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 file_name= str(title)+".pdf",
                 mime='application/octet-stream')
 
-    textRator()
+    textRator(uniqueKey)
     st.write('---')
 
-def textRator():
+def textRator(uniqueKey):
     for text in ["Did you like the articlesss?"]:
         response = st_text_rater(text=text, key= str(uniqueKey)+'4')
         if(response=='liked'): st.balloons()
