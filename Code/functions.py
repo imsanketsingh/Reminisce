@@ -49,9 +49,7 @@ def showthecontent(filepath):
 
 
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
-    response = requests.get(coverImageUrl)
-    image_data = BytesIO(response.content)
-    coverImage = Image.open(image_data)
+    coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
     with st.container():
         image_col, text_col = st.columns((2, 3))
