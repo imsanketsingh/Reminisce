@@ -27,6 +27,7 @@ def database(articleName, event):
 
     cursor.execute(update_query, (articleName,))
 
+    st.markdown(f"{articleName}")
     cursor.execute('SELECT * from mytable;')
     updated_rows = cursor.fetchall()
     for row in updated_rows:
