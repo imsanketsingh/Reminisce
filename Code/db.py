@@ -2,7 +2,7 @@ import sqlite3
 import streamlit as st
 
 def database(articleName, event):
-    db_path = 'count.db'
+    db_path = 'D:\Documents\Reminisce\count.db'
     conn = sqlite3.connect(db_path)
 
     cursor = conn.cursor()
@@ -11,8 +11,8 @@ def database(articleName, event):
     # CREATE TABLE IF NOT EXISTS mytable (
     # id INTEGER PRIMARY KEY AUTOINCREMENT,
     # article TEXT NOT NULL,
-    # liked INT,
-    # disliked INT
+    # liked INT DEFAULT 0,
+    # disliked INT DEFAULT 0
     # );
     # '''
 
