@@ -2,7 +2,7 @@ import sqlite3
 import streamlit as st
 
 def database(articleName, event):
-    db_path = 'D:\Documents\Reminisce\count.db'
+    db_path = 'count.db'
     conn = sqlite3.connect(db_path)
 
     cursor = conn.cursor()
