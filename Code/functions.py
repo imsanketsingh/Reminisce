@@ -9,7 +9,7 @@ import json
 import random
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
-
+from db import database
 
 @st.cache
 def load_lottiefile(filepath: str):
@@ -65,7 +65,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             showthecontent(contentPath)
             st.button("Wrap it up!", help="Close it")
 
-    textRator(uniqueKey)
+    textRator(uniqueKey, heading)
     st.write('---')
 
 def sidebar():
@@ -378,15 +378,17 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 file_name= str(title)+".pdf",
                 mime='application/octet-stream')
 
-    textRator(uniqueKey)
+    textRator(uniqueKey, title)
     st.write('---')
 
-def textRator(uniqueKey):
+def textRator(uniqueKey, articleName):
     for text in ["Did you like the articlesss?"]:
         response = st_text_rater(text=text, key= str(uniqueKey)+'4')
-        if(response=='liked'): st.balloons()
+        if(response=='liked'):
+            st.balloons()
+            database(articleName, True)
         else:
-            pass
+            database(articleName, False)
 
 
 
