@@ -11,22 +11,27 @@ def database(articleName, event):
     # CREATE TABLE IF NOT EXISTS mytable (
     # id INTEGER PRIMARY KEY AUTOINCREMENT,
     # article TEXT NOT NULL,
-    # liked INT DEFAULT 0,
-    # disliked INT DEFAULT 0
+    # liked INT,
+    # disliked INT
     # );
     # '''
 
     # cursor.execute(create_table_query)
-    articleName_quoted = f"'{articleName}'"
 
-    update_query = ""
+    cursor.execute("SELECT * FROM mytable WHERE article = ?", (articleName,))
+    existing_row = cursor.fetchone()
+
     if event:
-        update_query = "UPDATE mytable SET liked = liked + 1 WHERE article = ?;"
+        if existing_row:
+            cursor.execute("UPDATE mytable SET liked = liked + 1 WHERE article = ?", (articleName,))
+        else:
+            cursor.execute("INSERT INTO mytable (article, liked) VALUES (?, 1)", (articleName,))
+
     else:
-        update_query = "UPDATE mytable SET disliked = disliked + 1 WHERE article = ?;"
-
-    cursor.execute(update_query, (articleName,))
-
+        if existing_row:
+            cursor.execute("UPDATE mytable SET disliked = disliked + 1 WHERE article = ?", (articleName,))
+        else:
+            cursor.execute("INSERT INTO mytable (article, disliked) VALUES (?, 1)", (articleName,))
     
     conn.commit()
     conn.close()
