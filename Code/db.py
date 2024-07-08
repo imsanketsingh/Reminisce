@@ -26,9 +26,9 @@ def database(articleName, event):
 
     cursor.execute(update_query)
 
-    cursor.execute('SELECT * from mytable;')
-    updated_rows = cursor.fetchall()
-    for row in updated_rows:
-        st.markdown(f"{row[1]} has a {row[2]} likes and {row[3]} dislikes")
+    # cursor.execute('SELECT * from mytable;')
+    # updated_rows = cursor.fetchall()
+    # for row in updated_rows:
+    #     st.markdown(f"{row[1]} has a {row[2]} likes and {row[3]} dislikes")
     
     conn.commit()
