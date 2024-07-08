@@ -11,7 +11,7 @@ import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
 # from db import database
 
-@st.cache
+@st.cache_data
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
@@ -268,7 +268,7 @@ def connectMedia():
     st.write("___")
 
 
-@st.cache
+@st.cache_data
 def hideFooter():
     hide_st_style = """
             <style>
@@ -278,7 +278,7 @@ def hideFooter():
     st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
-@st.cache
+@st.cache_data
 def comingSoonDisplay(isEmpty):
     html_code = """"."""
     if(isEmpty):
