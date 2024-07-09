@@ -426,8 +426,8 @@ def specialSubtopics():
                 "nav": {"margin-right": "10px", "margin-left": "10px", "padding-right": "10px", "padding-left": "10px"},
                 "nav-link": {"font-size": "16px", "text-align": "left", "border-radius": "6px", "transition": "background-color 0.3s ease", "color": "#eee", "background-color": "#1a4513"},
                 "nav-link-selected": {"background-color": "#0b2907", "color": "#fff"},
-                "nav-link:hover": {"background-color": "#FFC300", "color": "#fff"}
+                "nav-link:hover": {"background-color": "#FFC300", "color": "#fff"},
+                "separator": {"<hr>"}
             },
-            orientation='horizontal',
-            separator = True
+            orientation='horizontal'
             )
