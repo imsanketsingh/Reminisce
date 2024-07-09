@@ -2,7 +2,7 @@ import streamlit as st
 import mysql.connector
 
 def database(articleName, event):
-    try:
+    
         host = st.secrets["mysql"]["host"]
         port = st.secrets["mysql"]["port"]
         database = st.secrets["mysql"]["database"]
@@ -36,12 +36,6 @@ def database(articleName, event):
 
         conn.commit()
 
-    except mysql.connector.Error as err:
-        st.error(f"MySQL error: {err}")
-        # pass
+        cursor.close()
+        conn.close()
 
-    finally:
-        if 'cursor' in locals():
-            cursor.close()
-        if 'conn' in locals():
-            conn.close()
