@@ -428,5 +428,6 @@ def specialSubtopics():
                 "nav-link-selected": {"background-color": "#0b2907", "color": "#fff"},
                 "nav-link:hover": {"background-color": "#FFC300", "color": "#fff"}
             },
-            orientation='horizontal'
+            orientation='horizontal',
+            separator = True
             )
