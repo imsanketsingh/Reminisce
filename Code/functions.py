@@ -415,3 +415,7 @@ def compendiaTopics():
         "nav-link-selected": {"background-color": "#080000"},
         },orientation='horizontal'
         )
+
+def specialSubtopics():
+    return option_menu(None, ["Climate Change"]
+        )

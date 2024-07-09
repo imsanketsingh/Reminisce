@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, displayPDF, reminisceTopics, compendiaTopics, displayImg
+from functions import displayMessage, displayWriting, sidebar, message, getQuoteAndSign, connectMedia, hideFooter, comingSoonDisplay, displayPDF, reminisceTopics, compendiaTopics, displayImg, specialSubtopics
 
 
 st.set_page_config(page_title="Reminisce", page_icon="💎")
@@ -135,6 +135,7 @@ elif choose == "Compendia":
     
     #Topic 5
     elif topic == "Special":
+        specialSubtopic = specialSubtopics()
 
         #Topic 5 Special 1
 
