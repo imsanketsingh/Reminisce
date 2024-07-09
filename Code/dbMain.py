@@ -26,7 +26,7 @@ def database(articleName, event):
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET liked = liked + 1 WHERE article = ?", (articleName,))
             else:
-                cursor.execute("INSERT INTO mytable (article, liked) VALUES (?, 1)", (articleName,))
+                cursor.execute(f"INSERT INTO mytable (article, liked) VALUES ({articleName}, 1)")
 
         else:
             if existing_row is not None:
