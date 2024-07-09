@@ -6,3 +6,5 @@ pandas
 requests
 streamlit_text_rating
 streamlit_lottie
+mysqlclient==2.2.4
+SQLAlchemy==2.0.31

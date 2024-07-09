@@ -9,7 +9,7 @@ import json
 import random
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
-# from db import database
+from dbMain import database
 
 @st.cache_data
 def load_lottiefile(filepath: str):
@@ -386,9 +386,9 @@ def textRator(uniqueKey, articleName):
         response = st_text_rater(text=text, key= str(uniqueKey)+'4')
         if(response=='liked'):
             st.balloons()
-            # database(articleName, True)
+            database(articleName, True)
         else:
-            # database(articleName, False)
+            database(articleName, False)
             pass
 
 
