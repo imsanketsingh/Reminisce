@@ -418,7 +418,7 @@ def compendiaTopics():
 
 def specialSubtopics():
     return option_menu(None, ["Climate Change", "Guests"],
-            icons=['globe', 'user'],
+            icons=['globe', 'glyphicon glyphicon-user'],
             menu_icon="list", default_index=0,
             styles={
                 "container": {"padding": "10px", "background-color": "#f0f0f0", "border-radius": "8px"},
