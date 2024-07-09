@@ -421,8 +421,8 @@ def specialSubtopics():
             icons=['globe', 'person-fill'],
             menu_icon="list", default_index=0,
             styles={
-                "container": {"padding-right": "10px", "padding-left": "10px", "background-color": "#f0f0f0", "border-radius": "8px"},
-                "icon": {"color": "#FF5733", "font-size": "14px", "margin-right": "10px", "margin-left": "10px"},
+                "container": {"background-color": "#f0f0f0", "border-radius": "8px"},
+                "icon": {"color": "#FF5733", "font-size": "14px", },
                 "nav-link": {"font-size": "16px", "text-align": "left", "margin-right": "10px", "margin-left": "10px", "padding": "8px", "border-radius": "6px", "transition": "background-color 0.3s ease", "color": "#eee", "background-color": "#1a4513"},
                 "nav-link-selected": {"background-color": "#0b2907", "color": "#fff"},
                 "nav-link:hover": {"background-color": "#FFC300", "color": "#fff"}
