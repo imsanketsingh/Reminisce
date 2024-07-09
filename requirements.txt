@@ -6,3 +6,4 @@ pandas
 requests
 streamlit_text_rating
 streamlit_lottie
+mysql-connector-python
