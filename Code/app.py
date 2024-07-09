@@ -137,9 +137,16 @@ elif choose == "Compendia":
     elif topic == "Special":
         specialSubtopic = specialSubtopics()
 
-        #Topic 5 Special 1
+        #Topic 5 specialSubtopic 1 Climate 1
+        if specialSubtopic == "Climate Change":
+            comingSoonDisplay(True)
 
-        comingSoonDisplay(True)
+
+        #Topic 5 specialSubtopic 1 Guests 1
+        elif specialSubtopic == "Guests":
+            comingSoonDisplay(True)
+
+        
 
 ####################################################################################################
 
