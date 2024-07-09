@@ -382,13 +382,13 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    for text in ["Did you like the articlesss?"]:
+    for text in ["Did you like the article?"]:
         response = st_text_rater(text=text, key= str(uniqueKey)+'4')
         if(response=='liked'):
             st.balloons()
             database(articleName, True)
         else:
-            database(articleName, False)
+            # database(articleName, False)
             pass
 
 
