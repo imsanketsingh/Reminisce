@@ -18,7 +18,7 @@ def database(articleName, event):
 
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM mytable WHERE article = ?", (articleName,))
+    cursor.execute("SELECT * FROM mytable WHERE article = ?", (articleName))
     existing_row = cursor.fetchone()
 
     if event:
