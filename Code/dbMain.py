@@ -37,8 +37,8 @@ def database(articleName, event):
         conn.commit()
 
     except mysql.connector.Error as err:
-        # st.error(f"MySQL error: {err}")
-        pass
+        st.error(f"MySQL error: {err}")
+        # pass
 
     finally:
         if 'cursor' in locals():
