@@ -387,9 +387,8 @@ def textRator(uniqueKey, articleName):
         if(response=='liked'):
             st.balloons()
             database(articleName, True)
-        else:
-            # database(articleName, False)
-            pass
+        elif(response=='disliked'):
+            database(articleName, False)
 
 
 
