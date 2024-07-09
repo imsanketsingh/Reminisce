@@ -417,7 +417,7 @@ def compendiaTopics():
         )
 
 def specialSubtopics():
-    return option_menu(None, ["Climate Change"],
+    return option_menu(None, ["Climate Change", "Guests"],
         icons=['book', 'laptop','lightning','journal-plus'],
         menu_icon="list", default_index=0,
         styles={
