@@ -423,7 +423,7 @@ def specialSubtopics():
             styles={
                 "container": {"background-color": "#f0f0f0", "border-radius": "8px", "width" : "80%"},
                 "icon": {"color": "#FF5733", "font-size": "14px", },
-                "nav": {"margin-right": "10px", "margin-left": "10px", "width" : "30%"},
+                "nav": {"margin-right": "10px", "margin-left": "10px", "width" : "39%"},
                 "nav-link": {"font-size": "16px", "text-align": "left", "border-radius": "6px", "transition": "background-color 0.3s ease", "color": "#eee", "background-color": "#1a4513"},
                 "nav-link-selected": {"background-color": "#0b2907", "color": "#fff"},
                 "nav-link:hover": {"background-color": "#FFC300", "color": "#fff"}
