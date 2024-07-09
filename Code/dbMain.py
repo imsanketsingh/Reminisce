@@ -19,7 +19,7 @@ def database(articleName, event):
 
         cursor = conn.cursor()
         # st.write(articleName)
-        # cursor.execute("SELECT * FROM mytable WHERE article = {articleName}")
+        # cursor.execute(f"SELECT * FROM mytable WHERE article = {articleName}")
         # existing_row = cursor.fetchone()
         existing_row = None
         if event:
@@ -30,9 +30,9 @@ def database(articleName, event):
 
         else:
             if existing_row is not None:
-                cursor.execute("UPDATE mytable SET disliked = disliked + 1 WHERE article = {articleName}")
+                cursor.execute(f"UPDATE mytable SET disliked = disliked + 1 WHERE article = {articleName}")
             else:
-                cursor.execute("INSERT INTO mytable (article, disliked) VALUES ({articleName}, 1)")
+                cursor.execute(f"INSERT INTO mytable (article, disliked) VALUES ({articleName}, 1)")
 
         conn.commit()
 
