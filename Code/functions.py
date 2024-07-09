@@ -405,7 +405,7 @@ def reminisceTopics():
         ) 
 
 def compendiaTopics():
-    return option_menu(None, ["Books", "Tech", "Philosophy", "BeyondThePages", "BeMyGuest"],
+    return option_menu(None, ["Books", "Tech", "Philosophy", "BeyondThePages", "Special"],
                          icons=['book', 'laptop','lightning','journal-plus'],
                          menu_icon="list", default_index=0,
                          styles={

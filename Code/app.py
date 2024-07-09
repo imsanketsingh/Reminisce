@@ -134,9 +134,9 @@ elif choose == "Compendia":
 
     
     #Topic 5
-    elif topic == "BeMyGuest":
+    elif topic == "Special":
 
-        #Topic 5 BeMyGuest 1
+        #Topic 5 Special 1
 
         comingSoonDisplay(True)
 
