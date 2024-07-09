@@ -139,6 +139,7 @@ elif choose == "Compendia":
 
         #Topic 5 specialSubtopic 1 Climate 1
         if specialSubtopic == "Climate Change":
+            displayWriting("CBTP1", './Cover Images/painofpeople.jpg', './New/Beyondthepages/The Pain of People.html', 'The Pain of People', 'Pain is a prevalent issue that can affect people from all walks of life. Acknowledging the pain of others is essential for building empathy and understanding, as it helps us to connect with others on a deeper level.', None)
             comingSoonDisplay(True)
 
 
