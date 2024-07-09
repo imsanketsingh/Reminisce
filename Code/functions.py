@@ -417,5 +417,13 @@ def compendiaTopics():
         )
 
 def specialSubtopics():
-    return option_menu(None, ["Climate Change"]
+    return option_menu(None, ["Climate Change"],
+        icons=['book', 'laptop','lightning','journal-plus'],
+        menu_icon="list", default_index=0,
+        styles={
+        "container": {"padding": "10!important", "background-color": "#fafafa"},
+        "icon": {"color": "orange", "font-size": "10px"}, 
+        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"15px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#080000"},
+        },orientation='horizontal'
         )
