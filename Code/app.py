@@ -138,7 +138,7 @@ elif choose == "Compendia":
         specialSubtopic = specialSubtopics()
 
         #Topic 5 specialSubtopic 1 Climate 1
-        if specialSubtopic == "Climate Change":
+        if specialSubtopic == "Climate":
             comingSoonDisplay(True)
 
 
