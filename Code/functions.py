@@ -418,12 +418,14 @@ def compendiaTopics():
 
 def specialSubtopics():
     return option_menu(None, ["Climate Change", "Guests"],
-        icons=['book', 'laptop','lightning','journal-plus'],
-        menu_icon="list", default_index=0,
-        styles={
-        "container": {"padding": "10!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "10px"}, 
-        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"15px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#080000"},
-        },orientation='horizontal'
-        )
+            icons=['globe', 'user'],
+            menu_icon="list", default_index=0,
+            styles={
+                "container": {"padding": "10px", "background-color": "#fafafa", "border-radius": "8px"},
+                "icon": {"color": "#FF5733", "font-size": "14px", "margin-right": "10px"},
+                "nav-link": {"font-size": "16px", "text-align": "left", "margin": "10px", "padding": "8px", "border-radius": "6px", "transition": "background-color 0.3s ease", "color": "#333"},
+                "nav-link-selected": {"background-color": "#FF5733", "color": "#fff"},
+                "nav-link:hover": {"background-color": "#FFC300", "color": "#fff"}
+            },
+            orientation='horizontal'
+            )
