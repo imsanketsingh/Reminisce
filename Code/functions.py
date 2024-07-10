@@ -387,10 +387,9 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
 
 def textRator(uniqueKey, articleName):
-    key = f"{uniqueKey}_rating"
-    
+    key=str(uniqueKey)+'4'
     # Display text rating component
-    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
+    response = st_text_rater(text="Did you like the article?", key=key)
     
     # Handle response from text rater
     if response in ['liked', 'disliked']:
