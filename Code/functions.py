@@ -31,8 +31,42 @@ def lottieWork():
     )
 
 
+def displayMessage(title, message):
+    col1, col2 = st.columns( [0.8, 0.2])
+    with col1:
+        st.markdown(""" <style> .font {
+        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
+        </style> """, unsafe_allow_html=True)
+        
+        st.markdown(f'<div style="text-align: center; position: relative; bottom: 10px; width: 100%;"> <span style="color: #046764; font-size: 33px; font-weight:Bold; font-style:helvetica;text-decoration: underline;">{title}</span> </div>', unsafe_allow_html=True)
+    st.markdown(f"""{message}""", unsafe_allow_html=True)
 
 
+def showthecontent(filepath):
+    with open(filepath, "r") as f:
+        html_string = f.read()
+    components.html(html_string, scrolling = True, height = 700)
+
+
+def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
+    coverImage = Image.open(coverImageUrl)
+    coverImage = coverImage.resize((320, 240))
+    with st.container():
+        image_col, text_col = st.columns((2, 3))
+        with image_col:
+            st.image(coverImage)
+        with text_col:
+            st.markdown(""" <style> .font {
+            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+            </style> """, unsafe_allow_html=True)
+            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
+            st.markdown(metaDescription, unsafe_allow_html=True)
+        if st.button("Get into it", key=str(uniqueKey)+'1'):
+            showthecontent(contentPath)
+            st.button("Wrap it up!", help="Close it")
+
+    textRator(uniqueKey, heading)
+    st.write('---')
 
 def sidebar():
     st.markdown("""
@@ -84,16 +118,6 @@ def sidebar():
     }
     )
     return choose
-
-def displayMessage(title, message):
-    col1, col2 = st.columns( [0.8, 0.2])
-    with col1:
-        st.markdown(""" <style> .font {
-        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
-        </style> """, unsafe_allow_html=True)
-        
-        st.markdown(f'<div style="text-align: center; position: relative; bottom: 10px; width: 100%;"> <span style="color: #046764; font-size: 33px; font-weight:Bold; font-style:helvetica;text-decoration: underline;">{title}</span> </div>', unsafe_allow_html=True)
-    st.markdown(f"""{message}""", unsafe_allow_html=True)
 
 
 def message():
@@ -344,8 +368,6 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     with col1:  
         if st.button('Open Article',key = str(uniqueKey)+'1'):            
             showPDF(contentPath)
-            st.markdown("")
-            textRator(uniqueKey, title)
     with col2:
         st.button('Close Article',key= str(uniqueKey)+'2')             
     with col3:
@@ -356,52 +378,21 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 file_name= str(title)+".pdf",
                 mime='application/octet-stream')
 
+    textRator(uniqueKey, title)
     st.write('---')
-
-
-def showthecontent(filepath):
-    with open(filepath, "r") as f:
-        html_string = f.read()
-    components.html(html_string, scrolling = True, height = 700)
-
-
-def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
-    coverImage = Image.open(coverImageUrl)
-    coverImage = coverImage.resize((320, 240))
-    with st.container():
-        image_col, text_col = st.columns((2, 3))
-        with image_col:
-            st.image(coverImage)
-        with text_col:
-            st.markdown(""" <style> .font {
-            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-            </style> """, unsafe_allow_html=True)
-            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
-            st.markdown(metaDescription, unsafe_allow_html=True)
-        if st.button("Get into it", key=str(uniqueKey)+'1'):
-            showthecontent(contentPath)
-            st.button("Wrap it up!", help="Close it")    
-            textRator(uniqueKey, heading)
-    st.write('---')
-
-
-import time
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like it?", key= str(uniqueKey)+'4')
+    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
     countFromDB = [0,0, True]
     if(response=='liked'):
         st.balloons()
         countFromDB = database(articleName, True)
         if(countFromDB[2]): st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else: st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
-        time.sleep(5)
     elif(response=='disliked'):
         countFromDB = database(articleName, False)
         if(countFromDB[2]): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else: st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-        time.sleep(5)
-    
 
 
 def reminisceTopics():
