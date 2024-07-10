@@ -402,7 +402,7 @@ def textRator(uniqueKey, articleName):
         session_state[key_rating] = True
         st.balloons()
         # Start a timer to reset session state to False after 2 seconds
-        threading.Timer(2.0, reset_session_state, args=[key_rating]).start()
+        threading.Timer(1.0, reset_session_state, args=[key_rating]).start()
         
         # Example database function call with rating parameter
         countFromDB = database(articleName, True)
