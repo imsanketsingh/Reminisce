@@ -53,8 +53,8 @@ def database(articleName, event):
         return counts
 
     except mysql.connector.Error as e:
-        st.error(f"Error: {e}")
+        # st.error(f"Error: {e}")
         return ["NA", "NA"]
     except Exception as e:
-        st.error(f"Unexpected error: {e}")
+        # st.error(f"Unexpected error: {e}")
         return ["NA", "NA"]
