@@ -8,7 +8,7 @@ def database(articleName, event):
         charset="utf8mb4",
         connect_timeout=timeout,
         cursorclass=pymysql.cursors.DictCursor,
-        db= st.secrets["mysql"]["db"],
+        db= st.secrets["mysql"]["database"],
         host= st.secrets["mysql"]["host"],
         password= st.secrets["mysql"]["password"],
         read_timeout=timeout,
