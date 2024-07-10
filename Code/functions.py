@@ -63,9 +63,8 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(metaDescription, unsafe_allow_html=True)
         if st.button("Get into it", key=str(uniqueKey)+'1'):
             showthecontent(contentPath)
-            st.button("Wrap it up!", help="Close it")
-
-    textRator(uniqueKey, heading)
+            textRator(uniqueKey, heading)
+            st.button("Wrap it up!", help="Close it")    
     st.write('---')
 
 def sidebar():
@@ -368,6 +367,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     with col1:  
         if st.button('Open Article',key = str(uniqueKey)+'1'):            
             showPDF(contentPath)
+            textRator(uniqueKey, title)
     with col2:
         st.button('Close Article',key= str(uniqueKey)+'2')             
     with col3:
@@ -378,9 +378,8 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 file_name= str(title)+".pdf",
                 mime='application/octet-stream')
 
-    textRator(uniqueKey, title)
     st.write('---')
-    
+
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
