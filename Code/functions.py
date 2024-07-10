@@ -11,8 +11,6 @@ import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
 from dbMain import database
 
-session_state = st.session_state.get('session_state', {})
-
 @st.cache_data
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -383,36 +381,35 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     textRator(uniqueKey, title)
     st.write('---')
 
+session_state = st.session_state.get('session_state', {})
+import threading
+
+def turn_off_element_after_delay(unique_key):
+    # Function to turn off the element corresponding to the unique key after 2 seconds
+    session_state[unique_key] = True
+    
+    def reset_element_state():
+        # Function to reset the session state after 2 seconds
+        if session_state.get(unique_key):
+            session_state[unique_key] = False
+            st.experimental_rerun()
+    
+    # Start a timer to reset session state to False after 2 seconds
+    threading.Timer(2.0, reset_element_state).start()
 
 def textRator(uniqueKey, articleName):
-    key=str(uniqueKey)+'4'
-    # Display text rating component
-    response = st_text_rater(text="Did you like the article?", key=key)
-    
-    # Handle response from text rater
-    if response in ['liked', 'disliked']:
-
-        for k in session_state:
-            if k != key:
-                session_state[k] = False
-        st.session_state['session_state'] = session_state
-                
-        # Example database function call with rating parameter
-        countFromDB = database(articleName, response == 'liked')
-        # Display feedback based on database response
-        if countFromDB[2]:
-            if response == 'liked':
-                st.balloons()
-                st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-            else:
-                st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-        else:
-            if response == 'liked':
-                st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
-            else:
-                st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-
-
+    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    countFromDB = [0,0, True]
+    if(response=='liked'):
+        st.balloons()
+        countFromDB = database(articleName, True)
+        if(countFromDB[2]): st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+    elif(response=='disliked'):
+        countFromDB = database(articleName, False)
+        if(countFromDB[2]): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
+    turn_off_element_after_delay(unique_key)
 
 
 
