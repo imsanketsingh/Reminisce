@@ -9,7 +9,7 @@ import json
 import random
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
-from test import database
+from dbMain import database
 
 @st.cache_data
 def load_lottiefile(filepath: str):
