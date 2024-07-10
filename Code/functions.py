@@ -380,19 +380,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
     textRator(uniqueKey, title)
     st.write('---')
-
-session_state = st.session_state.get('session_state', {})
-import threading
-
-def turn_off_element_after_delay(unique_key):    
-    def reset_element_state():
-        # Function to reset the session state after 2 seconds
-        if session_state.get(unique_key):
-            session_state[unique_key] = False
-            st.experimental_rerun()
     
-    # Start a timer to reset session state to False after 2 seconds
-    threading.Timer(1.0, reset_element_state).start()
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
@@ -406,12 +394,6 @@ def textRator(uniqueKey, articleName):
         countFromDB = database(articleName, False)
         if(countFromDB[2]): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else: st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-    turn_off_element_after_delay(uniqueKey)
-
-
-
-
-
 
 
 def reminisceTopics():
