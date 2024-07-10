@@ -387,10 +387,12 @@ def textRator(uniqueKey, articleName):
     if(response=='liked'):
         st.balloons()
         countFromDB = database(articleName, True)
-        st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        st.markdown(f"Thank you, Now {articleName} has {countFromDB[0]} likes and {countFromDB[1]} dislikes.")
     elif(response=='disliked'):
         countFromDB = database(articleName, False)
-        st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        st.markdown(f"Thank you, Now {articleName} has {countFromDB[0]} likes and {countFromDB[1]} dislikes.")
+
+
 
 
 
