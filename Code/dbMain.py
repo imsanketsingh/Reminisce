@@ -54,7 +54,7 @@ def database(articleName, event):
 
     except mysql.connector.Error as e:
         st.error(f"Error: {e}")
-        return None
+        return ["NA", "NA"]
     except Exception as e:
         st.error(f"Unexpected error: {e}")
-        return None
+        return ["NA", "NA"]
