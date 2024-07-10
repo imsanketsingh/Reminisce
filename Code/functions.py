@@ -386,40 +386,37 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     st.write('---')
 
 
-def reset_session_state(key_rating):
-    # Function to reset session state to False after 2 seconds
-    session_state[key_rating] = False
-    st.experimental_rerun()
-
 def textRator(uniqueKey, articleName):
-    key_rating = f"{uniqueKey}_rating"
+    key = f"{uniqueKey}_rating"
     
     # Display text rating component
     response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
     
     # Handle response from text rater
-    if response == 'liked':
-        session_state[key_rating] = True
-        st.balloons()
-        # Start a timer to reset session state to False after 2 seconds
-        threading.Timer(1.0, reset_session_state, args=[key_rating]).start()
+    if response in ['liked', 'disliked']:
+        session_state[key] = True
         
+        # Deactivate all other keys if this key is activated
+        for k in session_state:
+            if k != key:
+                session_state[k] = False
+                
         # Example database function call with rating parameter
-        countFromDB = database(articleName, True)
-        if countFromDB[2]:
-            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes.")
-        else:
-            st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
-    
-    elif response == 'disliked':
-        session_state[key_rating] = False
+        countFromDB = database(articleName, response == 'liked')
         
-        # Example database function call with rating parameter
-        countFromDB = database(articleName, False)
+        # Display feedback based on database response
         if countFromDB[2]:
-            st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[1]}_ dislikes.")
+            if response == 'liked':
+                st.balloons()
+                st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+            else:
+                st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else:
-            st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
+            if response == 'liked':
+                st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+            else:
+                st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
+
 
 
 
