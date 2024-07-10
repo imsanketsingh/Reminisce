@@ -31,41 +31,8 @@ def lottieWork():
     )
 
 
-def displayMessage(title, message):
-    col1, col2 = st.columns( [0.8, 0.2])
-    with col1:
-        st.markdown(""" <style> .font {
-        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
-        </style> """, unsafe_allow_html=True)
-        
-        st.markdown(f'<div style="text-align: center; position: relative; bottom: 10px; width: 100%;"> <span style="color: #046764; font-size: 33px; font-weight:Bold; font-style:helvetica;text-decoration: underline;">{title}</span> </div>', unsafe_allow_html=True)
-    st.markdown(f"""{message}""", unsafe_allow_html=True)
 
 
-def showthecontent(filepath):
-    with open(filepath, "r") as f:
-        html_string = f.read()
-    components.html(html_string, scrolling = True, height = 700)
-
-
-def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
-    coverImage = Image.open(coverImageUrl)
-    coverImage = coverImage.resize((320, 240))
-    with st.container():
-        image_col, text_col = st.columns((2, 3))
-        with image_col:
-            st.image(coverImage)
-        with text_col:
-            st.markdown(""" <style> .font {
-            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-            </style> """, unsafe_allow_html=True)
-            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
-            st.markdown(metaDescription, unsafe_allow_html=True)
-        if st.button("Get into it", key=str(uniqueKey)+'1'):
-            showthecontent(contentPath)
-            textRator(uniqueKey, heading)
-            st.button("Wrap it up!", help="Close it")    
-    st.write('---')
 
 def sidebar():
     st.markdown("""
@@ -117,6 +84,16 @@ def sidebar():
     }
     )
     return choose
+
+def displayMessage(title, message):
+    col1, col2 = st.columns( [0.8, 0.2])
+    with col1:
+        st.markdown(""" <style> .font {
+        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
+        </style> """, unsafe_allow_html=True)
+        
+        st.markdown(f'<div style="text-align: center; position: relative; bottom: 10px; width: 100%;"> <span style="color: #046764; font-size: 33px; font-weight:Bold; font-style:helvetica;text-decoration: underline;">{title}</span> </div>', unsafe_allow_html=True)
+    st.markdown(f"""{message}""", unsafe_allow_html=True)
 
 
 def message():
@@ -380,6 +357,34 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 mime='application/octet-stream')
 
     st.write('---')
+
+
+def showthecontent(filepath):
+    with open(filepath, "r") as f:
+        html_string = f.read()
+    components.html(html_string, scrolling = True, height = 700)
+
+
+def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
+    coverImage = Image.open(coverImageUrl)
+    coverImage = coverImage.resize((320, 240))
+    with st.container():
+        image_col, text_col = st.columns((2, 3))
+        with image_col:
+            st.image(coverImage)
+        with text_col:
+            st.markdown(""" <style> .font {
+            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+            </style> """, unsafe_allow_html=True)
+            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
+            st.markdown(metaDescription, unsafe_allow_html=True)
+        if st.button("Get into it", key=str(uniqueKey)+'1'):
+            showthecontent(contentPath)
+            textRator(uniqueKey, heading)
+            st.button("Wrap it up!", help="Close it")    
+    st.write('---')
+
+
 
 
 def textRator(uniqueKey, articleName):
