@@ -24,13 +24,20 @@ def database(articleName, event):
         if event:
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET liked = liked + 1 WHERE article = %s", (articleName,))
+                st.write(1)
             else:
                 cursor.execute("INSERT INTO mytable (article, liked) VALUES (%s, 1)", (articleName,))
+                st.write(2)
+
         else:
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET disliked = disliked + 1 WHERE article = %s", (articleName,))
+                st.write(3)
+
             else:
                 cursor.execute("INSERT INTO mytable (article, disliked) VALUES (%s, 1)", (articleName,))
+                st.write(4)
+
 
         conn.commit()
 
