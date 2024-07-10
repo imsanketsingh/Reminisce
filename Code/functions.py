@@ -386,14 +386,14 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 def textRator(uniqueKey, articleName):
     key_rating = f"{uniqueKey}_rating"
     
-    rating = st.text_input(f"Did you like the article?", key=f"rating_{uniqueKey}")
+    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
     
-    if rating.lower() == 'liked':
+    if response == 'liked':
         session_state[key_rating] = True
-    elif rating.lower() == 'disliked':
+    elif response == 'disliked':
         session_state[key_rating] = False
     
-    if rating.lower() in ['liked', 'disliked']:
+    if response in ['liked', 'disliked']:
         countFromDB = database(articleName, session_state.get(key_rating))
         if countFromDB[2]:
             if session_state.get(key_rating):
