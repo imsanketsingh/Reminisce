@@ -28,7 +28,7 @@ def database(articleName, event):
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET liked = liked + 1 WHERE article = %s", (articleName,))
                 counts[0] = existing_row[2]+1
-                counts[1] = existing_row[3]+1
+                counts[1] = existing_row[3]
                 # st.write(1)
             else:
                 cursor.execute("INSERT INTO mytable (article, liked) VALUES (%s, 1)", (articleName,))
@@ -38,7 +38,7 @@ def database(articleName, event):
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET disliked = disliked + 1 WHERE article = %s", (articleName,))
                 counts[0] = existing_row[2]
-                counts[1] = existing_row[3]
+                counts[1] = existing_row[3]+1
                 # st.write(3)
             else:
                 cursor.execute("INSERT INTO mytable (article, disliked) VALUES (%s, 1)", (articleName,))
