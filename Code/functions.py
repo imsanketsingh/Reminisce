@@ -397,10 +397,10 @@ def textRator(uniqueKey, articleName):
         for k in session_state:
             if k != key:
                 session_state[k] = False
+        st.session_state['session_state'] = session_state
                 
         # Example database function call with rating parameter
         countFromDB = database(articleName, response == 'liked')
-        
         # Display feedback based on database response
         if countFromDB[2]:
             if response == 'liked':
@@ -414,7 +414,7 @@ def textRator(uniqueKey, articleName):
             else:
                 st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
 
-st.session_state['session_state'] = session_state
+
 
 
 
