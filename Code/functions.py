@@ -9,6 +9,7 @@ import json
 import random
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
+import threading
 import time
 from dbMain import database
 
@@ -384,6 +385,12 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     textRator(uniqueKey, title)
     st.write('---')
 
+
+def reset_session_state(key_rating):
+    # Function to reset session state after 2 seconds
+    time.sleep(2)
+    session_state[key_rating] = False
+
 def textRator(uniqueKey, articleName):
     key_rating = f"{uniqueKey}_rating"
     
@@ -394,16 +401,11 @@ def textRator(uniqueKey, articleName):
     if response == 'liked':
         session_state[key_rating] = True
         st.balloons()
+        # Start a thread to reset session state after 2 seconds
+        threading.Thread(target=reset_session_state, args=(key_rating,)).start()
+    
     elif response == 'disliked':
         session_state[key_rating] = False
-    
-    # Check if session state is active and set a timer to deactivate it
-    if session_state.get(key_rating):
-        st.markdown(f"Session for {articleName} is active.")
-        st.write(f"response --> {response}")
-        time.sleep(2)
-        session_state[key_rating] = False
-        st.markdown(f"Session for {articleName} has expired.")
     
     # Example database function call with rating parameter
     countFromDB = database(articleName, session_state.get(key_rating))
