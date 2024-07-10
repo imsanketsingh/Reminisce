@@ -383,14 +383,13 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     textRator(uniqueKey, title)
     st.write('---')
 
-
 def textRator(uniqueKey, articleName):
     key_rating = f"{uniqueKey}_rating"
- 
+    
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
     
     for key in session_state.keys():
-        if key.startswith(f"rating_") and key != f"rating_{uniqueKey}":
+        if key.startswith("rating_"):
             session_state[key] = False
     
     if response == 'liked':
