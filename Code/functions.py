@@ -392,7 +392,7 @@ def textRator(uniqueKey, articleName):
     # Manage session state for other ratings
     for key in list(session_state.keys()):
         if key.startswith("rating_") and key != f"rating_{uniqueKey}":
-            session_state.pop(key, None)
+            session_state[key] = False
     
     # Handle response from text rater
     if response == 'liked':
@@ -414,7 +414,6 @@ def textRator(uniqueKey, articleName):
                 st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
             else:
                 st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-
 
 
 
