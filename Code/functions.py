@@ -383,14 +383,16 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
-    countFromDB = [0,0]
+    countFromDB = [0,0, True]
     if(response=='liked'):
         st.balloons()
         countFromDB = database(articleName, True)
-        st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        if(countFromDB): st.markdown(f"✨ Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded_")
     elif(response=='disliked'):
         countFromDB = database(articleName, False)
-        st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        if(countFromDB): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded_")
 
 
 

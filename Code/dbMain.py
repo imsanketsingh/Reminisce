@@ -17,7 +17,7 @@ def database(articleName, event):
             password=password
         )
 
-        counts = [0,0]
+        counts = [0,0, True] # True means there was no error accessing the db
 
         cursor = conn.cursor()
         # st.write(articleName)
@@ -54,7 +54,7 @@ def database(articleName, event):
 
     except mysql.connector.Error as e:
         # st.error(f"Error: {e}")
-        return ["NA", "NA"]
+        return ["NA", "NA", False]
     except Exception as e:
         # st.error(f"Unexpected error: {e}")
-        return ["NA", "NA"]
+        return ["NA", "NA", False]
