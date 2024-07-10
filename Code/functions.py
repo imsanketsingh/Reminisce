@@ -383,11 +383,14 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    countFromDB = []
     if(response=='liked'):
         st.balloons()
-        database(articleName, True)
+        countFromDB = database(articleName, True)
     elif(response=='disliked'):
-        database(articleName, False)
+        countFromDB = database(articleName, False)
+    st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+
 
 
 
