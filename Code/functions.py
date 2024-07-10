@@ -386,17 +386,21 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 def textRator(uniqueKey, articleName):
     key_rating = f"{uniqueKey}_rating"
     
-    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    # Display text rating component
+    response = st_text_rater(text=f"Did you like '{articleName}'?", key=f"rating_{uniqueKey}")
     
-    for key in session_state.keys():
-        if key.startswith("rating_"):
-            session_state[key] = False
+    # Manage session state for other ratings
+    for key in list(session_state.keys()):
+        if key.startswith("rating_") and key != f"rating_{uniqueKey}":
+            session_state.pop(key, None)
     
+    # Handle response from text rater
     if response == 'liked':
         session_state[key_rating] = True
     elif response == 'disliked':
         session_state[key_rating] = False
     
+    # Example database function call with rating parameter
     if response in ['liked', 'disliked']:
         countFromDB = database(articleName, session_state.get(key_rating))
         if countFromDB[2]:
@@ -410,7 +414,6 @@ def textRator(uniqueKey, articleName):
                 st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
             else:
                 st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-
 
 
 
