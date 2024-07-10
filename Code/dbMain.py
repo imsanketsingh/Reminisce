@@ -19,9 +19,8 @@ def database(articleName, event):
 
         cursor = conn.cursor()
         # st.write(articleName)
-        # cursor.execute(f"SELECT * FROM mytable WHERE article = {articleName}")
-        # existing_row = cursor.fetchone()
-        existing_row = None
+        cursor.execute(f"SELECT * FROM mytable WHERE article = %s", (articleName,))
+        existing_row = cursor.fetchone()
         if event:
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET liked = liked + 1 WHERE article = %s", (articleName,))
