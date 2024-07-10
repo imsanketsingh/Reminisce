@@ -384,10 +384,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 session_state = st.session_state.get('session_state', {})
 import threading
 
-def turn_off_element_after_delay(unique_key):
-    # Function to turn off the element corresponding to the unique key after 2 seconds
-    session_state[unique_key] = True
-    
+def turn_off_element_after_delay(unique_key):    
     def reset_element_state():
         # Function to reset the session state after 2 seconds
         if session_state.get(unique_key):
@@ -395,7 +392,7 @@ def turn_off_element_after_delay(unique_key):
             st.experimental_rerun()
     
     # Start a timer to reset session state to False after 2 seconds
-    threading.Timer(2.0, reset_element_state).start()
+    threading.Timer(1.0, reset_element_state).start()
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
