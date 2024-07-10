@@ -381,6 +381,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 mime='application/octet-stream')
 
     textRator(uniqueKey, title)
+    st.session_state['session_state'] = session_state
     st.write('---')
 
 
@@ -413,7 +414,8 @@ def textRator(uniqueKey, articleName):
                 st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
             else:
                 st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-    st.session_state['session_state'] = session_state
+
+
 
 
 
