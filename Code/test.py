@@ -13,7 +13,7 @@ def database(articleName, event):
         password= st.secrets["mysql"]["password"],
         read_timeout=timeout,
         port=st.secrets["mysql"]["port"],
-        user= st.secrets["mysql"]["user"],
+        user= st.secrets["mysql"]["username"],
         write_timeout=timeout,
     )
     
