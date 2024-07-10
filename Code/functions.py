@@ -384,33 +384,28 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    key_liked = f"{uniqueKey}_liked"
-    key_disliked = f"{uniqueKey}_disliked"
+    key_rating = f"{uniqueKey}_rating"
     
-    liked_clicked = st.button(f"Like '{articleName}'", key=f"like_{uniqueKey}")
-    disliked_clicked = st.button(f"Dislike '{articleName}'", key=f"dislike_{uniqueKey}")
+    rating = st.text_input(f"Did you like the article?", key=f"rating_{uniqueKey}")
     
-    if liked_clicked:
-        session_state[key_liked] = True
-        session_state[key_disliked] = False
-    elif disliked_clicked:
-        session_state[key_disliked] = True
-        session_state[key_liked] = False
+    if rating.lower() == 'liked':
+        session_state[key_rating] = True
+    elif rating.lower() == 'disliked':
+        session_state[key_rating] = False
     
-    if liked_clicked or disliked_clicked:
-        countFromDB = database(articleName, session_state.get(key_liked, False))
+    if rating.lower() in ['liked', 'disliked']:
+        countFromDB = database(articleName, session_state.get(key_rating))
         if countFromDB[2]:
-            if session_state.get(key_liked, False):
+            if session_state.get(key_rating):
                 st.balloons()
                 st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes.")
-            elif session_state.get(key_disliked, False):
+            else:
                 st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[1]}_ dislikes.")
         else:
-            if session_state.get(key_liked, False):
+            if session_state.get(key_rating):
                 st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
-            elif session_state.get(key_disliked, False):
+            else:
                 st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-
 
 
 
