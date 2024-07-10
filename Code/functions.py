@@ -399,7 +399,7 @@ def textRator(uniqueKey, articleName):
         countFromDB = database(articleName, False)
         if(countFromDB[2]): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else: st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
-    time.sleep(3)
+    time.sleep(10)
 
 
 def reminisceTopics():
