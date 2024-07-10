@@ -380,8 +380,8 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(metaDescription, unsafe_allow_html=True)
         if st.button("Get into it", key=str(uniqueKey)+'1'):
             showthecontent(contentPath)
-            textRator(uniqueKey, heading)
             st.button("Wrap it up!", help="Close it")    
+            textRator(uniqueKey, heading)
     st.write('---')
 
 
