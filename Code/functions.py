@@ -367,11 +367,10 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     with col1:  
         if st.button('Open Article',key = str(uniqueKey)+'1'):            
             showPDF(contentPath)
-            
-    with col2:
-        if st.button('Close Article',key= str(uniqueKey)+'2'):
             st.markdown("")
-            textRator(uniqueKey, title)            
+            textRator(uniqueKey, title)
+    with col2:
+        st.button('Close Article',key= str(uniqueKey)+'2')             
     with col3:
         with open(contentPath, "rb") as pdf_file:
             PDFbyte = pdf_file.read()
