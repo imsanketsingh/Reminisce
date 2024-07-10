@@ -394,7 +394,7 @@ def textRator(uniqueKey, articleName):
     
     # Handle response from text rater
     if response in ['liked', 'disliked']:
-        session_state[key] = True
+        session_state[key] = not session_state.get(key, False)
         
         # Deactivate all other keys if this key is activated
         for k in session_state:
