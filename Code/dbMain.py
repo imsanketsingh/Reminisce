@@ -3,11 +3,11 @@ import mysql.connector
 
 def database(articleName, event):
     
-        host = st.secrets["mysql"]["host"]
-        port = st.secrets["mysql"]["port"]
-        database = st.secrets["mysql"]["database"]
-        username = st.secrets["mysql"]["username"]
-        password = st.secrets["mysql"]["password"]
+        host = st.secrets["connections.mysql"]["host"]
+        port = st.secrets["connections.mysql"]["port"]
+        database = st.secrets["connections.mysql"]["database"]
+        username = st.secrets["connections.mysql"]["username"]
+        password = st.secrets["connections.mysql"]["password"]
 
         conn = mysql.connector.connect(
             host=host,
