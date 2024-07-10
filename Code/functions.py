@@ -383,7 +383,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    response = st_text_rater(text="Did you like it?", key= str(uniqueKey)+'4')
     countFromDB = [0,0, True]
     if(response=='liked'):
         st.balloons()
