@@ -2,7 +2,7 @@ import streamlit as st
 import mysql.connector
 
 def database(articleName, event):
-    
+    try:
         host = st.secrets["mysql"]["host"]
         port = st.secrets["mysql"]["port"]
         database = st.secrets["mysql"]["database"]
@@ -23,6 +23,7 @@ def database(articleName, event):
         # st.write(articleName)
         cursor.execute(f"SELECT * FROM mytable WHERE article = %s", (articleName,))
         existing_row = cursor.fetchone()
+        
         if event:
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET liked = liked + 1 WHERE article = %s", (articleName,))
@@ -33,7 +34,6 @@ def database(articleName, event):
                 cursor.execute("INSERT INTO mytable (article, liked) VALUES (%s, 1)", (articleName,))
                 counts[0] = 1
                 # st.write(2)
-
         else:
             if existing_row is not None:
                 cursor.execute("UPDATE mytable SET disliked = disliked + 1 WHERE article = %s", (articleName,))
@@ -45,7 +45,6 @@ def database(articleName, event):
                 counts[1] = 1
                 # st.write(4)
 
-
         conn.commit()
 
         cursor.close()
@@ -53,3 +52,9 @@ def database(articleName, event):
 
         return counts
 
+    except mysql.connector.Error as e:
+        st.error(f"Error: {e}")
+        return None
+    except Exception as e:
+        st.error(f"Unexpected error: {e}")
+        return None
