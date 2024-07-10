@@ -9,6 +9,7 @@ import json
 import random
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
+import time
 from dbMain import database
 
 session_state = st.session_state.get('session_state', {})
@@ -387,33 +388,35 @@ def textRator(uniqueKey, articleName):
     key_rating = f"{uniqueKey}_rating"
     
     # Display text rating component
-    response = st_text_rater(text=f"Did you like '{articleName}'?", key=f"rating_{uniqueKey}")
-    
-    # Manage session state for other ratings
-    for key in list(session_state.keys()):
-        if key.startswith("rating_") and key != f"rating_{uniqueKey}":
-            session_state[key] = False
+    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
     
     # Handle response from text rater
     if response == 'liked':
         session_state[key_rating] = True
+        st.balloons()
     elif response == 'disliked':
         session_state[key_rating] = False
     
+    # Check if session state is active and set a timer to deactivate it
+    if session_state.get(key_rating):
+        st.markdown(f"Session for {articleName} is active.")
+        st.write(f"response --> {response}")
+        time.sleep(2)
+        session_state[key_rating] = False
+        st.markdown(f"Session for {articleName} has expired.")
+    
     # Example database function call with rating parameter
-    if response in ['liked', 'disliked']:
-        countFromDB = database(articleName, session_state.get(key_rating))
-        if countFromDB[2]:
-            if session_state.get(key_rating):
-                st.balloons()
-                st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes.")
-            else:
-                st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[1]}_ dislikes.")
+    countFromDB = database(articleName, session_state.get(key_rating))
+    if countFromDB[2]:
+        if session_state.get(key_rating):
+            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else:
-            if session_state.get(key_rating):
-                st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
-            else:
-                st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
+            st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+    else:
+        if session_state.get(key_rating):
+            st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+        else:
+            st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
 
 
 
