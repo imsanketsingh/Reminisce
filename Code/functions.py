@@ -387,29 +387,29 @@ def textRator(uniqueKey, articleName):
     key_liked = f"{uniqueKey}_liked"
     key_disliked = f"{uniqueKey}_disliked"
     
-    if st.button(f"Like '{articleName}'", key=f"like_{uniqueKey}"):
-        session_state[key_liked] = not session_state.get(key_liked, False)
-        if session_state[key_liked]:
-            session_state[key_disliked] = False
+    liked_clicked = st.button(f"Like '{articleName}'", key=f"like_{uniqueKey}")
+    disliked_clicked = st.button(f"Dislike '{articleName}'", key=f"dislike_{uniqueKey}")
     
-    if st.button(f"Dislike '{articleName}'", key=f"dislike_{uniqueKey}"):
-        session_state[key_disliked] = not session_state.get(key_disliked, False)
-        if session_state[key_disliked]:
-            session_state[key_liked] = False
+    if liked_clicked:
+        session_state[key_liked] = True
+        session_state[key_disliked] = False
+    elif disliked_clicked:
+        session_state[key_disliked] = True
+        session_state[key_liked] = False
     
-    countFromDB = database(articleName, session_state[key_liked], session_state[key_disliked])
-    
-    if countFromDB[2]:
-        if session_state[key_liked]:
-            st.balloons()
-            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-        elif session_state[key_disliked]:
-            st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-    else:
-        if session_state[key_liked]:
-            st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
-        elif session_state[key_disliked]:
-            st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
+    if liked_clicked or disliked_clicked:
+        countFromDB = database(articleName, session_state.get(key_liked, False))
+        if countFromDB[2]:
+            if session_state.get(key_liked, False):
+                st.balloons()
+                st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes.")
+            elif session_state.get(key_disliked, False):
+                st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[1]}_ dislikes.")
+        else:
+            if session_state.get(key_liked, False):
+                st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+            elif session_state.get(key_disliked, False):
+                st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
 
 
 
