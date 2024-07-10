@@ -9,8 +9,6 @@ import json
 import random
 import base64
 from streamlit_text_rating.st_text_rater import st_text_rater
-import threading
-import time
 from dbMain import database
 
 session_state = st.session_state.get('session_state', {})
@@ -415,6 +413,8 @@ def textRator(uniqueKey, articleName):
                 st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
             else:
                 st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
+    st.session_state['session_state'] = session_state
+
 
 
 
