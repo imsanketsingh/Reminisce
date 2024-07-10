@@ -387,9 +387,9 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
 
 def reset_session_state(key_rating):
-    # Function to reset session state after 2 seconds
-    time.sleep(2)
+    # Function to reset session state to False after 2 seconds
     session_state[key_rating] = False
+    st.experimental_rerun()
 
 def textRator(uniqueKey, articleName):
     key_rating = f"{uniqueKey}_rating"
@@ -401,22 +401,23 @@ def textRator(uniqueKey, articleName):
     if response == 'liked':
         session_state[key_rating] = True
         st.balloons()
-        # Start a thread to reset session state after 2 seconds
-        threading.Thread(target=reset_session_state, args=(key_rating,)).start()
+        # Start a timer to reset session state to False after 2 seconds
+        threading.Timer(2.0, reset_session_state, args=[key_rating]).start()
+        
+        # Example database function call with rating parameter
+        countFromDB = database(articleName, True)
+        if countFromDB[2]:
+            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes.")
+        else:
+            st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
     
     elif response == 'disliked':
         session_state[key_rating] = False
-    
-    # Example database function call with rating parameter
-    countFromDB = database(articleName, session_state.get(key_rating))
-    if countFromDB[2]:
-        if session_state.get(key_rating):
-            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-        else:
-            st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-    else:
-        if session_state.get(key_rating):
-            st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+        
+        # Example database function call with rating parameter
+        countFromDB = database(articleName, False)
+        if countFromDB[2]:
+            st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[1]}_ dislikes.")
         else:
             st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
 
