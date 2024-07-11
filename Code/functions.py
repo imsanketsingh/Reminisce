@@ -405,7 +405,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like it?", key=str(uniqueKey)+'4')
-    st.write(f"Response: {response}")
+    # st.write(f"Response: {response}")
     
     if response:
         countFromDB = [0, 0, True]
