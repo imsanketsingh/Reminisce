@@ -378,28 +378,28 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             </style> """, unsafe_allow_html=True)
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
-        if st.button("Get into it", key=str(uniqueKey)+'1'):
+        with st.button("Get into it", key=str(uniqueKey)+'1'):
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
             st.button("Wrap it up!", help="Close it")
-
+    
+    
     st.write('---')
 
-def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
-    st.write(f"Response: {response}")  # Debugging statement
-    if response:
-        countFromDB = [0, 0, True]
-        if response == 'liked':
-            st.balloons()
-            countFromDB = database(articleName, True)
-        elif response == 'disliked':
-            countFromDB = database(articleName, False)
 
-        if countFromDB[2]:
-            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-        else:
-            st.markdown(f"_Database hourly limit exceeded, this response won't be counted_")
+
+def textRator(uniqueKey, articleName):
+    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    countFromDB = [0,0, True]
+    if(response=='liked'):
+        st.balloons()
+        countFromDB = database(articleName, True)
+        if(countFromDB[2]): st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+    elif(response=='disliked'):
+        countFromDB = database(articleName, False)
+        if(countFromDB[2]): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
 
 
 def reminisceTopics():
