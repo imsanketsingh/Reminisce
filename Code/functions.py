@@ -328,44 +328,32 @@ def displayImg(featureImagePath, title, metaDescription):
             st.markdown(f'<p class="font">{title}</p>', unsafe_allow_html=True)
             st.markdown(f'{metaDescription}', unsafe_allow_html=True)
 
+
 def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription, caption):
     feature_image = Image.open(featureImagePath)
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(feature_image, caption=caption)
+            st.image(feature_image, caption= caption)
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
             </style> """, unsafe_allow_html=True)
             st.markdown(f'<p class="font">{title}</p>', unsafe_allow_html=True)
             st.markdown(f'{metaDescription}<b>[Read More👇]</b>', unsafe_allow_html=True)
-
-    show_article_key = f'show_article_{uniqueKey}'
-    if show_article_key not in st.session_state:
-        st.session_state[show_article_key] = False
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        if st.button('Open Article', key=str(uniqueKey)+'1'):
-            st.session_state[show_article_key] = True
-
+    col1, col2,col3= st.columns(3)
+    with col1:  
+        if st.button('Open Article',key = str(uniqueKey)+'1'):            
+            showPDF(contentPath)
     with col2:
-        if st.button('Close Article', key=str(uniqueKey)+'2'):
-            st.session_state[show_article_key] = False
-
+        st.button('Close Article',key= str(uniqueKey)+'2')             
     with col3:
         with open(contentPath, "rb") as pdf_file:
             PDFbyte = pdf_file.read()
-        st.download_button(label="Download PDF Article", key=str(uniqueKey)+'3',
-                           data=PDFbyte,
-                           file_name=str(title) + ".pdf",
-                           mime='application/octet-stream')
-
-    if st.session_state[show_article_key]:
-        showPDF(contentPath)
-        textRator(uniqueKey, title)
-
+        st.download_button(label="Download PDF Article", key= str(uniqueKey)+'3',
+                data=PDFbyte,
+                file_name= str(title)+".pdf",
+                mime='application/octet-stream')
     st.write('---')
 
 
@@ -412,7 +400,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like it?", key=str(uniqueKey)+'4')
+    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
     # st.write(f"Response: {response}")
     
     if response:
