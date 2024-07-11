@@ -375,6 +375,7 @@ def showthecontent(filepath):
     components.html(html_string, scrolling = True, height = 700)
 
 
+
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
@@ -390,13 +391,18 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
 
+        # Use session state to track which article is expanded
         expanded_key = 'expanded_article'
         if expanded_key not in st.session_state:
             st.session_state[expanded_key] = None
 
         if st.button("Get into it", key=str(uniqueKey)+'_open'):
-            st.session_state[expanded_key] = uniqueKey
+            if st.session_state[expanded_key] == uniqueKey:
+                st.session_state[expanded_key] = None  # Close if already open
+            else:
+                st.session_state[expanded_key] = uniqueKey  # Open the current one
 
+        # Display the article content if it is the expanded one
         if st.session_state[expanded_key] == uniqueKey:
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
