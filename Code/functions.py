@@ -364,26 +364,27 @@ def showthecontent(filepath):
 
 
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
+    show_rater = False  # Flag to track article visibility
+
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
-    
     with st.container():
         image_col, text_col = st.columns((2, 3))
-        
         with image_col:
             st.image(coverImage)
-        
         with text_col:
-            st.markdown(""" <style> .font {
-            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-            </style> """, unsafe_allow_html=True)
+            st.markdown(""" <style> .font { font-size:22px ; font-family: 'Black'; color: #FFFFF;} </style> """, unsafe_allow_html=True)
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
-        
-        if st.button("Get into it", key=str(uniqueKey)+'1'):
-            showthecontent(contentPath)
-            textRator(uniqueKey, heading)
 
+    if st.button("Get into it", key=str(uniqueKey) + '1'):
+        showthecontent(contentPath)
+        show_rater = True  # Set flag to True after opening article
+
+    if show_rater:  # Display rater only if article is open
+        textRator(uniqueKey, heading)
+
+    st.button("Wrap it up!", help="Close it")
     st.write('---')
 
 def textRator(uniqueKey, articleName):
