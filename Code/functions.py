@@ -383,18 +383,25 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
         if expanded_key not in st.session_state:
             st.session_state[expanded_key] = None
 
+        # Check if the current article is expanded
+        is_expanded = st.session_state[expanded_key] == uniqueKey
+
+        # Display toggle button based on current state
         if st.button("Get into it", key=str(uniqueKey)+'_open'):
-            if st.session_state[expanded_key] == uniqueKey:
-                st.session_state[expanded_key] = None  # Close if already open
-            else:
-                st.session_state[expanded_key] = uniqueKey  # Open clicked article
+            # Close all other articles if they are not the current one
+            for key in st.session_state.keys():
+                if key.startswith('expanded_article_') and key != expanded_key:
+                    st.session_state[key] = False
+
+            # Toggle current article state
+            st.session_state[expanded_key] = not is_expanded
 
         # Display the article content if it is the expanded one
-        if st.session_state[expanded_key] == uniqueKey:
+        if st.session_state[expanded_key]:
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
             if st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it"):
-                st.session_state[expanded_key] = None  # Close the article
+                st.session_state[expanded_key] = False
 
     st.write('---')
 
