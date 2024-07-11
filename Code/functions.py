@@ -362,10 +362,10 @@ def showthecontent(filepath):
         html_string = f.read()
     components.html(html_string, scrolling = True, height = 700)
 
+if 'user_rating' not in st.session_state:
+    st.session_state.user_rating = None
 
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
-    show_rater = False  # Flag to track article visibility
-
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
     with st.container():
@@ -379,14 +379,9 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
 
     if st.button("Get into it", key=str(uniqueKey) + '1'):
         showthecontent(contentPath)
-        show_rater = True  # Set flag to True after opening article
-
-    # Separate container for the rater
-    if show_rater:
-        with st.container():
-            textRator(uniqueKey, heading)
-
+        textRator(uniqueKey, heading)
         st.button("Wrap it up!", help="Close it")
+
     st.write('---')
 
 def textRator(uniqueKey, articleName):
@@ -398,8 +393,10 @@ def textRator(uniqueKey, articleName):
         if response == 'liked':
             st.balloons()
             countFromDB = database(articleName, True)
+            st.session_state.user_rating = 'liked'
         elif response == 'disliked':
             countFromDB = database(articleName, False)
+            st.session_state.user_rating = 'disliked'
 
         if countFromDB[2]:
             st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
