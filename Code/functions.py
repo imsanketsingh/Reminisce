@@ -387,15 +387,14 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             if st.session_state[expanded_key] == uniqueKey:
                 st.session_state[expanded_key] = None  # Close if already open
             else:
-                st.session_state[expanded_key] = uniqueKey  # Open the current one
+                st.session_state[expanded_key] = uniqueKey  # Open clicked article
 
         # Display the article content if it is the expanded one
         if st.session_state[expanded_key] == uniqueKey:
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
-            wrap_up_clicked = st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it")
-            if wrap_up_clicked:
-                st.session_state[expanded_key] = None
+            if st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it"):
+                st.session_state[expanded_key] = None  # Close the article
 
     st.write('---')
 
