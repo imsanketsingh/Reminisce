@@ -370,11 +370,10 @@ class SessionState:
         self.__dict__.update(kwargs)
 
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
-    session_state = SessionState(show_content=False)
-
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
 
+    # Display cover image and initial content
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
@@ -386,12 +385,17 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
 
-    if st.button("Get into it", key=str(uniqueKey) + '1'):
-        session_state.show_content = True
+    # Button to trigger showing content and rating
+    show_content = st.button("Get into it", key=str(uniqueKey) + '1')
 
-    if session_state.show_content:
+    # Handle content display and rating
+    if show_content:
         showthecontent(contentPath)
-        textRator(uniqueKey, heading)
+
+        # Use a placeholder to hold st_text_rater
+        text_rater_placeholder = st.empty()
+        with text_rater_placeholder:
+            textRator(uniqueKey, heading)
 
     st.write('---')
 
@@ -404,10 +408,8 @@ def textRator(uniqueKey, articleName):
         if response == 'liked':
             st.balloons()
             countFromDB = database(articleName, True)
-            st.session_state.user_rating = 'liked'
         elif response == 'disliked':
             countFromDB = database(articleName, False)
-            st.session_state.user_rating = 'disliked'
 
         if countFromDB[2]:
             st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
