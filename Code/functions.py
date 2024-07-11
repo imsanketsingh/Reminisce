@@ -385,7 +385,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    response = st_text_rater(text="Liked the article?", key= str(uniqueKey)+'4')
     countFromDB = [0,0, True]
     if(response=='liked'):
         st.balloons()
