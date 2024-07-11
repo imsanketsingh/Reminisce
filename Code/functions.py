@@ -390,16 +390,18 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
 
-        if 'show_content' not in st.session_state:
-            st.session_state.show_content = False
+        # Use session state to track whether the content is shown
+        show_content_key = f'show_content_{uniqueKey}'
+        if show_content_key not in st.session_state:
+            st.session_state[show_content_key] = False
 
         if st.button("Get into it", key=str(uniqueKey)+'1'):
-            st.session_state.show_content = not st.session_state.show_content
+            st.session_state[show_content_key] = not st.session_state[show_content_key]
 
-        if st.session_state.show_content:
+        if st.session_state[show_content_key]:
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
-            st.button("Wrap it up!", help="Close it", on_click=lambda: setattr(st.session_state, 'show_content', False))
+            st.button("Wrap it up!", help="Close it", on_click=lambda: setattr(st.session_state, show_content_key, False))
 
     st.write('---')
 
