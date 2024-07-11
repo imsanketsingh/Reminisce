@@ -365,11 +365,16 @@ def showthecontent(filepath):
 if 'user_rating' not in st.session_state:
     st.session_state.user_rating = None
 
+class SessionState:
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
+    session_state = SessionState(show_content=False)
+
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
 
-    # Display cover image and initial content
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
@@ -381,11 +386,10 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
 
-    # Button to trigger showing content and rating
-    show_content = st.button("Get into it", key=str(uniqueKey) + '1')
+    if st.button("Get into it", key=str(uniqueKey) + '1'):
+        session_state.show_content = True
 
-    # Handle content display and rating
-    if show_content:
+    if session_state.show_content:
         showthecontent(contentPath)
         textRator(uniqueKey, heading)
 
