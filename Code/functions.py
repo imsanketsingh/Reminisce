@@ -385,21 +385,17 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
-    # st.write(f"Response: {response}")
-    
-    if response:
-        countFromDB = [0, 0, True]
-        if response == 'liked':
-            st.balloons()
-            countFromDB = database(articleName, True)
-        elif response == 'disliked':
-            countFromDB = database(articleName, False)
-
-        if countFromDB[2]:
-            st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
-        else:
-            st.markdown(f"_Database hourly limit exceeded, this {response[:-1]} won't be counted_")
+    response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
+    countFromDB = [0,0, True]
+    if(response=='liked'):
+        st.balloons()
+        countFromDB = database(articleName, True)
+        if(countFromDB[2]): st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded, this like won't be counted_")
+    elif(response=='disliked'):
+        countFromDB = database(articleName, False)
+        if(countFromDB[2]): st.markdown(f"Thank you, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
+        else: st.markdown(f"_Database hourly limit exceeded, this dislike won't be counted_")
 
 
 def reminisceTopics():
