@@ -385,7 +385,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
         textRator(uniqueKey, heading)
 
         st.button("Wrap it up!", help="Close it")
-        st.write('---')
+    st.write('---')
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
