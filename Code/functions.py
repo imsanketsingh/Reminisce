@@ -381,8 +381,10 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
         showthecontent(contentPath)
         show_rater = True  # Set flag to True after opening article
 
-    if show_rater:  # Display rater only if article is open
-        textRator(uniqueKey, heading)
+    # Separate container for the rater
+    if show_rater:
+        with st.container():
+            textRator(uniqueKey, heading)
 
         st.button("Wrap it up!", help="Close it")
     st.write('---')
