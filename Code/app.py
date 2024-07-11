@@ -99,6 +99,7 @@ elif choose == "Compendia":
     if topic == "Books":
         #Topic1 Book 1
         displayWriting("CB1", './Cover Images/Rashmirathi.jpg', './New/Books/Rashmirathi.html', 'Rashmirathi : Part 1', 'The first article of the series that explores the great epic **Rashmirathi** by Ramdhari Singh Dinkar, delving into its Philiterary themes, offering insights into duty, morality, and the complexities of the Mahabharata character, Karna.', None)
+        displayWriting("CB2", './Cover Images/Rashmirathi.jpg', './New/Books/Rashmirathi.html', 'Rashmirathi : Part 1', 'The first article of the series that explores the great epic **Rashmirathi** by Ramdhari Singh Dinkar, delving into its Philiterary themes, offering insights into duty, morality, and the complexities of the Mahabharata character, Karna.', None)
 
         comingSoonDisplay(False)
 
