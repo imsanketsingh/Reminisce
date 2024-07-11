@@ -384,8 +384,8 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     if show_rater:  # Display rater only if article is open
         textRator(uniqueKey, heading)
 
-    st.button("Wrap it up!", help="Close it")
-    st.write('---')
+        st.button("Wrap it up!", help="Close it")
+        st.write('---')
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
