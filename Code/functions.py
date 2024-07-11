@@ -369,39 +369,20 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     
     with st.container():
         image_col, text_col = st.columns((2, 3))
+        
         with image_col:
             st.image(coverImage)
+        
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
             </style> """, unsafe_allow_html=True)
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
-
-        # Use session state to track which article is expanded
-        expanded_key = 'expanded_article'
-        if expanded_key not in st.session_state:
-            st.session_state[expanded_key] = None
-
-        # Check if the current article is expanded
-        is_expanded = st.session_state[expanded_key] == uniqueKey
-
-        # Display toggle button based on current state
-        if st.button("Get into it", key=str(uniqueKey)+'_open'):
-            # Close all other articles if they are not the current one
-            for key in st.session_state.keys():
-                if key.startswith('expanded_article_') and key != expanded_key:
-                    st.session_state[key] = False
-
-            # Toggle current article state
-            st.session_state[expanded_key] = not is_expanded
-
-        # Display the article content if it is the expanded one
-        if st.session_state[expanded_key]:
+        
+        if st.button("Get into it", key=str(uniqueKey)+'1'):
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
-            if st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it"):
-                st.session_state[expanded_key] = False
 
     st.write('---')
 
