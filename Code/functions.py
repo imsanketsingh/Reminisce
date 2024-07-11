@@ -308,32 +308,6 @@ def comingSoonDisplay(isEmpty):
 
 
 
-def showthecontent(filepath):
-    with open(filepath, "r") as f:
-        html_string = f.read()
-    components.html(html_string, scrolling = True, height = 700)
-
-
-def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
-    coverImage = Image.open(coverImageUrl)
-    coverImage = coverImage.resize((320, 240))
-    with st.container():
-        image_col, text_col = st.columns((2, 3))
-        with image_col:
-            st.image(coverImage)
-        with text_col:
-            st.markdown(""" <style> .font {
-            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
-            </style> """, unsafe_allow_html=True)
-            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
-            st.markdown(metaDescription, unsafe_allow_html=True)
-        if st.button("Get into it", key=str(uniqueKey)+'1'):
-            showthecontent(contentPath)
-            st.button("Wrap it up!", help="Close it")
-
-    textRator(uniqueKey, heading)
-    st.write('---')
-
 
 def showPDF(file_path):
     with open(file_path,"rb") as f:
@@ -383,6 +357,35 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
 
     textRator(uniqueKey, title)
     st.write('---')
+
+
+def showthecontent(filepath):
+    with open(filepath, "r") as f:
+        html_string = f.read()
+    components.html(html_string, scrolling = True, height = 700)
+
+
+def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
+    coverImage = Image.open(coverImageUrl)
+    coverImage = coverImage.resize((320, 240))
+    with st.container():
+        image_col, text_col = st.columns((2, 3))
+        with image_col:
+            st.image(coverImage)
+        with text_col:
+            st.markdown(""" <style> .font {
+            font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+            </style> """, unsafe_allow_html=True)
+            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
+            st.markdown(metaDescription, unsafe_allow_html=True)
+        if st.button("Get into it", key=str(uniqueKey)+'1'):
+            showthecontent(contentPath)
+            st.button("Wrap it up!", help="Close it")
+        textRator(uniqueKey, heading)
+
+    st.write('---')
+
+
 
 def textRator(uniqueKey, articleName):
     response = st_text_rater(text="Did you like the article?", key= str(uniqueKey)+'4')
