@@ -345,6 +345,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     with col1:  
         if st.button('Open Article',key = str(uniqueKey)+'1'):            
             showPDF(contentPath)
+            textRator(uniqueKey, title)
     with col2:
         st.button('Close Article',key= str(uniqueKey)+'2')             
     with col3:
@@ -355,7 +356,6 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
                 file_name= str(title)+".pdf",
                 mime='application/octet-stream')
 
-    textRator(uniqueKey, title)
     st.write('---')
 
 
@@ -394,7 +394,7 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
+    response = st_text_rater(text="Did you like it?", key=str(uniqueKey)+'4')
     st.write(f"Response: {response}")
     
     if response:
