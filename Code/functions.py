@@ -333,7 +333,7 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
     with st.container():
         image_col, text_col = st.columns((2, 3))
         with image_col:
-            st.image(feature_image, caption= caption)
+            st.image(feature_image, caption=caption)
         with text_col:
             st.markdown(""" <style> .font {
             font-size:22px ; font-family: 'Black'; color: #FFFFF;}
@@ -341,20 +341,29 @@ def displayPDF(uniqueKey, featureImagePath, contentPath, title, metaDescription,
             st.markdown(f'<p class="font">{title}</p>', unsafe_allow_html=True)
             st.markdown(f'{metaDescription}<b>[Read More👇]</b>', unsafe_allow_html=True)
 
-    col1, col2,col3= st.columns(3)
-    with col1:  
-        if st.button('Open Article',key = str(uniqueKey)+'1'):            
-            showPDF(contentPath)
-            textRator(uniqueKey, title)
+    if 'show_article' not in st.session_state:
+        st.session_state.show_article = False
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        if st.button('Open Article', key=str(uniqueKey)+'1'):
+            st.session_state.show_article = True
+
     with col2:
-        st.button('Close Article',key= str(uniqueKey)+'2')             
+        if st.button('Close Article', key=str(uniqueKey)+'2'):
+            st.session_state.show_article = False
+
     with col3:
         with open(contentPath, "rb") as pdf_file:
             PDFbyte = pdf_file.read()
-        st.download_button(label="Download PDF Article", key= str(uniqueKey)+'3',
-                data=PDFbyte,
-                file_name= str(title)+".pdf",
-                mime='application/octet-stream')
+        st.download_button(label="Download PDF Article", key=str(uniqueKey)+'3',
+                           data=PDFbyte,
+                           file_name=str(title) + ".pdf",
+                           mime='application/octet-stream')
+
+    if st.session_state.show_article:
+        showPDF(contentPath)
+        textRator(uniqueKey, title)
 
     st.write('---')
 
