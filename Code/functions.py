@@ -385,24 +385,28 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
 
-    # Button to trigger showing content and rating
+    # Button to trigger showing content
     show_content = st.button("Get into it", key=str(uniqueKey) + '1')
 
-    # Handle content display and rating
+    # Handle content display
     if show_content:
         showthecontent(contentPath)
 
-        # Use a placeholder to hold st_text_rater
-        text_rater_placeholder = st.empty()
-        with text_rater_placeholder:
-            textRator(uniqueKey, heading)
+        # Call textRator with unique key for this article
+        textRator(uniqueKey, heading)
 
     st.write('---')
 
 def textRator(uniqueKey, articleName):
-    response = st_text_rater(text="Did you like the article?", key=str(uniqueKey)+'4')
-    # st.write(f"Response: {response}")
-    
+    # Generate a unique key for the text rater based on article's unique key
+    text_rater_key = f"{uniqueKey}_text_rater"
+
+    # Retrieve stored state or initialize if not exists
+    text_rater_state = st.session_state.get(text_rater_key, None)
+
+    # Display st_text_rater based on stored state or new instance
+    response = st_text_rater(text="Did you like the article?", key=text_rater_key, state=text_rater_state)
+
     if response:
         countFromDB = [0, 0, True]
         if response == 'liked':
@@ -415,6 +419,9 @@ def textRator(uniqueKey, articleName):
             st.markdown(f"Thank you🖤, Now _{articleName}_ has _{countFromDB[0]}_ likes and _{countFromDB[1]}_ dislikes.")
         else:
             st.markdown(f"_Database hourly limit exceeded, this {response[:-1]} won't be counted_")
+
+    # Store the state of st_text_rater for this article
+    st.session_state[text_rater_key] = response
 
 
 def reminisceTopics():
