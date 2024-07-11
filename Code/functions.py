@@ -368,18 +368,25 @@ if 'user_rating' not in st.session_state:
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
-    with st.container():
-        image_col, text_col = st.columns((2, 3))
-        with image_col:
-            st.image(coverImage)
-        with text_col:
-            st.markdown(""" <style> .font { font-size:22px ; font-family: 'Black'; color: #FFFFF;} </style> """, unsafe_allow_html=True)
-            st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
-            st.markdown(metaDescription, unsafe_allow_html=True)
-
-    if st.button("Get into it", key=str(uniqueKey) + '1'):
+    
+    show_content = st.button("Get into it", key=str(uniqueKey)+'1')
+    
+    if show_content:
+        with st.container():
+            image_col, text_col = st.columns((2, 3))
+            with image_col:
+                st.image(coverImage)
+            with text_col:
+                st.markdown(""" <style> .font {
+                font-size:22px ; font-family: 'Black'; color: #FFFFF;}
+                </style> """, unsafe_allow_html=True)
+                st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
+                st.markdown(metaDescription, unsafe_allow_html=True)
+            
+        # Show content only when button is clicked
         showthecontent(contentPath)
         textRator(uniqueKey, heading)
+
         st.button("Wrap it up!", help="Close it")
 
     st.write('---')
