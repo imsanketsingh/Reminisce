@@ -375,7 +375,6 @@ def showthecontent(filepath):
     components.html(html_string, scrolling = True, height = 700)
 
 
-
 def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescription, caption):
     coverImage = Image.open(coverImageUrl)
     coverImage = coverImage.resize((320, 240))
@@ -406,7 +405,8 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
         if st.session_state[expanded_key] == uniqueKey:
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
-            if st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it"):
+            wrap_up_clicked = st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it")
+            if wrap_up_clicked:
                 st.session_state[expanded_key] = None
 
     st.write('---')
