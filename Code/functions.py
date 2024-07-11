@@ -389,19 +389,19 @@ def displayWriting(uniqueKey, coverImageUrl, contentPath, heading, metaDescripti
             </style> """, unsafe_allow_html=True)
             st.markdown(f'<p class="font">{heading}</p>', unsafe_allow_html=True)
             st.markdown(metaDescription, unsafe_allow_html=True)
-            
-        show_content_key = f'show_content_{uniqueKey}'
-        if show_content_key not in st.session_state:
-            st.session_state[show_content_key] = False
+
+        expanded_key = 'expanded_article'
+        if expanded_key not in st.session_state:
+            st.session_state[expanded_key] = None
 
         if st.button("Get into it", key=str(uniqueKey)+'_open'):
-            st.session_state[show_content_key] = not st.session_state[show_content_key]
+            st.session_state[expanded_key] = uniqueKey
 
-        if st.session_state[show_content_key]:
+        if st.session_state[expanded_key] == uniqueKey:
             showthecontent(contentPath)
             textRator(uniqueKey, heading)
             if st.button("Wrap it up!", key=str(uniqueKey)+'_close', help="Close it"):
-                st.session_state[show_content_key] = False
+                st.session_state[expanded_key] = None
 
     st.write('---')
 
